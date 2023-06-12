@@ -62,7 +62,7 @@ namespace HotBug.Controllers
             int companyId = User.Identity.GetCompanyId().Value;
 
             // Instantiate the ITUser
-            HBUser hBUser = (await _companyInfoService.GetAllMembersAsync(companyId)).FirstOrDefault(u => u.Id == member.ITUser.Id);
+            HBUser hBUser = (await _companyInfoService.GetAllMembersAsync(companyId)).FirstOrDefault(u => u.Id == member.HBUser.Id);
 
             // Get the roles for the user
             IEnumerable<string> roles = await _rolesService.GetUserRolesAsync(hBUser);

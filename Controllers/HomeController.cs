@@ -111,7 +111,7 @@ namespace HotBug.Controllers
             chartData.Add(new object[] { "Priority", "Count" });
 
 
-            foreach (string priority in Enum.GetNames(typeof(ITProjectPriority)))
+            foreach (string priority in Enum.GetNames(typeof(HBProjectPriority)))
             {
                 int priorityCount = (await _projectService.GetAllProjectsByPriority(companyId, priority)).Count();
                 chartData.Add(new object[] { priority, priorityCount });

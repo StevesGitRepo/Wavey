@@ -2,12 +2,11 @@
 using HotBug.Models;
 using Microsoft.EntityFrameworkCore;
 using HotBug.Data;
-using HotBug.Models;
 
 
 namespace HotBug.Controllers
 {
-    public class CompaniesController
+    public class CompaniesController : Controller
     {
         //private = local
         private readonly ApplicationDbContext _context;

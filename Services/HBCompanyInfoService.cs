@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions;
 using System.Security.Cryptography.X509Certificates;
 using HotBug.Data;
 using HotBug.Models;

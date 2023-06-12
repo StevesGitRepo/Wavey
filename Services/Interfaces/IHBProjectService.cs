@@ -1,5 +1,4 @@
-﻿using Microsoft.Build.Evaluation;
-using HotBug.Models;
+﻿using HotBug.Models;
 using Project = HotBug.Models.Project;
 
 namespace HotBug.Services.Interfaces

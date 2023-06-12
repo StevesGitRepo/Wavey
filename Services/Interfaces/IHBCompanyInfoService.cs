@@ -1,4 +1,5 @@
 ﻿using HotBug.Models;
+using Microsoft.Extensions;
 
 namespace HotBug.Services.Interfaces
 {

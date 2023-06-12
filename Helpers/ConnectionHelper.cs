@@ -1,5 +1,4 @@
-﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Npgsql;
+﻿using Npgsql;
 
 
 namespace HotBug.Helpers
