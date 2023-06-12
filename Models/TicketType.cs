@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace TheIssueTracker.Models
+namespace HotBug.Models
 {
     public class TicketType
     {
