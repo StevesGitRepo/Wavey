@@ -1,151 +1,152 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-HotBug-82093601-fa5d-4a6f-bfe0-04a0ba884244</UserSecretsId>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>aspnet-HotBug-82093601-fa5d-4a6f-bfe0-04a0ba884244</UserSecretsId>
+		<InvariantGlobalization>true</InvariantGlobalization>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="Areas\Identity\Pages\_ViewStart.cshtml" />
-    <None Include="Views\Companies\Create.cshtml" />
-    <None Include="Views\Companies\Delete.cshtml" />
-    <None Include="Views\Companies\Details.cshtml" />
-    <None Include="Views\Companies\Edit.cshtml" />
-    <None Include="Views\Companies\Index.cshtml" />
-    <None Include="Views\Home\Dashboard.cshtml" />
-    <None Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Home\Privacy.cshtml" />
-    <None Include="Views\Invites\Create.cshtml" />
-    <None Include="Views\Invites\Delete.cshtml" />
-    <None Include="Views\Invites\Details.cshtml" />
-    <None Include="Views\Invites\Edit.cshtml" />
-    <None Include="Views\Invites\Index.cshtml" />
-    <None Include="Views\Notifications\Create.cshtml" />
-    <None Include="Views\Notifications\Delete.cshtml" />
-    <None Include="Views\Notifications\Details.cshtml" />
-    <None Include="Views\Notifications\Edit.cshtml" />
-    <None Include="Views\Notifications\Index.cshtml" />
-    <None Include="Views\ProjectPriorities\Create.cshtml" />
-    <None Include="Views\ProjectPriorities\Delete.cshtml" />
-    <None Include="Views\ProjectPriorities\Details.cshtml" />
-    <None Include="Views\ProjectPriorities\Edit.cshtml" />
-    <None Include="Views\ProjectPriorities\Index.cshtml" />
-    <None Include="Views\Projects\AllProjects.cshtml" />
-    <None Include="Views\Projects\Archive.cshtml" />
-    <None Include="Views\Projects\ArchivedProjects.cshtml" />
-    <None Include="Views\Projects\AssignMembers.cshtml" />
-    <None Include="Views\Projects\AssignPM.cshtml" />
-    <None Include="Views\Projects\Create.cshtml" />
-    <None Include="Views\Projects\Details.cshtml" />
-    <None Include="Views\Projects\Edit.cshtml" />
-    <None Include="Views\Projects\Index.cshtml" />
-    <None Include="Views\Projects\MyProjects.cshtml" />
-    <None Include="Views\Projects\Restore.cshtml" />
-    <None Include="Views\Projects\UnassignedProjects.cshtml" />
-    <None Include="Views\Shared\Error.cshtml" />
-    <None Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Views\Shared\_LoginPartial.cshtml" />
-    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
-    <None Include="Views\TicketAttachments\Create.cshtml" />
-    <None Include="Views\TicketAttachments\Delete.cshtml" />
-    <None Include="Views\TicketAttachments\Details.cshtml" />
-    <None Include="Views\TicketAttachments\Edit.cshtml" />
-    <None Include="Views\TicketAttachments\Index.cshtml" />
-    <None Include="Views\TicketComments\Create.cshtml" />
-    <None Include="Views\TicketComments\Delete.cshtml" />
-    <None Include="Views\TicketComments\Details.cshtml" />
-    <None Include="Views\TicketComments\Edit.cshtml" />
-    <None Include="Views\TicketComments\Index.cshtml" />
-    <None Include="Views\TicketHistories\Create.cshtml" />
-    <None Include="Views\TicketHistories\Delete.cshtml" />
-    <None Include="Views\TicketHistories\Details.cshtml" />
-    <None Include="Views\TicketHistories\Edit.cshtml" />
-    <None Include="Views\TicketHistories\Index.cshtml" />
-    <None Include="Views\TicketPriorities\Create.cshtml" />
-    <None Include="Views\TicketPriorities\Delete.cshtml" />
-    <None Include="Views\TicketPriorities\Details.cshtml" />
-    <None Include="Views\TicketPriorities\Edit.cshtml" />
-    <None Include="Views\TicketPriorities\Index.cshtml" />
-    <None Include="Views\TicketStatus\Create.cshtml" />
-    <None Include="Views\TicketStatus\Delete.cshtml" />
-    <None Include="Views\TicketStatus\Details.cshtml" />
-    <None Include="Views\TicketStatus\Edit.cshtml" />
-    <None Include="Views\TicketStatus\Index.cshtml" />
-    <None Include="Views\Tickets\AllTickets.cshtml" />
-    <None Include="Views\Tickets\Archive.cshtml" />
-    <None Include="Views\Tickets\ArchivedTickets.cshtml" />
-    <None Include="Views\Tickets\AssignDeveloper.cshtml" />
-    <None Include="Views\Tickets\Create.cshtml" />
-    <None Include="Views\Tickets\Details.cshtml" />
-    <None Include="Views\Tickets\Edit.cshtml" />
-    <None Include="Views\Tickets\Index.cshtml" />
-    <None Include="Views\Tickets\MyTickets.cshtml" />
-    <None Include="Views\Tickets\Restore.cshtml" />
-    <None Include="Views\Tickets\UnassignedTickets.cshtml" />
-    <None Include="Views\TicketTypes\Create.cshtml" />
-    <None Include="Views\TicketTypes\Delete.cshtml" />
-    <None Include="Views\TicketTypes\Details.cshtml" />
-    <None Include="Views\TicketTypes\Edit.cshtml" />
-    <None Include="Views\TicketTypes\Index.cshtml" />
-    <None Include="Views\UserRoles\ManageUserRoles.cshtml" />
-    <None Include="Views\_ViewImports.cshtml" />
-    <None Include="Views\_ViewStart.cshtml" />
-    <None Include="wwwroot\js\site.js" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
-    <None Include="wwwroot\lib\bootstrap\LICENSE" />
-    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
-    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
-    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
-    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
-    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
-    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
-    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
-    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
-    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
-    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="Areas\Identity\Pages\_ViewStart.cshtml" />
+		<None Include="Views\Companies\Create.cshtml" />
+		<None Include="Views\Companies\Delete.cshtml" />
+		<None Include="Views\Companies\Details.cshtml" />
+		<None Include="Views\Companies\Edit.cshtml" />
+		<None Include="Views\Companies\Index.cshtml" />
+		<None Include="Views\Home\Dashboard.cshtml" />
+		<None Include="Views\Home\Index.cshtml" />
+		<None Include="Views\Home\Privacy.cshtml" />
+		<None Include="Views\Invites\Create.cshtml" />
+		<None Include="Views\Invites\Delete.cshtml" />
+		<None Include="Views\Invites\Details.cshtml" />
+		<None Include="Views\Invites\Edit.cshtml" />
+		<None Include="Views\Invites\Index.cshtml" />
+		<None Include="Views\Notifications\Create.cshtml" />
+		<None Include="Views\Notifications\Delete.cshtml" />
+		<None Include="Views\Notifications\Details.cshtml" />
+		<None Include="Views\Notifications\Edit.cshtml" />
+		<None Include="Views\Notifications\Index.cshtml" />
+		<None Include="Views\ProjectPriorities\Create.cshtml" />
+		<None Include="Views\ProjectPriorities\Delete.cshtml" />
+		<None Include="Views\ProjectPriorities\Details.cshtml" />
+		<None Include="Views\ProjectPriorities\Edit.cshtml" />
+		<None Include="Views\ProjectPriorities\Index.cshtml" />
+		<None Include="Views\Projects\AllProjects.cshtml" />
+		<None Include="Views\Projects\Archive.cshtml" />
+		<None Include="Views\Projects\ArchivedProjects.cshtml" />
+		<None Include="Views\Projects\AssignMembers.cshtml" />
+		<None Include="Views\Projects\AssignPM.cshtml" />
+		<None Include="Views\Projects\Create.cshtml" />
+		<None Include="Views\Projects\Details.cshtml" />
+		<None Include="Views\Projects\Edit.cshtml" />
+		<None Include="Views\Projects\Index.cshtml" />
+		<None Include="Views\Projects\MyProjects.cshtml" />
+		<None Include="Views\Projects\Restore.cshtml" />
+		<None Include="Views\Projects\UnassignedProjects.cshtml" />
+		<None Include="Views\Shared\Error.cshtml" />
+		<None Include="Views\Shared\_Layout.cshtml" />
+		<None Include="Views\Shared\_LoginPartial.cshtml" />
+		<None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+		<None Include="Views\TicketAttachments\Create.cshtml" />
+		<None Include="Views\TicketAttachments\Delete.cshtml" />
+		<None Include="Views\TicketAttachments\Details.cshtml" />
+		<None Include="Views\TicketAttachments\Edit.cshtml" />
+		<None Include="Views\TicketAttachments\Index.cshtml" />
+		<None Include="Views\TicketComments\Create.cshtml" />
+		<None Include="Views\TicketComments\Delete.cshtml" />
+		<None Include="Views\TicketComments\Details.cshtml" />
+		<None Include="Views\TicketComments\Edit.cshtml" />
+		<None Include="Views\TicketComments\Index.cshtml" />
+		<None Include="Views\TicketHistories\Create.cshtml" />
+		<None Include="Views\TicketHistories\Delete.cshtml" />
+		<None Include="Views\TicketHistories\Details.cshtml" />
+		<None Include="Views\TicketHistories\Edit.cshtml" />
+		<None Include="Views\TicketHistories\Index.cshtml" />
+		<None Include="Views\TicketPriorities\Create.cshtml" />
+		<None Include="Views\TicketPriorities\Delete.cshtml" />
+		<None Include="Views\TicketPriorities\Details.cshtml" />
+		<None Include="Views\TicketPriorities\Edit.cshtml" />
+		<None Include="Views\TicketPriorities\Index.cshtml" />
+		<None Include="Views\TicketStatus\Create.cshtml" />
+		<None Include="Views\TicketStatus\Delete.cshtml" />
+		<None Include="Views\TicketStatus\Details.cshtml" />
+		<None Include="Views\TicketStatus\Edit.cshtml" />
+		<None Include="Views\TicketStatus\Index.cshtml" />
+		<None Include="Views\Tickets\AllTickets.cshtml" />
+		<None Include="Views\Tickets\Archive.cshtml" />
+		<None Include="Views\Tickets\ArchivedTickets.cshtml" />
+		<None Include="Views\Tickets\AssignDeveloper.cshtml" />
+		<None Include="Views\Tickets\Create.cshtml" />
+		<None Include="Views\Tickets\Details.cshtml" />
+		<None Include="Views\Tickets\Edit.cshtml" />
+		<None Include="Views\Tickets\Index.cshtml" />
+		<None Include="Views\Tickets\MyTickets.cshtml" />
+		<None Include="Views\Tickets\Restore.cshtml" />
+		<None Include="Views\Tickets\UnassignedTickets.cshtml" />
+		<None Include="Views\TicketTypes\Create.cshtml" />
+		<None Include="Views\TicketTypes\Delete.cshtml" />
+		<None Include="Views\TicketTypes\Details.cshtml" />
+		<None Include="Views\TicketTypes\Edit.cshtml" />
+		<None Include="Views\TicketTypes\Index.cshtml" />
+		<None Include="Views\UserRoles\ManageUserRoles.cshtml" />
+		<None Include="Views\_ViewImports.cshtml" />
+		<None Include="Views\_ViewStart.cshtml" />
+		<None Include="wwwroot\js\site.js" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+		<None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+		<None Include="wwwroot\lib\bootstrap\LICENSE" />
+		<None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+		<None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+		<None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+		<None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+		<None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+		<None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+		<None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+		<None Include="wwwroot\lib\jquery\dist\jquery.js" />
+		<None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+		<None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MailKit" Version="4.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.15" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.15" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.15" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="MimeKit" Version="4.0.0" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MailKit" Version="4.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.15" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.15" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.15" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="MimeKit" Version="4.0.0" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+	</ItemGroup>
 
 </Project>
