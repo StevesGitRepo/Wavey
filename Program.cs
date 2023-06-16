@@ -6,17 +6,30 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using HotBug.Services.Factories;
+using HotBug.Models;
+using HotBug.Models.Enums;
+using HotBug.Services;
+using HotBug.Services.Factories;
+using HotBug.Services.Interfaces;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
-//var connectionString = DataUtility.GetConnectionString(builder.Configuration);
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//var connectionString = builder.Configuration.GetSection("pgSettings")["pgConnection"];
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration), o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
-AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+AppContext.SetSwitch("Npgsql.EnableLegacyTimeStampBehavior", true);
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+/*builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();*/
 builder.Services.AddIdentity<HBUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddClaimsPrincipalFactory<HBUserClaimsPrincipalFactory>()
@@ -34,14 +47,11 @@ builder.Services.AddScoped<IHBNotifcationService, HBNotificationService>();
 builder.Services.AddScoped<IHBInviteService, HBInviteService>();
 builder.Services.AddScoped<IHBFileService, HBFileService>();
 builder.Services.AddScoped<IHBLookupService, HBLookupService>();
-builder.Services.AddScoped<IEmailSender, HBEmailService>();
-builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 
 builder.Services.AddScoped<IEmailSender, HBEmailService>();
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 
 builder.Services.AddControllersWithViews();
-
 
 var app = builder.Build();
 
