@@ -1,3 +1,11 @@
+:root {
+    --hotbug-dark-color: #052247;
+}
+
+.hotbug-dark {
+    background-image: var(--hotbug-dark-color);
+}
+
 html {
   font-size: 14px;
 }

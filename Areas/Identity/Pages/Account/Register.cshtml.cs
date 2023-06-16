@@ -19,6 +19,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using HotBug.Models;
+using System.ComponentModel;
+using HotBug.Data;
+using HotBug.Controllers;
+using HotBug.Services.Interfaces;
 
 namespace HotBug.Areas.Identity.Pages.Account
 {
@@ -30,13 +34,17 @@ namespace HotBug.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<HBUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly IHBCompanyInfoService _companyInfoService;
+        private readonly IHBRolesService _hBRolesService;
 
         public RegisterModel(
             UserManager<HBUser> userManager,
             IUserStore<HBUser> userStore,
             SignInManager<HBUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IHBCompanyInfoService companyInfoService,
+            IHBRolesService hBRolesService)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -44,6 +52,8 @@ namespace HotBug.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _companyInfoService = companyInfoService;
+            _hBRolesService = hBRolesService;
         }
 
         /// <summary>
@@ -88,6 +98,14 @@ namespace HotBug.Areas.Identity.Pages.Account
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
+            [Required]
+            [Display(Name = "Company Name")]
+            public string CompanyName { get; set; }
+
+            [Required]
+            [DisplayName("Company Description")]
+            public string CompanyDescription { get; set; }
+
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -121,7 +139,14 @@ namespace HotBug.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new HBUser { UserName = Input.Email, Email = Input.Email, FirstName = Input.FirstName, LastName = Input.LastName};
+                var user = new HBUser 
+                { 
+                    UserName = Input.Email, 
+                    Email = Input.Email, 
+                    FirstName = Input.FirstName, 
+                    LastName = Input.LastName,
+                    Company = await _companyInfoService.AddUserAsync(Input.CompanyName, Input.CompanyDescription)
+                };
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

@@ -17,6 +17,46 @@ namespace HotBug.Services
             _context = context;
         }
 
+        public async Task<Company> AddCompanyAsync(Company company)
+        {
+            try
+            {
+                await _context.AddAsync(company);
+                await _context.SaveChangesAsync();
+                return company;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<Company> AddUserAsync(string Name, string Description)
+        {
+            Name = Name.ToLower();
+            Description = Description.ToLower();
+
+            List<Company> companies = await _context.Companies!.ToListAsync();
+
+            foreach (Company company in companies)
+            {
+                if(company.Name == Name && company.Description == Description)
+                {
+                    return company;
+                }
+            }
+
+            Company newCompany = new()
+            {
+                Name = Name,
+                Description = Description
+            };
+
+            await AddCompanyAsync(newCompany);
+            return newCompany;
+        }
+
         public async Task<List<HBUser>> GetAllMembersAsync(int companyId)
         {
             List<HBUser> result = new List<HBUser>();

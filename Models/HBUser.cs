@@ -38,7 +38,7 @@ namespace HotBug.Models
             public int CompanyId { get; set; }
 
             //Navigation
-            public virtual Company Company { get; set; }
+            public virtual Company? Company { get; set; }
 
             public virtual ICollection<Project>? Projects { get; set; }
     }
