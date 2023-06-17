@@ -4,12 +4,14 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using HotBug.Models;
+using HotBug.Models.ViewModels;
 
 namespace HotBug.Services
 {
     public class HBEmailService : IEmailSender
     {
         private readonly MailSettings _mailSettings;
+
         public HBEmailService(IOptions<MailSettings> mailSettings)
         {
 
@@ -17,36 +19,47 @@ namespace HotBug.Services
 
         }
 
-        public async Task SendEmailAsync(string emailTo, string subject, string htmlMessage)
+        public async Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            MimeMessage email = new();
+            var emailSender = _mailSettings.Email;
 
-            email.Sender = MailboxAddress.Parse(_mailSettings.Mail);
-            email.To.Add(MailboxAddress.Parse(emailTo));
-            email.Subject = subject;
+            MimeMessage newEmail = new();
 
-            var builder = new BodyBuilder
+            newEmail.Sender = MailboxAddress.Parse(emailSender);
+
+            foreach (var emailAddress in email.Split(";"))
             {
-                HtmlBody = htmlMessage
-            };
+                newEmail.To.Add(MailboxAddress.Parse(emailAddress));
+            }
 
-            email.Body = builder.ToMessageBody();
+            newEmail.Subject = subject;
+
+            BodyBuilder emailBody = new();
+            emailBody.HtmlBody = htmlMessage;
+
+            newEmail.Body = emailBody.ToMessageBody();
+
+            //Log into smtp client...
+            using SmtpClient smtpClient = new();
 
             try
             {
-                using var smtp = new SmtpClient();
-                smtp.Connect(_mailSettings.Host, _mailSettings.Port, SecureSocketOptions.StartTls);
-                smtp.Authenticate(_mailSettings.Mail, _mailSettings.Password);
+                var host = _mailSettings.Host;
+                var port = _mailSettings.Port;
+                var password = _mailSettings.Password;
 
-                await smtp.SendAsync(email);
+                await smtpClient.ConnectAsync(host, port, SecureSocketOptions.StartTls);
+                await smtpClient.AuthenticateAsync(emailSender, password);
 
-                smtp.Disconnect(true);
+                await smtpClient.SendAsync(newEmail);
+                await smtpClient.DisconnectAsync(true);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                var error = ex.Message;
                 throw;
             }
+
         }
     }
 }

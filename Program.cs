@@ -13,7 +13,7 @@ using HotBug.Services.Factories;
 using HotBug.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
+using HotBug.Models.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
