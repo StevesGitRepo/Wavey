@@ -161,4 +161,8 @@
 	  </Content>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="wwwroot\assets\" />
+	</ItemGroup>
+
 </Project>
