@@ -3057,6 +3057,21 @@ input[type=button].btn-block {
         border-end-start-radius: 3px;
     }
 
+.card-row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    min-width: 0;
+    word-wrap: break-word;
+    opacity: 100;
+/*    background:;
+    background-clip: border-box;
+    border-radius: 5px;
+    border: 1px solid #deebfd;
+    margin-block-end: 1.3rem;
+    box-shadow: -8px 12px 18px 0 #dadee8;*/
+}
+
 .card-body {
     flex: 1 1 auto;
     padding: 1.25rem;
