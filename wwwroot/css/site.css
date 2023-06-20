@@ -938,6 +938,15 @@ a.bg-dark.focus {
     }
 }
 
+.mobile-hidden {
+}
+
+@media (max-width: 633px) {
+    .mobile-hidden {
+        display: none;
+    }
+}
+
 .breadcrumb {
     display: flex;
     flex-wrap: wrap;
