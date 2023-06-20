@@ -1119,8 +1119,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: var(--primary-bg-color);
-    border-color: var(--primary-bg-color);
+    background-color: #3533CD;
+    border-color: #3533CD;
 }
 
     .btn-primary:hover {
@@ -1539,15 +1539,17 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-    color: var(--primary-bg-color);
+    color: #3533CD;
     border-color: var(--primary-bg-color);
-    box-shadow: none;
+    background-color:lightgoldenrodyellow;
+    box-shadow: 0 0 5px 0 #3533CD;
 }
 
     .btn-outline-primary:hover {
         color: #fff;
-        background-color: var(--primary-bg-color) !important;
-        border-color: var(--primary-bg-color);
+        background-color: #3533CD !important;
+        border-color: #3533CD;
+        box-shadow: 0 0 5px 0 #E2EFFF;
     }
 
     .btn-outline-primary:focus,
@@ -19300,7 +19302,7 @@ html.fullscreen-button {
     top: 0;
     inset-inline-start: 0;
     inset-inline-end: 0;
-    color: #fff;
+    color: #E2EFFF;
     position: relative;
     border-radius: 0px;
     background: url(../img/photos/35.jpg) center center;
@@ -64722,7 +64724,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-    color: var(--primary-bg-color) !important;
+    color: #3533CD !important;
 }
 
 a.text-primary:hover,
@@ -82677,6 +82679,10 @@ div.dtr-bs-modal table.table tr:first-child td {
     .richText .richText-toolbar ul li a {
         border-inline-end: #eae8f1 solid 1px;
     }
+
+.demo-shadow {
+    box-shadow: 0 0 6px 0 #002038df;
+}
 
 .select2-container {
     box-sizing: border-box;
