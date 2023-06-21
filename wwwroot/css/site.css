@@ -38059,6 +38059,12 @@ table.dataTable tfoot td {
         font-weight: 700;
         font-size: 11px;
     }
+.img-swap {
+    background: url("~/img/hotbug/hbLogoLightNoTextEyesFwd.png");
+}
+.img-swap:hover {
+    background: url("~/img/hotbug/hotbugNoBgLightNoTextCropped.png");
+}
 
 /* jQuery Simple Datetimepicker */
 .main-datetimepicker {
