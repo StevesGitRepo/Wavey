@@ -17,14 +17,12 @@
 </head>
 <body>
 
-    <div class="main-header side-header sticky nav nav-item">
-        <div class="container-fluid main-container ">
-            <div class="main-header-left ">
+    @*<div class="main-header side-header sticky nav nav-item">
+        <div class="container-fluid main-container ">*@
+           @* <div class="main-header-left ">
                 <div class="responsive-logo">
                     <a href="index.html" class="header-logo mt-2">
                         <img src="~/img/hotbug/hbLogoNoTextEyesFwd.png" width="80" class="logo-1" alt="logo">
-                        @*						<img src="~/img/hotbug/hbLogoLightNoTextEyesFwd.png" width="120" class="dark-logo-1" alt="logo">
-                        *@
                     </a>
                 </div>
                 <div class="app-sidebar__toggle" data-bs-toggle="sidebar">
@@ -34,8 +32,8 @@
                 <div class="main-header-center ms-3 d-sm-none d-md-none d-lg-block">
                     <input class="form-control" placeholder="Search for anything..." type="search"> <button class="btn"><i class="fas fa-search d-none d-md-block"></i></button>
                 </div>
-            </div>
-            <div class="main-header-right">
+            </div>*@
+@*            <div class="main-header-right">
                 <button class="navbar-toggler navresponsive-toggler d-lg-none ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon fe fe-more-vertical "></span>
                 </button>
@@ -306,20 +304,20 @@
                     </div>
                 </div>
             </div>
-        </div>
+*@        </div>
     </div>
 
-    <div class="container-fluid overflow-hidden">
+    @*<div class="container-fluid overflow-hidden">
         <div class="row vh-100 overflow-auto">
             <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-white d-flex sticky-top">
-                <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
-                    <a href="/" class="d-flex align-items-center justify-content-center pb-sm-3 mb-md-0 me-md-auto">
-                        <span class="fs-5 mt-1 ms-4 ps-2"><span class="d-none d-sm-inline"><img src="~/img/hotbug/hbLogoNoTextEyesFwd.png" width="126" /></span></span>
+                <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">*@
+                    <a href="/" class="d-flex pb-sm-3 mt-md-3 mb-md-0 me-md-auto">
+                        <span class="fs-5 mt-1 ms-4 ps-2"><span class="d-none d-sm-inline"><img src="~/img/hotbug/hbLogoLightTextEyesFwd.png" width="100" /></span></span>
                     </a>
 
-                    <partial name="_LoginPartial" />
+                  @*  <partial name="_LoginPartial" />*@
 
-                    @if (SignInManager.IsSignedIn(User))
+@*                    @if (SignInManager.IsSignedIn(User))
                     {
                         <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
                             <li class="nav-item">
@@ -379,15 +377,15 @@
                             </li>
                         </ul>
                     }
-                </div>
-            </div>
-            <div class="col d-flex flex-column h-100">
+*@               @* </div>*@
+@*            </div>
+*@            <div class="col d-flex flex-column h-100">
                 <main class="row">
                     @RenderBody()
                 </main>
-                <footer class="row bg-light py-4 mt-auto">
+                <footer class="row bg-dark mt-5 pt-4 mt-auto">
                     <div class="container">
-                        &copy; 2021 - HotBug - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        &copy; 2023 - HotBug - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                     </div>
                 </footer>
             </div>

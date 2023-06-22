@@ -99,6 +99,8 @@ Width
 /*white variables*/
 /*black variables*/
 /*shadow variables*/
+
+
 [dir=rtl] {
     --float-left: right;
     --float-right: left;
@@ -1494,8 +1496,8 @@ fieldset:disabled a.btn {
 
 .btn-dark {
     color: #fff;
-    background-color: #364261;
-    border-color: #364261;
+    background-color: #0F0944;
+    border-color: #0F0944;
 }
 
     .btn-dark:hover {
