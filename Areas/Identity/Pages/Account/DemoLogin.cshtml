@@ -5,104 +5,100 @@
     ViewData["Title"] = "Demo Log in";
 }
 <div class="overflow:hidden">
-<body class="bg-dark">
-    <div class="row mt-2 ps-1 ms-1 ps-md-0 ms-md-0">
-        <h2 class="mb-2 mt-4 ps-4 pe-4 text-center">Welcome to the HotBug Issue Tracker!</h2>
-        <h4 class="text-center mt-2 ps-4 pe-4">Log in to the demo as one of the following roles:</h2> 
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8">
-            <div class="row mt-3">
-                <!-- ADMIN DEMO -->
-                <div class="col-md-4">
-                    <div class="card-dark mt-3 px-3 py-3">
-                        <form id="account" method="post">
-                            <h2 class="text-warning">Administrator</h2>
-                            <hr />
-                            <p>Try out the HotBug Issue Tracker as the organization's administrator.  Experience the full toolset of HotBug!</p>
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <div class="form-floating">
-                                <input asp-for="Input.Email" class="form-control mb-3" autocomplete="username" aria-required="true" />
-                                <label asp-for="Input.Email" class="form-label"></label>
-                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+    <body class="bg-dark">
+        <div class="row mt-4 mt-lg-5">
+            <span class="mt-3 d-flex justify-content-center"><span class=""><img src="~/img/hotbug/hbLogoLightTextEyesFwd.png" width="300" /></span></span>
+
+            <p class="text-center mt-3 ps-4 pe-4">
+                Log in to the demo as one of the following roles:</p>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 mt-lg-4">
+                    <div class="row">
+                        <!-- ADMIN DEMO -->
+                        <div class="col-md-4">
+                            <div class="card-dark mt-4 px-3 py-3">
+                                <form id="account" method="post">
+                                    <h2 class="text-warning text-center">Administrator</h2>
+                                    <hr />
+                                    <p class="text-center">Try out the HotBug Issue Tracker as the organization's administrator.  Experience the full toolset of HotBug!</p>
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-floating">
+                                        <input hidden asp-for="Input.Email" value="demo.admin@bugtrackerpro.com" class="form-control mb-3" autocomplete="username" aria-required="true" />
+                                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input hidden asp-for="Input.Password" value="S3cureP@ssword" class="form-control mb-2" autocomplete="current-password" aria-required="true" />
+                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                    </div>
+                                    <div>
+                                        <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-1 mb-2">
+                                            <span>
+                                                <img src="~/img/hotbug/hbGetStartedBtnCropped.png" width="120" />
+                                            </span>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="form-floating">
-                                <input asp-for="Input.Password" class="form-control mb-2" autocomplete="current-password" aria-required="true" />
-                                <label asp-for="Input.Password" class="form-label"></label>
-                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <!-- PROJECT MANAGER DEMO -->
+                        <div class="col-md-4">
+                            <div class="card-dark mt-4 px-3 py-3">
+                                <form id="account" method="post">
+                                    <h2 class="text-light text-center">Project Manager</h2>
+                                    <hr />
+                                    <p class="text-center">Create and manage projects. Assign developers to tickets, and archive/restore tickets through their lifecycles.</p>
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-floating">
+                                        <input hidden asp-for="Input.Email" value="demo.pm@bugtrackerpro.com" class="form-control mb-3" autocomplete="username" aria-required="true" />
+                                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input asp-for="Input.Password" hidden value="S3cureP@ssword" class="form-control mb-2" autocomplete="current-password" aria-required="true" />
+                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                    </div>
+                                    <div>
+                                        <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-1 mb-2">
+                                            <span>
+                                                <img src="~/img/hotbug/hbGetStartedBtnCropped.png" width="120" />
+                                            </span>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                            <div>
-                                <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-3 mb-2">
-                                    <span>
-                                        <img src="~/img/hotbug/hbGetStartedBtnCropped.png" width="120" />
-                                    </span>
-                                </button>
+                        </div>
+                        <!-- DEVELOPER DEMO -->
+                        <div class="col-md-4">
+                            <div class="card-dark mt-4 px-3 py-3">
+                                <form id="account" method="post">
+                                    <h2 class="text-info text-center">Developer</h2>
+                                    <hr />
+                                    <p class="text-center">View projects, create tickets, and notate changes. Update ticket statuses, priorities, types and send invites.</p>
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-floating">
+                                        <input asp-for="Input.Email" hidden value="demo.dev@bugtrackerpro.com" class="form-control mb-3" autocomplete="username" aria-required="true" />
+                                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input asp-for="Input.Password" hidden value="S3cureP@ssword" class="form-control mb-2" autocomplete="current-password" aria-required="true" />
+                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                    </div>
+                                    <div>
+                                        <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-1 mb-2 hb-button">
+                                            <span class="">
+                                                <img src="~/img/hotbug/hbGetStartedBtnCropped.png" width="120" />
+                                            </span>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-                <!-- PROJECT MANAGER DEMO -->
-                <div class="col-md-4">
-                    <div class="card-dark mt-3 px-3 py-3">
-                        <form id="account" method="post">
-                            <h2 class="">Project Manager</h2>
-                            <hr />
-                            <p>Create and manage projects. Assign developers to tickets, and archive/restore tickets through their lifecycles.</p>
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <div class="form-floating">
-                                <input asp-for="Input.Email" class="form-control mb-3" autocomplete="username" aria-required="true" />
-                                <label asp-for="Input.Email" class="form-label"></label>
-                                <span asp-validation-for="Input.Email" class="text-danger"></span>
-                            </div>
-                            <div class="form-floating">
-                                <input asp-for="Input.Password" class="form-control mb-2" autocomplete="current-password" aria-required="true" />
-                                <label asp-for="Input.Password" class="form-label"></label>
-                                <span asp-validation-for="Input.Password" class="text-danger"></span>
-                            </div>
-                            <div>
-                                <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-3 mb-2">
-                                    <span>
-                                        <img src="~/img/hotbug/hbGetStartedBtnCropped.png" width="120" />
-                                    </span>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="col-lg-2">
                 </div>
-                <!-- DEVELOPER DEMO -->
-                <div class="col-md-4">
-                    <div class="card-dark mt-3 px-3 py-3">
-                        <form id="account" method="post">
-                            <h2 class="text-info">Developer</h2>
-                            <hr />
-                            <p>View projects, create tickets, and notate changes. Update ticket statuses, priorities, types and send invites.</p>
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <div class="form-floating">
-                                <input asp-for="Input.Email" class="form-control mb-3" autocomplete="username" aria-required="true" />
-                                <label asp-for="Input.Email" class="form-label"></label>
-                                <span asp-validation-for="Input.Email" class="text-danger"></span>
-                            </div>
-                            <div class="form-floating">
-                                <input asp-for="Input.Password" class="form-control mb-2" autocomplete="current-password" aria-required="true" />
-                                <label asp-for="Input.Password" class="form-label"></label>
-                                <span asp-validation-for="Input.Password" class="text-danger"></span>
-                            </div>
-                            <div>
-                                <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-3 mb-2 hb-button">
-                                    <span class="">
-                                        <img src="~/img/hotbug/hbGetStartedBtnCropped.png" width="120" />
-                                    </span>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="col-lg-2">
-        </div>
-    </div>
-@*@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-    }*@
-</body>
+        @*@section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+        }*@
+    </body>
 </div>

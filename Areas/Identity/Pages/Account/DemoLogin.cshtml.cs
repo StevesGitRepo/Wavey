@@ -67,6 +67,7 @@ namespace HotBug.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
+            [DisplayFormat(DataFormatString = "demo.admin@bugtrackerpro.com", ApplyFormatInEditMode = true)]
             public string Email { get; set; }
 
             /// <summary>
@@ -75,6 +76,7 @@ namespace HotBug.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [DataType(DataType.Password)]
+            [DisplayFormat(DataFormatString = "S3cureP@ssword")]
             public string Password { get; set; }
 
             /// <summary>
