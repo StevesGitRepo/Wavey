@@ -680,7 +680,7 @@
 						</div>
 		<!--UNASSIGNED TICKETS CARD-->
 						<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
-							<div class="card overflow-hidden sales-card bg-danger-gradient">
+							<div class="card overflow-hidden sales-card bg-info-gradient">
 								<div class="px-3 pt-3  pb-2 pt-0">
 									<div class="">
 										<h6 class="mb-3 tx-12 text-white">UNASSIGNED TICKETS</h6>
@@ -735,7 +735,7 @@
 								<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
 									<div class="d-flex justify-content-between">
 										<h4 class="card-title mb-0">Snapshot</h4>
-										<a href="javascript:void(0);" class="tx-inverse" data-bs-toggle="dropdown"><i
+										@*<a href="javascript:void(0);" class="tx-inverse" data-bs-toggle="dropdown"><i
 											class="mdi mdi-dots-horizontal text-gray"></i></a>
 										<div class="dropdown-menu">
 											<a class="dropdown-item" href="javascript:void(0);">Action</a>
@@ -743,39 +743,83 @@
 												Action</a>
 											<a class="dropdown-item" href="javascript:void(0);">Something Else
 												Here</a>
+										</div>*@
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="row">
+										<div class="col-3">
+											<div class="hstack">
+												<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-people-fill mt-1 pt-1 bg-info-gradient border rounded" viewBox="0 0 16 16">
+													<path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+												</svg>
+											</div>
+										</div>
+										<div class="col-9">
+											<h6>Total Users</h6>
+											<h4 class="">0</h4>
+										</div>
+										<div class="col-12">
+											<hr class="border border-dark w-100">
 										</div>
 									</div>
-									<p class="tx-12 text-muted mb-0">Order Status and Tracking. Track your order from ship date to arrival. To begin, enter your order number.</p>
-								</div>
-								<div class="card-body b-p-apex">
-									
-									<div id="bar" class="sales-bar mt-4"></div>
+									<div class="row mt-1">
+										<div class="col-3">
+											<div class="hstack">
+												<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-ticket-fill mt-1 pt-1 bg-purple-gradient border rounded" viewBox="0 0 16 16">
+													<path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3h-13Z"/>
+												</svg>
+											</div>
+										</div>
+										<div class="col-9">
+											<h6>Tickets in Development</h6>
+											<h4 class="">0</h4>
+										</div>
+										<div class="col-12">
+											<hr class="border border-dark w-100">
+										</div>
+									</div>
+									<div class="row mt-1">
+										<div class="col-3">
+											<div class="hstack">
+												<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-person-fill mt-1 pt-1 bg-primary-gradient border rounded" viewBox="0 0 16 16">
+													<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+												</svg>
+											</div>
+										</div>
+										<div class="col-9">
+											<h6>Total Developers</h6>
+											<h4 class="">0</h4>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 
 		<!--COMPNAY DATA CARD-->
 						<div class="col-md-12 col-lg-12 col-xl-3">
-							
-									<div class="card col m-1 p-2">
-										<div class="card-body">
-											<h5>Project Tickets Count</h5>
-											<p>Ticket Status %</p>
-											<div id="donut"></div>
-										</div>
+							<div class="card">
+								<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
+									<div class="card-body">
+										<h5>Project Tickets Count</h5>
+										<p>Ticket Status %</p>
+										<div id="donut"></div>
 									</div>
+								</div>
+							</div>
 						</div>
 
 		<!--PROJECT PRIORITY CARD-->
 						<div class="col-md-12 col-lg-12 col-xl-3">
-							
-								<div class="card col m-1 p-2">
+							<div class="card">
+								<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
 									<div class="card-body">
 										<h5>Projects by Priority</h5>
 										<p>Priority End Date</p>
 										<div id="chart3D"></div>
 									</div>
 								</div>
+							</div>
 						</div>
 
 		<!--PRODUCTION CARD-->
