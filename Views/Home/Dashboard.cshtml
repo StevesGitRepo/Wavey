@@ -757,7 +757,7 @@
 										</div>
 										<div class="col-9">
 											<h6>Total Users</h6>
-											<h4 class="">0</h4>
+											<h4 class="">@Model.Members.Count()</h4>
 										</div>
 										<div class="col-12">
 											<hr class="border border-dark w-100">
@@ -773,7 +773,7 @@
 										</div>
 										<div class="col-9">
 											<h6>Tickets in Development</h6>
-											<h4 class="">0</h4>
+											<h4 class="">@Model.Tickets!.Count()</h4>
 										</div>
 										<div class="col-12">
 											<hr class="border border-dark w-100">
@@ -789,13 +789,13 @@
 										</div>
 										<div class="col-9">
 											<h6>Total Developers</h6>
-											<h4 class="">0</h4>
+											<h4 class="">4</h4>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
+						@*@Model.Tickets!.Where(t=> string.IsNullOrEmpty(t.DeveloperUserId)).Count(*@
 		<!--COMPNAY DATA CARD-->
 						<div class="col-md-12 col-lg-12 col-xl-3">
 							<div class="card">
