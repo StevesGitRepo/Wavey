@@ -849,26 +849,25 @@
 								@foreach(HBUser member in Model.Members)
 								{
 
-									<div class="list-group list-lg-group list-group-flush">
-								<div class="list-group-item list-group-item-action">
-									<div class="media mt-0">
-										<img class="avatar-lg rounded-circle my-auto me-3" src="../assets/img/users/3.jpg" alt="Image description">
-										<div class="media-body">
-											<div class="d-flex align-items-center">
-												<div class="mt-0">
-													<h5 class="mb-1 tx-15">@member.FullName</h5>
-													<p class="mb-0 tx-13 text-muted"><span class="text-success ms-2 d-inline-block"></span></p>
-												</div>
-												<div class="ms-auto wd-45p fs-16 mt-2">
-													<div id="spark1" class="wd-100p"></div>
+								<div class="list-group list-lg-group list-group-flush">
+									<div class="list-group-item list-group-item-action">
+										<div class="media mt-0">
+@*											<img class="avatar-lg rounded-circle my-auto me-3" src="@member.AvatarFileData" alt="Image description">
+*@											<div class="media-body">
+												<div class="d-flex align-items-center">
+													<div class="mt-0">
+														<h5 class="mb-1 tx-15">@member.FullName</h5>
+														<p class="mb-0 tx-13 text-muted">@member.Email<span class="text-success ms-2 d-inline-block"></span></p>
+													</div>
+													<div class="ms-auto wd-45p fs-16">
+														<div id="spark1" class="wd-100p"></div>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
+								@*	<div class="list-group-item list-group-item-action br-t-1 br-be-7 br-bs-7">*@
 								</div>
-								<div class="list-group-item list-group-item-action br-t-1 br-be-7 br-bs-7">
-								</div>
-							</div>
 									
 								}
 
