@@ -1,4 +1,5 @@
 ﻿@model HotBug.Models.ViewModels.DashboardViewModel
+@using Microsoft.EntityFrameworkCore;
 @using Microsoft.AspNetCore.Identity
 @using HotBug.Models.Enums;
 @using HotBug.Services;
@@ -842,7 +843,7 @@
 					<div class="card">
 						<div class="card-header pb-1">
 							<h3 class="card-title mb-2">Members</h3>
-							<p class="tx-12 mb-0 text-muted">View the team members on your project.</p>
+							<p class="tx-12 mb-0 text-muted">@Model.Company!.Name</p>
 						</div>
 						<div class="card-body p-0 customers mt-1">
 
@@ -857,16 +858,18 @@
 												<div class="d-flex align-items-center">
 													<div class="mt-0">
 														<h5 class="mb-1 tx-15">@member.FullName</h5>
-														<p class="mb-0 tx-13 text-muted">@member.Email<span class="text-success ms-2 d-inline-block"></span></p>
+														<a>
+															<p class="mb-0 tx-13 text-muted">@member.Email<span class="text-success ms-2 d-inline-block">@(await RoleService.GetUserRolesAsync(member).FirstOrDefault())</span></p>
+														</a>
 													</div>
-													<div class="ms-auto wd-45p fs-16">
+													@*<div class="ms-auto wd-45p fs-16">
 														<div id="spark1" class="wd-100p"></div>
-													</div>
+													</div>*@
 												</div>
 											</div>
 										</div>
 									</div>
-								@*	<div class="list-group-item list-group-item-action br-t-1 br-be-7 br-bs-7">*@
+									@*<hr class="border border-light">*@
 								</div>
 									
 								}
