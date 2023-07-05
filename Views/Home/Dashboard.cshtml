@@ -802,6 +802,22 @@
 							</div>
 						</div>
 
+		<!--PRODUCTION CARD-->
+						<div class="col-md-12 col-lg-12 col-xl-3">
+							<div class="card">
+								<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
+									<div class="card-body">
+										<h5>Tickets by Priority</h5>
+										<p>[Morris Charts]</p>
+										<!-- Morris: Donut -->
+										<div class="col-md-12">
+											<div class="chart chart-md" id="morrisTicketPriority"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 		<!--PROJECT PRIORITY CARD-->
 						<div class="col-md-12 col-lg-12 col-xl-3">
 							<div class="card">
@@ -811,19 +827,6 @@
 										<p>Priority End Date</p>
 										<div id="chart3D"></div>
 									</div>
-								</div>
-							</div>
-						</div>
-
-		<!--PRODUCTION CARD-->
-						<div class="col-md-12 col-lg-12 col-xl-3">
-							<div class="card">
-								<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
-									
-								</div>
-								<div class="card-body b-p-apex">
-
-									<div id="bar" class="sales-bar mt-4"></div>
 								</div>
 							</div>
 						</div>
@@ -1752,6 +1755,7 @@
 				});
 			}
 		</script>
+
 		<script type="text/javascript">
 			google.load("visualization", "1", { packages: ["corechart"] });
 			google.setOnLoadCallback(drawChart);
