@@ -7,6 +7,7 @@
 
 @inject UserManager<HBUser> UserManager
 @inject IHBRolesService RoleService
+@inject IHBProjectService ProjectService
 
 @{
     ViewData["Title"] = "Dashboard";
@@ -859,7 +860,7 @@
 													<div class="mt-0">
 														<h5 class="mb-1 tx-15">@member.FullName</h5>
 														<a>
-															<p class="mb-0 tx-13 text-muted">@member.Email<span class="text-success ms-2 d-inline-block">@(await RoleService.GetUserRolesAsync(member).FirstOrDefault())</span></p>
+															<p class="mb-0 tx-13 text-muted">@member.Email<span class="text-success ms-2 d-inline-block"></span></p>
 														</a>
 													</div>
 													@*<div class="ms-auto wd-45p fs-16">
@@ -883,14 +884,25 @@
 							<div class="card">
 								<div class="card-header pb-1">
 									<h3 class="card-title mb-2">Projects List</h3>
-									<p class="tx-12 mb-0 text-muted">Sales activities are the tactics that salespeople use to achieve their goals and objective</p>
+									<p class="tx-12 mb-0 text-muted">Available projects are listed for each user.</p>
 								</div>
+
+							@foreach(Project project in Model.Projects)
+							{
+								
 								<div class="product-timeline card-body pt-2 mt-1">
 									<ul class="timeline-1 mb-0">
-										<li class="mt-0 mrg-8"> <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">Total Products</span> <a href="javascript:void(0);" class="float-end tx-11 text-muted">3 days ago</a>
+										<li class="mt-0 mrg-8"> <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">@project.Name</span> <a href="javascript:void(0);" class="float-end tx-11 text-muted"></a>
 											<p class="mb-0 text-muted tx-12">1.3k New Products</p>
 										</li>
-										<li class="mt-0 mrg-8"> <i class="mdi mdi-cart-outline bg-danger-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">Total Sales</span> <a href="javascript:void(0);" class="float-end tx-11 text-muted">35 mins ago</a>
+									</ul>
+								</div>
+							}
+
+							</div>
+						</div>
+
+										@*<li class="mt-0 mrg-8"> <i class="mdi mdi-cart-outline bg-danger-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">Total Sales</span> <a href="javascript:void(0);" class="float-end tx-11 text-muted">35 mins ago</a>
 											<p class="mb-0 text-muted tx-12">1k New Sales</p>
 										</li>
 										<li class="mt-0 mrg-8"> <i class="ti-bar-chart-alt bg-success-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">Toatal Revenue</span> <a href="javascript:void(0);" class="float-end tx-11 text-muted">50 mins ago</a>
@@ -904,11 +916,9 @@
 										</li>
 										<li class="mt-0 mb-0 mrg-8"> <i class="icon-note icons bg-primary-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">Customer Reviews</span> <a href="javascript:void(0);" class="float-end tx-11 text-muted">1 day ago</a>
 											<p class="mb-0 text-muted tx-12">1.5k reviews</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+										</li>*@
+
+
 						<div class="col-xl-4 col-md-12 col-lg-6">
 							<div class="card">
 								<div class="card-header pb-0">
