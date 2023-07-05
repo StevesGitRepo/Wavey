@@ -623,18 +623,12 @@
 					</div>
 					<div class="main-dashboard-header-right">
 						<div>
-							<label class="tx-13">Customer Ratings</label>
-							<div class="main-star">
-								<i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star"></i> <span>(14,873)</span>
-							</div>
+							<label class="tx-13">Total Projects</label>
+							<h5>@Model.Projects!.Count()</h5>
 						</div>
 						<div>
-							<label class="tx-13">Online Sales</label>
-							<h5>563,275</h5>
-						</div>
-						<div>
-							<label class="tx-13">Offline Sales</label>
-							<h5>783,675</h5>
+							<label class="tx-13">Open Tickets</label>
+							<h5>@Model.Tickets!.Count()</h5>
 						</div>
 					</div>
 				</div>
@@ -892,8 +886,9 @@
 								
 								<div class="product-timeline card-body pt-2 mt-1">
 									<ul class="timeline-1 mb-0">
-										<li class="mt-0 mrg-8"> <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">@project.Name</span> <a href="javascript:void(0);" class="float-end tx-11 text-muted"></a>
-											<p class="mb-0 text-muted tx-12">1.3k New Products</p>
+										<li class="mt-0 mrg-8"> <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">@project.Name</span> 
+											<a href="javascript:void(0);" class="float-end tx-11 text-muted"></a>
+											<p class="mb-0 text-muted tx-12"></p>
 										</li>
 									</ul>
 								</div>
