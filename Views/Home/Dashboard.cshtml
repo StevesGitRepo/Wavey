@@ -66,10 +66,10 @@
 								<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
 									<ul class="nav nav-item  navbar-nav-right ms-auto">
 										<li class="dropdown nav-item main-layout">
-											<a class="new nav-link theme-layout nav-link-bg layout-setting" >
+											@*<a class="new nav-link theme-layout nav-link-bg layout-setting" >
 												<span class="dark-layout"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" width="24" height="24" viewBox="0 0 24 24"><path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z"/></svg></span>
 												<span class="light-layout"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" width="24" height="24" viewBox="0 0 24 24"><path d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"/></svg></span>
-											</a>
+											</a>*@
 										</li>
 										<li class="nav-link search-icon d-lg-none d-block">
 											<form class="navbar-form" role="search">
@@ -293,7 +293,7 @@
 				<div class="sticky">
 					<aside class="app-sidebar sidebar-scroll">
 						<div class="main-sidebar-header active">
-						<a class="desktop-logo logo-light active" href="index.html"><img src="~/img/hotbug/hbBlueNoText.png" class="main-logo" alt="logo"></a>
+						<a class="desktop-logo logo-light active" href="index.html"><img src="~/img/hotbug/hbLogoNoTextEyesFwd.png" class="main-logo" alt="logo"></a>
 							<a class="desktop-logo logo-dark active" href="index.html"><img src="../assets/img/brand/logo-white.png" class="main-logo" alt="logo"></a>
 						<a class="logo-icon mobile-logo icon-light active" href="index.html"><img src="~/img/hotbug/hbLogoNoTextEyesFwd.png" alt="logo"></a>
 							<a class="logo-icon mobile-logo icon-dark active" href="index.html"><img src="../assets/img/brand/favicon-white.png" alt="logo"></a>
@@ -748,6 +748,7 @@
 												<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-people-fill mt-1 pt-1 bg-info-gradient border rounded" viewBox="0 0 16 16">
 													<path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
 												</svg>
+											<i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i>
 											</div>
 										</div>
 										<div class="col-9">
@@ -822,127 +823,117 @@
 							<div class="card">
 								<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
 								<div class="d-flex justify-content-between">
-										<h5 class="mb-5 card-title">Tickets by Priority</h5>
+									<h5 class="mb-4 card-title">Tickets by Priority</h5>
 								</div>
-									<div>
-										<div class="row">
-											<div class="col-8">
-												<h5 class="mt-0 mb-2 text-start">Low: </h5>
-											</div>
-											<div class="col-4 d-flex justify-content-end">
-												<h5>13</h5>
-											</div>
-											<hr class=" col-12 border border-secondary pe-4 mt-2 mb-2"/>
+									<p class="mb-4">Tickets sorted by their status</p>
+								<div>
+									<div class="row mb-4">
+										<div class="col-8">
+											<h5 class="text-start">Low</h5>
 										</div>
-
-
-										<div class="row">
-											<div class="col-8 mt-2">
-												<h5 class="text-start">Medium: </h5>
-											</div>
-											<div class="col-4 d-flex mt-2 justify-content-end">
-												<h5>15</h5>
-											</div>
-
-											<hr class=" col-12 border border-secondary pe-4 mt-2 mb-2"/>
-
+										<div class="col-4 d-flex justify-content-end">
+											<a asp-action="AllTickets" asp-controller="Tickets">
+												<h5>@Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Low)).Count()</h5>
+											</a>
 										</div>
-
-										<div class="row">
-											<div class="col-8 mt-2">
-												<h5 class="mt-2 mb-2 text-start">High: </h5>
-											</div>
-											<div class="col-4 mt-2 d-flex justify-content-end">
-												<h5>7</h5>
-											</div>
-
-											<hr class="col-12 border border-secondary pe-4 mt-2 mb-2" />
-
-										</div>
-										<div class="row">
-											<div class="col-8 mt-2">
-												<h5 class="mt-2 mb-2 text-start">Urgent: </h5>
-											</div>
-											<div class="col-4 mt-2 mb-2 d-flex justify-content-end">
-												<h5>4</h5>
-											</div>
-										</div>
-
-
-
-										
 									</div>
+
+									<div class="row mb-4">
+										<div class="col-8">
+											<h5 class="text-start">Medium</h5>
+										</div>
+										<div class="col-4 d-flex justify-content-end">
+											<a asp-action="AllTickets" asp-controller="Tickets">
+												<h5>@Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Medium)).Count()</h5>
+											</a>
+										</div>
+									</div>
+
+									<div class="row mb-4">
+										<div class="col-8">
+										<i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i>
+											<h5 class="text-start">High</h5>
+										</div>
+										<div class="col-4 d-flex justify-content-end">
+											<a asp-action="AllTickets" asp-controller="Tickets">
+												<h5>@Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.High)).Count()</h5>
+											</a>
+										</div>
+
+									</div>
+									<div class="row mb-4 pb-1">
+										<div class="col-8">
+											<h5 class="text-start">Urgent</h5>
+										</div>
+										<div class="col-4 d-flex justify-content-end">
+											<a asp-action="AllTickets" asp-controller="Tickets">
+												<h5>@Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Urgent)).Count()</h5>
+											</a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-
-	
-
 					</div>
 
 	<!-- NEW ROW -->
 
 		<!--MEMBERS CARD-->
-					<div class="row row-sm">
+					<div class="row">
 						<div class="col-xl-7 col-md-12 col-lg-12">
-					<div class="card">
-						<div class="card-header pb-1">
-							<h3 class="card-title mb-2">Members</h3>
-							<p class="tx-12 mb-0 text-muted">@Model.Company!.Name</p>
-						</div>
-						<div class="card-body p-0 customers mt-1">
+						<div class="card">
+							<div class="card-header pb-1">
+								<h3 class="card-title mb-2">Members</h3>
+								<p class="tx-12 mb-0 text-muted">@Model.Company!.Name</p>
+							</div>
+							<div class="card-body p-0 customers mt-1">
 
-								@foreach(HBUser member in Model.Members)
-								{
+									@foreach(HBUser member in Model.Members)
+									{
 
-								<div class="list-group list-lg-group list-group-flush">
-									<div class="list-group-item list-group-item-action">
-										<div class="media mt-0">
-@*											<img class="avatar-lg rounded-circle my-auto me-3" src="@member.AvatarFileData" alt="Image description">
-*@											<div class="media-body">
-												<div class="d-flex align-items-center">
-													<div class="mt-0">
-														<h5 class="mb-1 tx-15">@member.FullName</h5>
-														<a>
-															<p class="mb-0 tx-13 text-muted">@member.Email<span class="text-success ms-2 d-inline-block"></span></p>
-														</a>
+									<div class="list-group list-lg-group list-group-flush">
+										<div class="list-group-item list-group-item-action">
+											<div class="media mt-0">
+	@*											<img class="avatar-lg rounded-circle my-auto me-3" src="@member.AvatarFileData" alt="Image description">
+	*@											<div class="media-body">
+													<div class="d-flex align-items-center">
+														<div class="mt-0">
+															<h5 class="mb-1 tx-15">@member.FullName</h5>
+															<a>
+																<p class="mb-0 tx-13 text-muted">@member.Email<span class="text-success ms-2 d-inline-block"></span></p>
+															</a>
+														</div>
+														@*<div class="ms-auto wd-45p fs-16">
+															<div id="spark1" class="wd-100p"></div>
+														</div>*@
 													</div>
-													@*<div class="ms-auto wd-45p fs-16">
-														<div id="spark1" class="wd-100p"></div>
-													</div>*@
 												</div>
 											</div>
 										</div>
+										@*<hr class="border border-light">*@
 									</div>
-									@*<hr class="border border-light">*@
-								</div>
 									
-								}
-
-
-
+									}
+							</div>
 						</div>
-					</div>
-						</div>
-						<div class="col-xl-5 col-md-12 col-lg-6">
+							</div>
+						<div class="col-xl-5 col-md-12 col-lg-12">
 							<div class="card">
 								<div class="card-header pb-1">
 									<h3 class="card-title mb-2">Projects List</h3>
 									<p class="tx-12 mb-0 text-muted">Available projects are listed for each user.</p>
 								</div>
-
-							@foreach(Project project in Model.Projects)
-							{
-								
-								<div class="product-timeline card-body pt-2 mt-1">
-									<ul class="timeline-1 mb-0">
-										<li class="mt-0 mrg-8"> <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">@project.Name</span> 
-											<a href="javascript:void(0);" class="float-end tx-11 text-muted"></a>
-											<p class="mb-0 text-muted tx-12"></p>
-										</li>
-									</ul>
-								</div>
-							}
-
+								@foreach(Project project in Model.Projects)
+								{
+									<div class="product-timeline card-body pt-2 mt-1">
+										<ul class="timeline-1 mb-0">
+											<li class="mt-0 mrg-8"> <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">@project.Name</span> 
+												<a href="javascript:void(0);" class="float-end tx-11 text-muted"></a>
+												<p class="mb-0 text-muted tx-12"></p>
+											</li>
+										</ul>
+									</div>
+								}
 							</div>
 						</div>
 
@@ -961,99 +952,14 @@
 										<li class="mt-0 mb-0 mrg-8"> <i class="icon-note icons bg-primary-gradient text-white product-icon"></i> <span class="fw-semibold mb-4 tx-14 ">Customer Reviews</span> <a href="javascript:void(0);" class="float-end tx-11 text-muted">1 day ago</a>
 											<p class="mb-0 text-muted tx-12">1.5k reviews</p>
 										</li>*@
-
-
-						<div class="col-xl-4 col-md-12 col-lg-6">
-							<div class="card">
-								<div class="card-header pb-0">
-									<h3 class="card-title mb-2">Recent Orders</h3>
-									<p class="tx-12 mb-0 text-muted">An order is an investor's instructions to a broker or brokerage firm to purchase or sell</p>
-								</div>
-								<div class="card-body sales-info ot-0 pb-0 pt-0">
-									<div id="chart" class="ht-150"></div>
-									<div class="row sales-infomation pb-0 mb-0 mx-auto wd-100p">
-										<div class="col-md-6 col">
-											<p class="mb-0 d-flex"><span class="legend bg-primary brround"></span>Delivered</p>
-											<h3 class="mb-1">5238</h3>
-											<div class="d-flex">
-												<p class="text-muted ">Last 6 months</p>
-											</div>
-										</div>
-										<div class="col-md-6 col">
-											<p class="mb-0 d-flex"><span class="legend bg-info brround"></span>Cancelled</p>
-												<h3 class="mb-1">3467</h3>
-											<div class="d-flex">
-												<p class="text-muted">Last 6 months</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="card ">
-								<div class="card-body">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="d-flex align-items-center pb-2">
-												<p class="mb-0">Total Sales</p>
-											</div>
-											<h4 class="fw-bold mb-2">$7,590</h4>
-											<div class="progress progress-style progress-sm">
-												<div class="progress-bar bg-primary-gradient wd-80p" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="78"></div>
-											</div>
-										</div>
-										<div class="col-md-6 mt-4 mt-md-0">
-											<div class="d-flex align-items-center pb-2">
-												<p class="mb-0">Active Users</p>
-											</div>
-											<h4 class="fw-bold mb-2">$5,460</h4>
-											<div class="progress progress-style progress-sm">
-												<div class="progress-bar bg-danger-gradient wd-75" role="progressbar"  aria-valuenow="45" aria-valuemin="0" aria-valuemax="45"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 					<!-- row close -->
-
 					<!-- row opened -->
-					<div class="row row-sm row-deck">
-						<div class="col-md-12 col-lg-4 col-xl-4">
-							<div class="card card-dashboard-eight pb-2">
-								<h6 class="card-title">Your Top Countries</h6><span class="d-block mg-b-10 text-muted tx-12">Sales performance revenue based by country</span>
-								<div class="list-group border">
-									<div class="list-group-item border-top-0" id="br-t-0">
-										<i class="flag-icon flag-icon-us flag-icon-squared"></i>
-										<p>United States</p><span>$1,671.10</span>
-									</div>
-									<div class="list-group-item">
-										<i class="flag-icon flag-icon-nl flag-icon-squared"></i>
-										<p>Netherlands</p><span>$1,064.75</span>
-									</div>
-									<div class="list-group-item">
-										<i class="flag-icon flag-icon-gb flag-icon-squared"></i>
-										<p>United Kingdom</p><span>$1,055.98</span>
-									</div>
-									<div class="list-group-item">
-										<i class="flag-icon flag-icon-ca flag-icon-squared"></i>
-										<p>Canada</p><span>$1,045.49</span>
-									</div>
-									<div class="list-group-item">
-										<i class="flag-icon flag-icon-in flag-icon-squared"></i>
-										<p>India</p><span>$1,930.12</span>
-									</div>
-									<div class="list-group-item border-bottom-0 mb-0">
-										<i class="flag-icon flag-icon-au flag-icon-squared"></i>
-										<p>Australia</p><span>$1,042.00</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12 col-lg-8 col-xl-8">
+		
+						<div class="col-md-12 col-lg-12 col-xl-12">
 							<div class="card card-table-two">
 								<div class=" card-header p-0 d-flex justify-content-between">
-									<h4 class="card-title mb-1">Your Most Recent Earnings</h4>
+									<h4 class="card-title mb-1">Recent Tickets</h4>
 									<a href="javascript:void(0);" class="tx-inverse" data-bs-toggle="dropdown"><i
 										class="mdi mdi-dots-horizontal text-gray"></i></a>
 									<div class="dropdown-menu">
@@ -1064,7 +970,7 @@
 											Here</a>
 									</div>
 								</div>
-								<span class="tx-12 tx-muted mb-3 ">This is your most recent earnings for today's date.</span>
+								<span class="tx-12 tx-muted mb-3 ">The most recent tickets</span>
 								<div class="table-responsive country-table">
 									<table class="table table-striped table-bordered mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
 										<thead>
@@ -1694,7 +1600,7 @@
 			<!-- Footer opened -->
 			<div class="main-footer">
 				<div class="container-fluid pd-t-0 ht-100p">
-					<span> Copyright © 2022 <a href="javascript:void(0);" class="text-primary">Valex</a>. Designed with <span class="fa fa-heart text-danger"></span> by <a href="javascript:void(0);"> Spruko </a> All rights reserved.</span>
+					<span> Copyright © 2023 <a href="javascript:void(0);" class="text-primary">Hotbug</a>. Designed by <a href="https://steveszymanski.com/"> Steve Szymanski </a> All rights reserved.</span>
 				</div>
 			</div>
 			<!-- Footer closed -->
@@ -1836,101 +1742,13 @@
 		</script>
 
 		<!-- @* Morris Donut Chart *@ -->
-		<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-		<script>
-
-			var morrisDonutData = [{
-				label: "Low",
-				value: @Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Low)).Count()
-																}, {
-				label: "Medium",
-				value: @Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Medium)).Count()
-																}, {
-				label: "High",
-				value: @Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.High)).Count()
-																}, {
-				label: "Urgent",
-				value: @Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Urgent)).Count()
-																}];
-
-
-			/*
-			Morris: Donut
-			*/
-			if ($('#morrisTicketPriority').get(0)) {
-				var donutChart = Morris.Donut({
-					resize: true,
-					element: 'morrisTicketPriority',
-					data: morrisDonutData,
-					colors: ['#0088cc', '#734ba9', '#E36159', '#ff993b']
-				});
-
-				donutChart.options.data.forEach(function (label, i) {
-					var legendItem = $('<span></span>').text(label['label'] + ": " + label['value']).prepend('<span>&nbsp;</span>');
-					legendItem.find('span')
-						.css('backgroundColor', donutChart.options.colors[i])
-						.css('width', '20px')
-						.css('display', 'inline-block')
-						.css('margin', '10px');
-					$('#legend').append(legendItem)
-				});
-			};
-		</script>
 
 		<!-- *** Begin Chart JS Pie/Donut *** -->
-		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
-		<script>
-
-			var donutChartCanvas = $('#donutChart').get(0).getContext('2d');
-			var donutData = {
-				labels: [
-					'@nameof(HBTicketStatus.Development)',
-					'@nameof(HBTicketStatus.New)',
-					'@nameof(HBTicketStatus.Resolved)',
-					'@nameof(HBTicketStatus.Testing)'
-				],
-				datasets: [
-					{
-						data: [
-			@Model.Tickets.Where(t=> t.TicketStatus.Name == nameof(HBTicketStatus.Development)).Count(),
-			@Model.Tickets.Where(t=> t.TicketStatus.Name ==nameof(HBTicketStatus.New)).Count(),
-			@Model.Tickets.Where(t=> t.TicketStatus.Name ==nameof(HBTicketStatus.Resolved)).Count(),
-			@Model.Tickets.Where(t=> t.TicketStatus.Name ==nameof(HBTicketStatus.Testing)).Count()
-																	],
-						backgroundColor: [
-							'rgba(255, 99, 132, 0.2)',
-							'rgba(54, 162, 235, 0.2)',
-							'rgba(255, 206, 86, 0.2)',
-							'rgba(75, 192, 192, 0.2)'
-						],
-						borderColor: [
-							'rgba(255, 99, 132, 1)',
-							'rgba(54, 162, 235, 1)',
-							'rgba(255, 206, 86, 1)',
-							'rgba(75, 192, 192, 1)'
-						]
-					}
-				]
-			};
-
-			var donutOptions = {
-				maintainAspectRatio: false,
-				responsive: true,
-			};
-			//Create pie or douhnut chart
-			// You can switch between pie and douhnut using the method below.
-			new Chart(donutChartCanvas, {
-				type: 'doughnut',
-				data: donutData,
-				options: donutOptions
-			});
-		</script>
+	
+		
 		<!-- *** End Chart JS Donut *** -->
 		<!-- *** Begin AM Charts *** -->
 		<!-- Resources -->
-		<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-		<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
 		<!-- *** End AM Charts *** -->
 		<!-- Chart code -->
 		<script>
@@ -2006,31 +1824,5 @@
 				}
 			});
 		</script>
-		<!--  Plotly Charts  -->
-		<!-- Load plotly.js into the DOM -->
-		<script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
-		<script>
-			$.ajax({
-				type: "POST",
-				url: "/Home/PlotlyBarChart",
-				data: '{}',
-				contentType: "application/json; charset=utf-8",
-				dataType: "json",
-				success: function (result) {
-					var data = result;
-
-					var layout = { barmode: 'group' };
-
-					Plotly.newPlot('plotlyChart', data, layout);
-				},
-				failure: function (result) {
-					alert(result.d);
-				},
-				error: function (result) {
-					alert(result.d);
-				}
-			});
-		</script>
-
 	</body>
 </html>
