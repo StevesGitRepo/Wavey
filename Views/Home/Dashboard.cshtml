@@ -878,7 +878,57 @@
 
 	<!-- NEW ROW -->
 
+		
 		<!--MEMBERS CARD-->
+					<div class="col-xl-7 col-md-12 col-lg-12">
+						<div class="card card-table-two">
+							<div class=" card-header p-0 d-flex justify-content-between">
+								<h4 class="card-title mb-1">Members</h4>
+								<a href="javascript:void(0);" class="tx-inverse" data-bs-toggle="dropdown">
+									<i class="mdi mdi-dots-horizontal text-gray"></i>
+								</a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="javascript:void(0);">Action</a>
+									<a class="dropdown-item" href="javascript:void(0);">
+										Another
+										Action
+									</a>
+									<a class="dropdown-item" href="javascript:void(0);">
+										Something Else
+										Here
+									</a>
+								</div>
+							</div>
+							<span class="tx-12 tx-muted mb-3 ">@Model.Company!.Name Team Members</span>
+							<div class="table-responsive country-table">
+								<table class="table table-striped table-bordered mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
+									<thead>
+										<tr>
+											<th class="wd-lg-25p">Name</th>
+											<th class="wd-lg-25p tx-right">Contact</th>
+											<th class="wd-lg-25p tx-right">Projects</th>
+										</tr>
+									</thead>
+
+										@foreach(HBUser member in Model.Members)
+										{
+
+											<tbody>
+												<tr>
+													<td>@member.FullName</td>
+													<td class="tx-right tx-medium tx-inverse">@member.Email</td>
+													<td class="tx-right tx-medium tx-inverse">@Model.Projects!.Count()</td>
+												</tr>
+										
+											</tbody>
+										}
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
 					<div class="row">
 						<div class="col-xl-7 col-md-12 col-lg-12">
 						<div class="card">
@@ -888,32 +938,30 @@
 							</div>
 							<div class="card-body p-0 customers mt-1">
 
-									@foreach(HBUser member in Model.Members)
-									{
+								
 
 									<div class="list-group list-lg-group list-group-flush">
 										<div class="list-group-item list-group-item-action">
 											<div class="media mt-0">
-	@*											<img class="avatar-lg rounded-circle my-auto me-3" src="@member.AvatarFileData" alt="Image description">
-	*@											<div class="media-body">
+												<img class="avatar-lg rounded-circle my-auto me-3" src="" alt="Image description">
+												<div class="media-body">
 													<div class="d-flex align-items-center">
 														<div class="mt-0">
-															<h5 class="mb-1 tx-15">@member.FullName</h5>
+															<h5 class="mb-1 tx-15"></h5>
 															<a>
-																<p class="mb-0 tx-13 text-muted">@member.Email<span class="text-success ms-2 d-inline-block"></span></p>
+																<p class="mb-0 tx-13 text-muted"><span class="text-success ms-2 d-inline-block"></span></p>
 															</a>
 														</div>
-														@*<div class="ms-auto wd-45p fs-16">
+														<div class="ms-auto wd-45p fs-16">
 															<div id="spark1" class="wd-100p"></div>
-														</div>*@
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-										@*<hr class="border border-light">*@
+										<hr class="border border-light">
 									</div>
 									
-									}
 							</div>
 						</div>
 							</div>

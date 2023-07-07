@@ -244,7 +244,7 @@ public static class DataUtility
             Email = "harold.jeter@techbuilder.net",
             FirstName = "Harold",
             LastName = "Jeter",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company2Id
         };
         try
@@ -272,7 +272,7 @@ public static class DataUtility
             Email = "william.squarepants@widgisoft.com",
             FirstName = "William",
             LastName = "Squarepants",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company1Id
         };
         try
@@ -301,7 +301,7 @@ public static class DataUtility
             Email = "darrell.lopez@techbuilder.net",
             FirstName = "Darrell",
             LastName = "Lopez",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company2Id
         };
         try
@@ -330,7 +330,7 @@ public static class DataUtility
             Email = "ashwari.singh@widgisoft.com",
             FirstName = "Ashwari",
             LastName = "Singh",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company1Id
         };
         try
@@ -359,7 +359,7 @@ public static class DataUtility
             Email = "madeline.johnson@techbuilder.net",
             FirstName = "Madeline",
             LastName = "Johnson",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company2Id
         };
         try
@@ -388,7 +388,7 @@ public static class DataUtility
             Email = "andre.blankenship@widgisoft.com",
             FirstName = "Andre",
             LastName = "Blankenship",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company1Id
         };
         try
@@ -417,7 +417,7 @@ public static class DataUtility
             Email = "terrance.turner@techbuilder.net",
             FirstName = "Terrance",
             LastName = "Turner",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company2Id
         };
         try
@@ -446,7 +446,7 @@ public static class DataUtility
             Email = "jessica.simpson@widgisoft.com",
             FirstName = "Jessica",
             LastName = "Simpson",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company1Id
         };
         try
@@ -474,7 +474,7 @@ public static class DataUtility
             Email = "kelvin.jiminez@techbuilder.net",
             FirstName = "Kelvin",
             LastName = "Jiminez",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company2Id
         };
         try
@@ -502,7 +502,7 @@ public static class DataUtility
             Email = "maria.anderson@widgisoft.com",
             FirstName = "Maria",
             LastName = "Anderson",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company1Id
         };
         try
@@ -531,7 +531,7 @@ public static class DataUtility
             Email = "blake.jonsonberg@techbuilder.net",
             FirstName = "Blake",
             LastName = "Jonsonberg",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company2Id
         };
         try
@@ -563,7 +563,7 @@ public static class DataUtility
             Email = "demo.admin@bugtrackerpro.com",
             FirstName = "Derek",
             LastName = "Jeter",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company1Id
         };
         try
@@ -594,7 +594,7 @@ public static class DataUtility
             Email = "demo.pm@bugtrackerpro.com",
             FirstName = "Bernie",
             LastName = "Williams",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company2Id
         };
         try
@@ -624,7 +624,7 @@ public static class DataUtility
             Email = "demo.dev@bugtrackerpro.com",
             FirstName = "Aaron",
             LastName = "Judge",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company2Id
         };
         try
@@ -654,7 +654,7 @@ public static class DataUtility
             Email = "demo.submitter@bugtrackerpro.com",
             FirstName = "Nester",
             LastName = "Cortez",
-            EmailConfirmed = true,
+			EmailConfirmed = true,
             CompanyId = company2Id
         };
         try

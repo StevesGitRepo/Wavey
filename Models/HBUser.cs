@@ -21,7 +21,7 @@ namespace HotBug.Models
             //string interpolation, concatination
             [NotMapped]
             public string? FullName { get { return $"{FirstName} {LastName}"; } }
-
+           
             //Avatar
             [NotMapped]
             [DataType(DataType.Upload)]
