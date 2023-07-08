@@ -54,7 +54,8 @@ namespace HotBug.Services
             }
         }
 
-        public async Task<List<TicketType>> GetTicketTypesAsync()
+		#region GET TICKET TYPES ASYNC
+		public async Task<List<TicketType>> GetTicketTypesAsync()
         {
             try
             {
@@ -66,5 +67,7 @@ namespace HotBug.Services
                 throw;
             }
         }
-    }
+		#endregion
+
+	}
 }

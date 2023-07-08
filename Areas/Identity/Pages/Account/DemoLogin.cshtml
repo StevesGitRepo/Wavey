@@ -10,15 +10,22 @@
             <span class="d-flex justify-content-center me-1"><span class=""><img src="~/img/hotbug/hbLogoTextEyesFwd.png" width="280" /></span></span>
             <div class="col-lg-2"></div>
             <div class="col-lg-8 mt-5">
-                <div class="row">
-                    <h5 class="mt-4 mb-2 text-dark ps-3 pe-4">   
-                        Try the Demo as one of the following roles:
-                    </h5>
+                <h5 class="mt-4 mb-2 text-dark ps-3 pe-4">   
+                    Try Hotbug as one of the following roles:
+                </h5>
+                <div class="card mt-4 pt-3 px-4">
+                    <div class="row">
                     <!-- ADMIN DEMO -->
                     <div class="col-md-4">
-                        <div class="card mt-3 mt-lg-2 px-3 py-3">
+                        <div class="card border-primary mt-3 mt-lg-2 px-3 py-3">
                             <form id="account" method="post">
-                                <h4 class="text-dark"><span class="me-2"><img src="~/img/hotbug/hbAdminDarkImg.png" width="24"></span>Administrator</h4>
+                                <h4 class="text-dark">
+                                    <span class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-person-fill-gear px-1 bg-primary-gradient border rounded me-2" viewBox="0 0 16 16">
+                                            <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                                        </svg>
+                                    </span>Administrator
+                                </h4>
                                 <hr />
                                 <p class="text-dark">Try out the Hotbug Issue Tracker as the organization's administrator.  Experience access to the full toolset of Hotbug!</p>
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -31,10 +38,11 @@
                                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                                 </div>
                                 <div>
-                                    <button id="login-submit" type="submit" class="w-100 btn btn-md btn-primary mt-1 mb-2">
-                                        <span>
+                                    <button id="login-submit" type="submit" class="w-100 btn btn-md btn-primary mt-1 mb-2 font-awesome font-weight-bold">
+                                        Administrator Demo Login
+                                        @*<span>
                                             <img src="~/img/hotbug/hbAdminDemoButtonCropped.png" width="240" />
-                                        </span>
+                                        </span>*@
                                     </button>
                                 </div>
                             </form>
@@ -42,9 +50,15 @@
                     </div>
                     <!-- PROJECT MANAGER DEMO -->
                     <div class="col-md-4">
-                        <div class="card mt-4 mt-lg-2 px-3 py-3">
+                        <div class="card border-info mt-4 mt-lg-2 px-3 py-3">
                             <form id="account" method="post">
-                                <h4 class="text-dark"><span class="me-2"><img src="~/img/hotbug/hbPmDarkImg.png" width="28" class=""></span>Project Manager</h4>
+                                <h4 class="text-dark">
+                                    <span class="me-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-people-fill px-1 bg-info-gradient border rounded" viewBox="0 0 16 16">
+                                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                                        </svg>
+                                    </span>Project Manager
+                                </h4>
                                 <hr />
                                 <p class="text-dark">Create and manage projects. Assign developers, archive tickets, and restore tickets through the lifecycle.</p>
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -57,10 +71,11 @@
                                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                                 </div>
                                 <div>
-                                    <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-1 mb-2">
-                                        <span>
+                                    <button id="login-submit" type="submit" class="w-100 btn btn-md btn-info mt-1 mb-2 text-lg font-weight-bold">
+                                        Project Manager Demo Login
+                                        @*<span>
                                             <img src="~/img/hotbug/hbPMDemoButtonCropped.png" width="240" />
-                                        </span>
+                                        </span>*@
                                     </button>
                                 </div>
                             </form>
@@ -68,9 +83,15 @@
                     </div>
                     <!-- DEVELOPER DEMO -->
                     <div class="col-md-4">
-                        <div class="card mt-4 mt-lg-2 px-3 py-3">
+                        <div class="card border-secondary mt-4 mt-lg-2 px-3 py-3">
                             <form id="account" method="post">
-                                <h4 class="text-dark"><span class="me-2"><img src="~/img/hotbug/hbDevDarkImg.png" width="28" class=""></span>Developer</h4>
+                                <h4 class="text-dark">
+                                    <span class="me-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-person-fill px-1 bg-secondary-gradient border rounded" viewBox="0 0 16 16">
+                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                        </svg>
+                                    </span>Developer
+                                </h4>
                                 <hr />
                                 <p class="text-dark">View projects, create tickets, and notate changes. Update ticket statuses, priorities, types and send invites.</p>
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -83,15 +104,17 @@
                                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                                 </div>
                                 <div>
-                                    <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-1 mb-2 hb-button">
-                                        <span class="">
+                                    <button id="login-submit" type="submit" class="w-100 btn btn-md btn-secondary mt-1 mb-2 hb-button font-weight-bold">
+                                        Developer Demo Login
+                                        @*<span class="">
                                             <img src="~/img/hotbug/hbDevDemoButtonCropped.png" width="240" />
-                                        </span>
+                                        </span>*@
                                     </button>
                                 </div>
                             </form>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
             <div class="col-lg-2">
