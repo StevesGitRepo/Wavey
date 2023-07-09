@@ -368,7 +368,7 @@
                                         <li><a class="dropdown-item" asp-area="" asp-controller="Tickets" asp-action="UnassignedTickets">Unassigned Tickets</a></li>
                                     }
 
-                                </ul>
+                                </ul>z
                             </li>
                             <li>
                                 <a asp-area="" asp-controller="Notifications" asp-action="Index" class="nav-link px-sm-0 px-2">
@@ -383,14 +383,13 @@
                 <main class="row">
                     @RenderBody()
                 </main>
-                <footer class="row bg-light mt-5 pt-4 mt-auto">
-                    <div class="container">
-                        &copy; 2023 - HotBug - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </div>
-                </footer>
+        <div class="main-footer">
+            <div class="container-fluid pd-t-0 d-flex">
+                <span> Copyright © 2023 <a href="javascript:void(0);" class="text-primary">Hotbug</a>. Designed by <a href="https://steveszymanski.com/"> Steve Szymanski </a> All rights reserved.</span>
             </div>
         </div>
-    </div>
+     </div>
+      
 
     <script src="~/js/site.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
