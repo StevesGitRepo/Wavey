@@ -48,13 +48,18 @@
 				</div>
 				<div class="main-dashboard-header-right">
 					<div>
-						<label class="tx-13">Total Projects</label>
+						<label class="tx-5">Total Projects</label>
 						<h5>@Model.Projects!.Count()</h5>
 					</div>
 					<div>
-						<label class="tx-13">Total Tickets</label>
+						<label class="tx-5">Total Tickets</label>
 						<h5>@Model.Tickets!.Count()</h5>
 					</div>
+					<h2>
+						<a asp-action="AllTickets" asp-controller="Tickets" class="btn btn-md w-sm font-weight-bold btn-primary btn-rounded ms-4 me-2 pt-xl-2" target="_blank">
+										New Ticket
+									</a>
+					</h2>
 				</div>
 			</div>
 
