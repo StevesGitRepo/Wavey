@@ -23,17 +23,25 @@
 				<div>
 					<!-- main-header -->
 					<div class="main-header side-header sticky nav nav-item">
-						<div class="container-fluid main-container ">
-							<div class="main-header-left ">
+						<div class="container-fluid main-container">
+						<div class="main-header-left">
+								<div class="app-sidebar__toggle" data-bs-toggle="sidebar">
+								<a class="open-toggle" href="javascript:void(0);">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="dark" class="bi bi-text-left mt-2" viewBox="0 0 16 16">
+									  <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+									</svg>
+								</a>
+								<a class="close-toggle" href="javascript:void(0);">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="dark" class="bi bi-x mt-1" viewBox="0 0 16 16">
+									  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+									</svg>
+								</a>
+								</div>
 								<div class="responsive-logo">
 									<a href="index.html" class="header-logo">
-										<img src="~/img/hotbug/hbBlueNoText.png" width="90" class="logo-1" alt="logo">
-
+										<img src="~/img/hotbug/hbLogoLightNoTextEyesFwd.png" width="90" class="logo-1" alt="logo">
+										<img src="~/img/hotbug/hbFavicon.png" class="dark-logo-1" alt="logo"/>
 									</a>
-								</div>
-								<div class="app-sidebar__toggle" data-bs-toggle="sidebar">
-									<a class="open-toggle" href="javascript:void(0);"><i class="header-icon fe fe-align-left"></i></a>
-									<a class="close-toggle" href="javascript:void(0);"><i class="header-icons fe fe-x"></i></a>
 								</div>
 								<div class="main-header-center ms-3 d-sm-none d-md-none d-lg-block">
 									<input class="form-control" placeholder="Search for anything..." type="search"> <button class="btn"><i class="fas fa-search d-none d-md-block"></i></button>
@@ -262,6 +270,7 @@
 											</li>
 										</ul>
 									</div>
+
 								</div>
 							</div>
 						</div>
@@ -273,9 +282,7 @@
 						<aside class="app-sidebar sidebar-scroll">
 							<div class="main-sidebar-header active">
 								<a class="desktop-logo logo-light active" asp-area="" asp-action="Index" asp-controller="Home"><img src="~/img/hotbug/hbLogoNoTextEyesFwd.png" class="main-logo" alt="logo"></a>
-								<a class="desktop-logo logo-dark active" href="index.html"><img src="../assets/img/brand/logo-white.png" class="main-logo" alt="logo"></a>
-								<a class="logo-icon mobile-logo icon-light active" href="index.html"><img src="~/img/hotbug/hbLogoNoTextEyesFwd.png" alt="logo"></a>
-								<a class="logo-icon mobile-logo icon-dark active" href="index.html"><img src="../assets/img/brand/favicon-white.png" alt="logo"></a>
+								<a class="logo-icon mobile-logo icon-light active" href="index.html"><img src="~/img/hotbug/hbFavicon.png" alt="logo"></a>
 							</div>
 							<div class="main-sidemenu">
 								<div class="app-sidebar__user clearfix mt-5">
