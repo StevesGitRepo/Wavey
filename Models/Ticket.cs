@@ -13,7 +13,7 @@ namespace HotBug.Models
 
         //[Required]
         [StringLength(50)]
-        [DisplayName("Title")]
+        [DisplayName("Ticket Name")]
         public string? Title { get; set; }
 
         //[Required]
@@ -31,13 +31,13 @@ namespace HotBug.Models
         [DisplayName("Archived")]
         public bool Archived { get; set; }
 
-        [DisplayName("Archived By Project")]
+		[DisplayName("Archived By Project")]
         public bool ArchivedByProject { get; set; }
 
         [DisplayName("Project")]
         public int ProjectId { get; set; }
 
-        [DisplayName("Ticket Type")]
+		[DisplayName("Ticket Type")]
         public int TicketTypeId { get; set; }
 
         [DisplayName("Ticket Priority")]
