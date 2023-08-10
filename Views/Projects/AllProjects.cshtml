@@ -22,7 +22,7 @@
                     @if (User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
                     {
                         <h3>
-                            <a asp-action="Create" class="btn btn-md btn-purple semibold-text btn-rounded mb-2">Start A Project</a>
+                            <a asp-action="Create" class="btn btn-md btn-purple semibold-text mb-2">Start A Project</a>
                         </h3>
                     }
                 </span>
