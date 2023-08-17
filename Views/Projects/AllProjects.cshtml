@@ -12,11 +12,102 @@
 }
 
 <div class="mt-5">
-    <div class="card mt-5 px-4">
+
+    <div class="row mt-5">
+        <!--MY PROJECTS-->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                <a asp-controller="Projects" asp-action="MyProjects">
+                    <div class="px-3 pt-3  pb-2 pt-0">
+                        <div class="">
+                            <h6 class="mb-3 tx-16 text-white">MY PROJECTS</h6>
+                        </div>
+                        <div class="pb-0 mt-0">
+                            <div class="d-flex">
+                                <span class="float-end my-auto ms-auto">
+                                    <i class="fas fa-arrow-circle-up text-white"></i>
+                                    <h4 class="tx-20 fw-bold mb-1 text-white">
+                                    </h4>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--ALL PROJECTS-->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                <a asp-controller="Projects" asp-action="AllProjects">
+                    <div class="px-3 pt-3  pb-2 pt-0">
+                        <div class="">
+                            <h6 class="mb-3 tx-16 text-white">ALL PROJECTS</h6>
+                        </div>
+                        <div class="pb-0 mt-0">
+                            <div class="d-flex">
+                                <span class="float-end my-auto ms-auto">
+                                    <i class="fas fa-arrow-circle-up text-white"></i>
+                                    <h4 class="tx-20 fw-bold mb-1 text-white">
+                                    </h4>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--ARCHIVED PROJECTS-->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                <a asp-controller="Projects" asp-action="ArchivedProjects">
+                    <div class="px-3 pt-3  pb-2 pt-0">
+                        <div class="">
+                            <h6 class="mb-3 tx-16 text-white">ARCHIVED PROJECTS</h6>
+                        </div>
+                        <div class="pb-0 mt-0">
+                            <div class="d-flex">
+                                <span class="float-end my-auto ms-auto">
+                                    <i class="fas fa-arrow-circle-up text-white"></i>
+                                    <h4 class="tx-20 fw-bold mb-1 text-white">
+                                    </h4>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--UNASSIGNED TICKETS-->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                <a asp-controller="Projects" asp-action="UnassignedProjects">
+                    <div class="px-3 pt-3  pb-2 pt-0">
+                        <div class="">
+                            <h6 class="mb-3 tx-16 text-white">UNASSIGNED PROJECTS</h6>
+                        </div>
+                        <div class="pb-0 mt-0">
+                            <div class="d-flex">
+                                <span class="float-end my-auto ms-auto">
+                                    <i class="fas fa-arrow-circle-up text-white"></i>
+                                    <h4 class="tx-20 fw-bold mb-1 text-white">
+                                    </h4>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-1 px-4">
         <div class="row pt-4">
             <div class="col-7 text-dark font-weight-bold">
                 <h3>
-                    Projects
+                    All Projects
                 </h3>
             </div>
             <div class="col-5 text-end">
