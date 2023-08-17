@@ -10,10 +10,11 @@
 @inject IHBRolesService RoleService
 @inject IHBProjectService ProjectService
 @inject IHBTicketService TicketService
+@inject IHBTicketHistoryService HistoryService
 
 @{
     ViewData["Title"] = "Dashboard";
-    @* Instantiate the hBUser *@
+    @* Instantiate the hBUser & projectManager *@
     HBUser hBUser = await UserManager.GetUserAsync(User);
 }
 
@@ -377,21 +378,56 @@
                             <thead>
                                 <tr>
                                     <th class="wd-lg-25p">Ticket Name</th>
-                                    <th class="wd-lg-25p tx-right">Create Date</th>
+                                    <th class="md-lg-25p tx-right">Description</th>
                                     <th class="wd-lg-25p tx-right">Ticket Status</th>
                                     <th class="wd-lg-25p tx-right">Ticket Priority</th>
+                                    <th class="wd-lg-25p tx-right">Create Date</th>
+                                    <th class="wd-lg-25p tx-right">Action</th>
                                 </tr>
                             </thead>
 
-                            @foreach (Ticket ticket in Model.Tickets)
+                            @foreach (var ticket in Model.Tickets.OrderByDescending(d => d.Created))
                             {
 
                                 <tbody>
                                     <tr>
-                                        <td>@ticket.Title</td>
-                                        <td class="tx-right tx-medium tx-inverse">@ticket.Created.DateTime</td>
-                                        <td class="tx-right tx-medium tx-inverse">@ticket.TicketStatus.Name</td>
+                                        <!--TITLE-->
+                                        <td><a asp-action="Details" asp-controller="Tickets" asp-route-id="@ticket.Id">@ticket.Title</a></td>
+
+                                        <!--DETAILS-->
+                                        <td class="tx-right tx-medium tx-inverse">
+                                            @ticket.Description
+                                        </td>
+
+                                        <!--TICKET STATUS-->
+                                        @if (ticket.TicketStatus.Name == "New")
+                                        {
+                                            <td class="tx-right tx-medium tx-inverse">
+                                                @ticket.TicketStatus.Name
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td><span>@ticket.TicketStatus.Name</span></td>
+                                        }
+
+                                        <!--TICKET PRIORITY-->
                                         <td class="tx-right tx-medium tx-danger">@ticket.TicketPriority.Name</td>
+
+                                        <!--CREATE DATE-->
+                                        <td class="tx-right tx-medium">@ticket.Created.ToString("MM-dd-yyyy")</td>
+
+                                        <!--ACTION-->
+                                        <td>
+                                            <a class="" asp-action="Details" asp-controller="Tickets" asp-route-id="@ticket.Id">
+                                                Details
+                                            </a>
+                                            @*@if(ticket.DeveloperUserId == hBUser.Id || ticket.OwnerUserId == hBUser.Id || (projectManager?.Id == hBUser.Id) || User.IsInRole(nameof(Roles.Admin)))
+                                        {
+                                        <a class="btn btn-outline-secondary" asp-action="Edit" asp-controller="Tickets" asp-route-id="@ticket.Id"><i class="fs-5 bi-pencil"></i>Edit</a>
+                                        }*@
+
+                                        </td>
                                     </tr>
                                 </tbody>
 

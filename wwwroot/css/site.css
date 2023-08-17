@@ -1544,14 +1544,14 @@ fieldset:disabled a.btn {
     color: #3533CD;
     border-color: var(--primary-bg-color);
     background-color:lightgoldenrodyellow;
-    box-shadow: 0 0 5px 0 #3533CD;
+    box-shadow: 0 0 2px 0 #3533CD;
 }
 
     .btn-outline-primary:hover {
         color: #fff;
         background-color: #3533CD !important;
         border-color: #3533CD;
-        box-shadow: 0 0 5px 0 #E2EFFF;
+        box-shadow: 0 0 2px 0 #E2EFFF;
     }
 
     .btn-outline-primary:focus,
@@ -94973,4 +94973,9 @@ a.evo-hist {
 
 .modal.buynow .modal-body .card {
     background: transparent;
+}
+
+
+.bg-secondary-gradient:hover {
+    background-image: linear-gradient(to right, #5f6d88 100%, #737f9e 0%) !important;
 }

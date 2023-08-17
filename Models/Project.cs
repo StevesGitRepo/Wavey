@@ -64,3 +64,4 @@ namespace HotBug.Models
         public virtual ICollection<Ticket> Tickets { get; set; } = new HashSet<Ticket>();
     }
 }
+    

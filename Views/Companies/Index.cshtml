@@ -1,8 +1,16 @@
 ﻿@model IEnumerable<HotBug.Models.Company>
+@using HotBug.Models
+@using HotBug.Models.Enums
+@using HotBug.Services.Interfaces
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<HBUser> UserManager
+@inject IHBRolesService RoleService
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Company";
 }
+    @*HBUser hBUser = await UserManager.GetRolesAsync(User);*@
 
 <div class="mt-5">
     <div class="card mt-5 px-4">
