@@ -71787,6 +71787,11 @@ a.fc-event {
     font-style: normal;
 }
 
+.league-spartan {
+    font-family: 'League Spartan', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+}
+
 .lg-icon {
     font-family: "lg";
     speak-as: none;
