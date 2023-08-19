@@ -1,4 +1,14 @@
 ﻿@model HotBug.Models.ViewModels.AssignDeveloperViewModel
+@using Microsoft.AspNetCore.Identity;
+@using HotBug.Services.Interfaces;
+@using HotBug.Models.Enums;
+
+@inject UserManager<HBUser> UserManager
+@inject IHBProjectService ProjectService
+
+@{
+    ViewData["Title"] = "Assign Developer";
+}
 
 <div class="container">
     <h2>Assign Developer for</h2>
