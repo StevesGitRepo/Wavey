@@ -1,8 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using HotBug.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using HotBug.Data;
-
+using HotBug.Models;
+using HotBug.Models.ViewModels;
+using HotBug.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using HotBug.Services;
+using HotBug.Extensions;
 
 namespace HotBug.Controllers
 {
@@ -10,24 +18,54 @@ namespace HotBug.Controllers
     {
         //private = local
         private readonly ApplicationDbContext _context;
+        private readonly IHBCompanyInfoService _companyInfoService;
 
-        public CompaniesController(ApplicationDbContext context)
+        public CompaniesController(ApplicationDbContext context, IHBCompanyInfoService companyInfoService)
         {
             _context = context;
+            _companyInfoService = companyInfoService;
         }
 
-        // GET: Companies
+        // GET: Company Info
         public async Task<IActionResult> Index()
         {
-            return _context.Companies != null ?
-                        View(await _context.Companies.ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.Companies'  is null.");
+            DashboardViewModel model = new();
+            int companyId = User.Identity!.GetCompanyId()!.Value;
+
+            model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
+            model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId))
+                                                       .Where(p => p.Archived == false)
+                                                       .ToList();
+            model.Tickets = model.Projects.SelectMany(p => p.Tickets!)
+                                          .Where(p => p.Archived == false)
+                                          .ToList();
+            model.Members = model.Company.Members!.ToList();
+
+            return View(model);
+        }
+
+        // GET: Company Snapshot Info
+        public async Task<IActionResult> Snapshot()
+        {
+            DashboardViewModel model = new();
+            int companyId = User.Identity!.GetCompanyId()!.Value;
+
+            model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
+            model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId))
+                                                       .Where(p => p.Archived == false)
+                                                       .ToList();
+            model.Tickets = model.Projects.SelectMany(p => p.Tickets!)
+                                          .Where(p => p.Archived == false)
+                                          .ToList();
+            model.Members = model.Company.Members!.ToList();
+
+            return View(model);
         }
 
         // GET: Companies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Companies == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -67,7 +105,7 @@ namespace HotBug.Controllers
         // GET: Companies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Companies == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -119,7 +157,7 @@ namespace HotBug.Controllers
         // GET: Companies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Companies == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -139,16 +177,8 @@ namespace HotBug.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Companies == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Companies'  is null.");
-            }
             var company = await _context.Companies.FindAsync(id);
-            if (company != null)
-            {
-                _context.Companies.Remove(company);
-            }
-
+            _context.Companies.Remove(company);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
