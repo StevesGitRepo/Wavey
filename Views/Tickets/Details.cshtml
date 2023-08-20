@@ -9,6 +9,7 @@
 @inject IHBProjectService ProjectService
 @inject IHBTicketHistoryService HistoryService
 @inject IHBFileService FileService
+@inject IHBTicketService TicketService
 
 @{
     ViewData["Title"] = "Details";
@@ -20,7 +21,7 @@
 <h1>Ticket Details</h1>
 @if (!string.IsNullOrEmpty(Model.DeveloperUserId))
 {
-    <a href="javascript:void(0);">
+    <a href="#">
         @if (Model.DeveloperUser?.AvatarFileData != null)
         {
             <img class="media-object" src="data-image/*;base64,@(Convert.ToBase64String(hBUser.AvatarFileData))" alt="" />
@@ -31,10 +32,11 @@
         }
     </a>
     <span class="text-muted" style="font-size:x-small;">
-        Developer: <strong>@Model.DeveloperUser.FullName</strong>
+        Developer: <strong>@Model.DeveloperUser!.FullName</strong>
     </span>
 }
 
+<a asp-controller="Projects" asp-action="Details" >@Model.Project.Name</a>
 
 <div>
     <div classxfont-weighteighteightgetainer-fluid">
@@ -95,7 +97,7 @@
 
                                 <form class="form-horizontal form-border" asp-action="AddTicketComment" asp-controller="=Tickets" method="post">
                                     <input type="hidden" asp-for="Id" name="TicketId" />
-                                    @if (Model.DeveloperUserId == hBUser.Id || Model.OwnerUserId == hBUser.Id || projectManager.Id == hBUser.Id || User.IsInRole(nameof(Roles.Admin)))
+                                    @if (Model.DeveloperUserId == hBUser.Id || Model.OwnerUserId == hBUser.Id )
                                     {
                                         <div class="form-group">
                                             <textarea asp-for="@(new TicketComment().Comment)" rows="8" class="form-control" required placeholder="Add comment ..."></textarea>
