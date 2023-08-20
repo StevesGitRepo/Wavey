@@ -27,7 +27,6 @@ namespace HotBug.Controllers
     [Authorize]
     public class TicketsController : Controller
     {
-        private readonly ApplicationDbContext _context;
         private readonly UserManager<HBUser> _userManager;
         private readonly IHBProjectService _projectService;
         private readonly IHBLookupService _lookupService;
@@ -36,16 +35,13 @@ namespace HotBug.Controllers
         private readonly IHBTicketHistoryService _historyService;
 
 
-        public TicketsController(ApplicationDbContext context,
-                                 UserManager<HBUser> userManager,
+        public TicketsController(UserManager<HBUser> userManager,
                                  IHBProjectService projectService,
                                  IHBLookupService lookupService,
                                  IHBTicketService ticketService,
                                  IHBFileService fileService,
                                  IHBTicketHistoryService historyService)
-
         {
-            _context = context;
             _userManager = userManager;
             _projectService = projectService;
             _lookupService = lookupService;
@@ -263,7 +259,7 @@ namespace HotBug.Controllers
         // GET: Tickets/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Tickets == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -404,7 +400,7 @@ namespace HotBug.Controllers
         [Authorize(Roles = "Admin, ProjectManager")]
         public async Task<IActionResult> Archive(int? id)
         {
-            if (id == null || _context.Tickets == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -437,7 +433,7 @@ namespace HotBug.Controllers
         [Authorize(Roles = "Admin, ProjectManager")]
         public async Task<IActionResult> Restore(int? id)
         {
-            if (id == null || _context.Tickets == null)
+            if (id == null)
             {
                 return NotFound();
             }
