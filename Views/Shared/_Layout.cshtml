@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using HotBug.Models.Enums
 @inject SignInManager<HBUser> SignInManager
+@inject UserManager<HBUser> UserManager
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +22,9 @@
 
 </head>
 
+@{
+	HBUser hbUser = await UserManager.GetUserAsync(User);
+}
 	<body class="main-body app sidebar-mini ltr">
 		<div class="overflow-hidden">
 			<!-- Page -->
@@ -53,6 +57,10 @@
 *@								</div>
 							</div>
 							<div class="main-header-right">
+							@if (SignInManager.IsSignedIn(User))
+							{
+								<p class="mt-3 d-none d-lg-block">Hello @hbUser.FullName</p>
+							}
 							<div class="mb-0 navbar navbar-expand-lg navbar-nav-right responsive-navbar navbar-dark p-0">
 								<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
 										<ul class="nav nav-item  navbar-nav-right ms-auto">
@@ -61,21 +69,8 @@
 *@												
 											</li>
 											<li class="nav-link search-icon d-lg-none d-block">
-												<form class="navbar-form" role="search">
-													<div class="input-group">
-														<input type="text" class="form-control" placeholder="Search">
-														<span class="input-group-btn">
-															<button type="reset" class="btn btn-default">
-																<i class="fas fa-times"></i>
-															</button>
-															<button type="submit" class="btn btn-default nav-link resp-btn">
-																<svg xmlns="http://www.w3.org/2000/svg" height="24px" class="header-icon-svgs" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /></svg>
-															</button>
-														</span>
-													</div>
-												</form>
 											</li>
-											<li class="dropdown nav-item main-header-message ">
+											<li class="dropdown nav-item main-header-message d-block d-lg-block">
 												@*<a class="new nav-link" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span class=" pulse-danger"></span></a>*@
 												<div class="dropdown-menu">
 													<div class="menu-header-content bg-primary text-start">
@@ -86,69 +81,8 @@
 														<p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread messages</p>
 													</div>
 													<div class="main-message-list chat-scroll">
-														<div class="p-3 d-flex border-bottom messages">
-															<div class="  drop-img  cover-image  " data-bs-image-src="../assets/img/users/3.jpg">
-																<span class="avatar-status bg-teal"></span>
-															</div>
-															<div class="wd-90p">
-																<div class="d-flex">
-																	<a href="chat.html"><h5 class="mb-1 name">Petey Cruiser</h5></a>
-																</div>
-																<p class="mb-0 desc">I'm sorry but i'm not sure how to help you with that......</p>
-																<p class="time mb-0 text-start float-start ms-2 mt-2">Mar 15 3:55 PM</p>
-															</div>
-														</div>
-														<div class="p-3 d-flex border-bottom messages">
-															<div class="drop-img cover-image" data-bs-image-src="../assets/img/users/2.jpg">
-																<span class="avatar-status bg-teal"></span>
-															</div>
-															<div class="wd-90p">
-																<div class="d-flex">
-																	<a href="chat.html"><h5 class="mb-1 name">Jimmy Changa</h5></a>
-																</div>
-																<p class="mb-0 desc">All set ! Now, time to get to you now......</p>
-																<p class="time mb-0 text-start float-start ms-2 mt-2">Mar 06 01:12 AM</p>
-															</div>
-														</div>
-														<div class="p-3 d-flex border-bottom messages">
-															<div class="drop-img cover-image" data-bs-image-src="../assets/img/users/9.jpg">
-																<span class="avatar-status bg-teal"></span>
-															</div>
-															<div class="wd-90p">
-																<div class="d-flex">
-																	<a href="chat.html"><h5 class="mb-1 name">Graham Cracker</h5></a>
-																</div>
-																<p class="mb-0 desc">Are you ready to pickup your Delivery...</p>
-																<p class="time mb-0 text-start float-start ms-2 mt-2">Feb 25 10:35 AM</p>
-															</div>
-														</div>
-														<div class="p-3 d-flex border-bottom messages">
-															<div class="drop-img cover-image" data-bs-image-src="../assets/img/users/12.jpg">
-																<span class="avatar-status bg-teal"></span>
-															</div>
-															<div class="wd-90p">
-																<div class="d-flex">
-																	<a href="chat.html"><h5 class="mb-1 name">Donatella Nobatti</h5></a>
-																</div>
-																<p class="mb-0 desc">Here are some products ...</p>
-																<p class="time mb-0 text-start float-start ms-2 mt-2">Feb 12 05:12 PM</p>
-															</div>
-														</div>
-														<div class="p-3 d-flex border-bottom messages">
-															<div class="drop-img cover-image" data-bs-image-src="../assets/img/users/5.jpg">
-																<span class="avatar-status bg-teal"></span>
-															</div>
-															<div class="wd-90p">
-																<div class="d-flex">
-																	<a href="chat.html"><h5 class="mb-1 name">Anne Fibbiyon</h5></a>
-																</div>
-																<p class="mb-0 desc">I'm sorry but i'm not sure how...</p>
-																<p class="time mb-0 text-start float-start ms-2 mt-2">Jan 29 03:16 PM</p>
-															</div>
-														</div>
 													</div>
 													<div class="text-center dropdown-footer">
-														<a href="chat.html">VIEW ALL</a>
 													</div>
 												</div>
 											</li>
@@ -158,85 +92,9 @@
 												</a>*@
 												<div class="dropdown-menu">
 													<div class="menu-header-content bg-primary text-start">
-														<div class="d-flex">
-															<h6 class="dropdown-title mb-1 tx-15 text-white fw-semibold">Notifications</h6>
-															<a href="javascript:void(0);" class="badge rounded-pill bg-warning ms-auto my-auto float-end">Mark All Read</a>
-														</div>
 														<p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread Notifications</p>
 													</div>
 													<div class="main-notification-list Notification-scroll">
-														<div class="d-flex p-3 border-bottom">
-															<div class="notifyimg bg-pink">
-																<i class="la la-file-alt text-white"></i>
-															</div>
-															<div class="ms-3">
-																<a href="mail.html"><h5 class="notification-label mb-1">New files available</h5></a>
-																<div class="notification-subtext">10 hour ago</div>
-															</div>
-															<div class="ms-auto">
-																<a href="mail.html"><i class="las la-angle-right text-end text-muted icon"></i></a>
-															</div>
-														</div>
-														<div class="d-flex p-3 border-bottom">
-															<div class="notifyimg bg-purple">
-																<i class="la la-gem text-white"></i>
-															</div>
-															<div class="ms-3">
-																<a href="mail.html"><h5 class="notification-label mb-1">Updates Available</h5></a>
-																<div class="notification-subtext">2 days ago</div>
-															</div>
-															<div class="ms-auto">
-																<a href="mail.html"><i class="las la-angle-right text-end text-muted icon"></i></a>
-															</div>
-														</div>
-														<div class="d-flex p-3 border-bottom">
-															<div class="notifyimg bg-success">
-																<i class="la la-shopping-basket text-white"></i>
-															</div>
-															<div class="ms-3">
-																<a href="mail.html"><h5 class="notification-label mb-1">New Order Received</h5></a>
-																<div class="notification-subtext">1 hour ago</div>
-															</div>
-															<div class="ms-auto">
-																<a href="mail.html"><i class="las la-angle-right text-end text-muted icon"></i></a>
-															</div>
-														</div>
-														<div class="d-flex p-3 border-bottom">
-															<div class="notifyimg bg-warning">
-																<i class="la la-envelope-open text-white"></i>
-															</div>
-															<div class="ms-3">
-																<a href="mail.html"><h5 class="notification-label mb-1">New review received</h5></a>
-																<div class="notification-subtext">1 day ago</div>
-															</div>
-															<div class="ms-auto">
-																<a href="mail.html"><i class="las la-angle-right text-end text-muted icon"></i></a>
-															</div>
-														</div>
-														<div class="d-flex p-3 border-bottom">
-															<div class="notifyimg bg-danger">
-																<i class="la la-user-check text-white"></i>
-															</div>
-															<div class="ms-3">
-																<a href="mail.html"><h5 class="notification-label mb-1">22 verified registrations</h5></a>
-																<div class="notification-subtext">2 hour ago</div>
-															</div>
-															<div class="ms-auto">
-																<a href="mail.html"><i class="las la-angle-right text-end text-muted icon"></i></a>
-															</div>
-														</div>
-														<div class="d-flex p-3 border-bottom">
-															<div class="notifyimg bg-primary">
-																<i class="la la-check-circle text-white"></i>
-															</div>
-															<div class="ms-3">
-																<a href="mail.html"><h5 class="notification-label mb-1">Project has been approved</h5></a>
-																<div class="notification-subtext">4 hour ago</div>
-															</div>
-															<div class="ms-auto">
-																<a href="mail.html"><i class="las la-angle-right text-end text-muted icon"></i></a>
-															</div>
-														</div>
 													</div>
 													<div class="dropdown-footer">
 														<a href="mail.html">VIEW ALL</a>

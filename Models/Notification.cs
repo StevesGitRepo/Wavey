@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.Net.Sockets;
+using System.Linq;
+using System.Threading.Tasks;
+
 
 namespace HotBug.Models
 {
@@ -23,9 +26,11 @@ namespace HotBug.Models
         [DisplayName("Name")]
         public DateTimeOffset Created { get; set; }
 
+        [Required]
         [DisplayName("Recipient")]
         public string? RecipientId { get; set; }
 
+        [Required]
         [DisplayName("Sender")]
         public string? SenderId { get; set; }
 

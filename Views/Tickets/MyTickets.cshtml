@@ -156,7 +156,8 @@
                         {
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Title)
+                                <a asp-action="Details" asp-controller="Tickets" asp-route-id="@item.Id">@item.Title</a>    
+
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Description)

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HotBug.Data;
 using HotBug.Models;
+
 namespace HotBug.Controllers
 {
     public class NotificationsController : Controller
@@ -46,9 +47,9 @@ namespace HotBug.Controllers
         // GET: Notifications/Create
         public IActionResult Create()
         {
-            ViewData["RecipientId"] = new SelectList(_context.Users, "Id", "Id");
-            ViewData["SenderId"] = new SelectList(_context.Users, "Id", "Id");
-            ViewData["TicketId"] = new SelectList(_context.Tickets, "Id", "Id");
+            ViewData["RecipientId"] = new SelectList(_context.Users, "Id", "FullName");
+            ViewData["SenderId"] = new SelectList(_context.Users, "Id", "FullName");
+            ViewData["TicketId"] = new SelectList(_context.Tickets, "Id", "Description");
             return View();
         }
 
@@ -65,9 +66,9 @@ namespace HotBug.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RecipientId"] = new SelectList(_context.Users, "Id", "Id", notification.RecipientId);
-            ViewData["SenderId"] = new SelectList(_context.Users, "Id", "Id", notification.SenderId);
-            ViewData["TicketId"] = new SelectList(_context.Tickets, "Id", "Id", notification.TicketId);
+            ViewData["RecipientId"] = new SelectList(_context.Users, "Id", "FullName", notification.RecipientId);
+            ViewData["SenderId"] = new SelectList(_context.Users, "Id", "FullName", notification.SenderId);
+            ViewData["TicketId"] = new SelectList(_context.Tickets, "Id", "Description", notification.TicketId);
             return View(notification);
         }
 
@@ -84,9 +85,9 @@ namespace HotBug.Controllers
             {
                 return NotFound();
             }
-            ViewData["RecipientId"] = new SelectList(_context.Users, "Id", "Id", notification.RecipientId);
-            ViewData["SenderId"] = new SelectList(_context.Users, "Id", "Id", notification.SenderId);
-            ViewData["TicketId"] = new SelectList(_context.Tickets, "Id", "Id", notification.TicketId);
+            ViewData["RecipientId"] = new SelectList(_context.Users, "Id", "FullName", notification.RecipientId);
+            ViewData["SenderId"] = new SelectList(_context.Users, "Id", "FullName", notification.SenderId);
+            ViewData["TicketId"] = new SelectList(_context.Tickets, "Id", "Description", notification.TicketId);
             return View(notification);
         }
 
@@ -122,9 +123,9 @@ namespace HotBug.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RecipientId"] = new SelectList(_context.Users, "Id", "Id", notification.RecipientId);
-            ViewData["SenderId"] = new SelectList(_context.Users, "Id", "Id", notification.SenderId);
-            ViewData["TicketId"] = new SelectList(_context.Tickets, "Id", "Id", notification.TicketId);
+            ViewData["RecipientId"] = new SelectList(_context.Users, "Id", "FullName", notification.RecipientId);
+            ViewData["SenderId"] = new SelectList(_context.Users, "Id", "FullName", notification.SenderId);
+            ViewData["TicketId"] = new SelectList(_context.Tickets, "Id", "Description", notification.TicketId);
             return View(notification);
         }
 
