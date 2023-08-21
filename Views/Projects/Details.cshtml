@@ -56,20 +56,20 @@
                     <div class="body">
                         <h5 class="text-dark">Project Data</h5>
                         <ul class=" text-dark">
-                            <li>Start Date: <span class="">@Model.StartDate.ToString(" MMM dd, yyyy")</span></li>
-                            <li>Deadline: <span class="">@Model.EndDate.ToString(" MMM dd, yyyy")</span></li>
-                            <li>Priority: <span class="">@Model.ProjectPriority?.Name</span></li>
+                            <li><strong>Start Date: </strong><span class="">@Model.StartDate.ToString(" MMM dd, yyyy")</span></li>
+                            <li><strong>Deadline: </strong><span class="">@Model.EndDate.ToString(" MMM dd, yyyy")</span></li>
+                            <li><strong>Priority: </strong><span class="">@Model.ProjectPriority?.Name</span></li>
                             @* if() logic *@
                             @if (today < end && today >= start)
                             {
-                                <li>Status:<span class=""> Active</span></li>
+                                <li><strong>Status: </strong><span class="">Active</span></li>
                             }
                             else
                             {
-                                <li>Status:<span class=""> Inactive</span></li>
+                                <li><strong>Status: </strong><span class="">Inactive</span></li>
                             }
                             <li>
-                                Project Manager: <span class="">
+                                <strong>Project Manager: </strong><span class="">
                                     @if (projectManager != null)
                                     {
                                         <h5>@projectManager.FullName</h5>
