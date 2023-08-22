@@ -48,6 +48,18 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="card mt-1 mt-lg-5 overflow-hidden sales-card bg-secondary-gradient">
+                    <a asp-controller="Tickets" asp-action="MyTickets">
+                        <div class="px-3 pt-3">
+                            <div class="">
+                                <h6 class="mb-3 tx-16 text-white">MY TICKETS</h6>
+                                <h6 class="mb-3 tx-16 text-white">Go back to my tickets</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="row mt-1">
             <div class="col-12 col-lg-6">
@@ -251,6 +263,7 @@
                     </div>
                 </div>
             </div>
+            <a asp-controller="Tickets" asp-action="MyTickets" class="mb-3">Back to my tickets</a>
         </div>
     </div>
 </div>
