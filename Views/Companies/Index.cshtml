@@ -1,4 +1,4 @@
-﻿@model HotBug.Models.ViewModels.DashboardViewModel
+﻿@model IEnumerable<HotBug.Models.Company>
 @using HotBug.Models
 @using HotBug.Models.Enums
 @using HotBug.Services.Interfaces
@@ -6,9 +6,11 @@
 
 @inject UserManager<HBUser> UserManager
 @inject IHBRolesService RoleService
+@inject IHBProjectService projectService
+
 
 @{
-    ViewData["Title"] = "Company";
+    ViewData["Title"] = "Index";
     HBUser hBUser = await UserManager.GetUserAsync(User);
 }
 
@@ -19,14 +21,14 @@
                 <div class="col-6 text-dark font-weight-bold">
                     Companies
                 </div>
-                @if(User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
+                @if (User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
                 {
+                }
                 <div class="col-6 text-end">
                     <h3>
-                        <a asp-action="Create" class="btn btn-md btn-secondary text-white semibold-text mb-2">Create Company</a>
+                        <a asp-action="Create" class="btn btn-md btn-purple text-white semibold-text mb-2">Create Company</a>
                     </h3>
                 </div>
-                }
             </div>
         </h3>
         <div class="card">
@@ -34,36 +36,33 @@
 
                 <table class="table table-striped table-bordered mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
                     <thead>
-                        <tr class="bg-dark">
-                            <th class="text-light">
-                                Name
+                        <tr>
+                            <th class="text-light bg-dark">
+                                @Html.DisplayNameFor(model => model.Name)
                             </th>
-                            <th class="text-light">
-                                Email
+                            <th class="text-light bg-dark">
+                                @Html.DisplayNameFor(model => model.Description)
+
                             </th>
-                            <th class="text-light">
-                                Role
-                            </th>
-                            <th class="text-light">
-                                Action
+                            <th class="text-light bg-dark">
+                                ACTIONS
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (HBUser member in Model.Members)
+                        @foreach (var item in Model)
                         {
                             <tr>
                                 <td class="font-bold">
-                                    @member.FullName
+                                    <a asp-controller="Company" asp-action="Details">@item.Name</a>
                                 </td>
                                 <td>
-                                    @member.Email
+                                    @Html.DisplayFor(modelItem => item.Description)
                                 </td>
                                 <td>
-                                    @((await RoleService.GetUserRolesAsync(member)).FirstOrDefault())
-                                </td>
-                                <td>
-                                    <a asp-action="ManageUserRoles" asp-controller="UserRoles" asp-route-id="@member.Id" class="text-dark">Take Action</a>
+                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                                 </td>
                             </tr>
                         }

@@ -29,38 +29,24 @@ namespace HotBug.Controllers
         // GET: Company Info
         public async Task<IActionResult> Index()
         {
-            DashboardViewModel model = new();
-            int companyId = User.Identity!.GetCompanyId()!.Value;
-
-            model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
-            model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId))
-                                                       .Where(p => p.Archived == false)
-                                                       .ToList();
-            model.Tickets = model.Projects.SelectMany(p => p.Tickets!)
-                                          .Where(p => p.Archived == false)
-                                          .ToList();
-            model.Members = model.Company.Members!.ToList();
-
-            return View(model);
+            return View(await _context.Companies.ToListAsync());
         }
+        /* public async Task<IActionResult> Index()
+         {
+             DashboardViewModel model = new();
+             int companyId = User.Identity!.GetCompanyId()!.Value;
 
-        // GET: Company Snapshot Info
-        public async Task<IActionResult> Snapshot()
-        {
-            DashboardViewModel model = new();
-            int companyId = User.Identity!.GetCompanyId()!.Value;
+             model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
+             model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId))
+                                                        .Where(p => p.Archived == false)
+                                                        .ToList();
+             model.Tickets = model.Projects.SelectMany(p => p.Tickets!)
+                                           .Where(p => p.Archived == false)
+                                           .ToList();
+             model.Members = model.Company.Members!.ToList();
 
-            model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
-            model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId))
-                                                       .Where(p => p.Archived == false)
-                                                       .ToList();
-            model.Tickets = model.Projects.SelectMany(p => p.Tickets!)
-                                          .Where(p => p.Archived == false)
-                                          .ToList();
-            model.Members = model.Company.Members!.ToList();
-
-            return View(model);
-        }
+             return View(model);
+         }*/
 
         // GET: Companies/Details/5
         public async Task<IActionResult> Details(int? id)

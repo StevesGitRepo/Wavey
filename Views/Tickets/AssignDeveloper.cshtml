@@ -10,8 +10,8 @@
     ViewData["Title"] = "Assign Developer";
 }
 
-<div class="container">
-    <h2>Assign Developer for</h2>
+<div class="container mt-5 ms-lg-4 me-1">
+    <h2 class="mt-5">Assign Developer for</h2>
     <div class="row">
         <div class="col-md-6">
             <h3> @Model.Ticket.Title</h3>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="card-body">
                     <form method="post" asp-action="AssignDeveloper" asp-controller="Tickets">
-                        <input asp-for="Ticket.Id" hidden />
+                        <input asp-for="Ticket!.Id" hidden />
                         <p>Description: @Model.Ticket.Description</p>
 
                         <div class="from-group">

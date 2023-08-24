@@ -19,8 +19,8 @@
 
 <div>
     <div class="container-fluid">
-        <div class="row mt-5">
-            <a asp-action="AllProjects" asp-controller="Projects" class="mb-3 text-end">Back to all Projects</a>
+        <div class="row mt-4">
+            <a asp-action="AllProjects" asp-controller="Projects" class="mb-2 mt-1 text-end">Back to all Projects</a>
             <div class="col-12 col-lg-6">
                 <!--PROJECT SNAPSHOT-->
                 <div class="card p-3">
@@ -87,7 +87,7 @@
                                         <p class="text-dark">Not Assigned</p>
                                         @if (User.IsInRole(nameof(Roles.Admin)))
                                         {
-                                            <span><a asp-action="AssignPM" asp-controller="Home" asp-route-id="@Model.Id" class="btn btn-xs btn-outline-info">Assign PM</a></span>
+                                            <span><a asp-action="AssignPM" asp-controller="Projects" asp-route-projectid="@Model.Id" class="btn btn-xs btn-outline-info">Assign PM</a></span>
                                         }
                                     }
                                 </span>
@@ -186,7 +186,7 @@
                                                 {
                                                     if (User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
                                                     {
-                                                        <a class="btn btn-xs btn-info" asp-action="AssignDeveloper" asp-controller="Tickets" asp-route-ticketId="@ticket.Id">Assign Dev</a>
+                                                        <a class="btn btn-xs btn-info" asp-action="AssignDeveloper" asp-controller="Tickets" asp-route-id="@ticket.Id">Assign Dev</a>
                                                     }
 
                                                 }
@@ -221,8 +221,8 @@
                         </div>
                     </div>
                 </div>
-                <a asp-action="AllProjects" asp-controller="Projects" class="mb-3">Back to all Projects</a>
             </div>
+            <a asp-action="AllProjects" asp-controller="Projects" class="mb-3 pb-3">Back to all Projects</a>
         </div>
     </div>
 </div>
