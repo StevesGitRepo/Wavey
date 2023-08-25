@@ -200,7 +200,7 @@
                                     @Html.DisplayFor(modelItem => item.ProjectPriority!.Id)
                                 </td>
                                 <td>
-                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                    <a asp-controller="Projects" asp-action="Details" asp-route-id="@item.Id">Details</a>
 
                                     @{
                                         bool isProjectPM = (await projectService.GetProjectManagerAsync(item.Id))?.Id == hBUser.Id;
@@ -208,7 +208,7 @@
 
                                     @if (User.IsInRole(nameof(Roles.Admin)) || isProjectPM)
                                     {
-                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                        <a asp-controller="Projects" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
 
                                         @if (item.Archived)
                                         {
@@ -226,6 +226,9 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div class="mb-3">
+            <a asp-action="Dashboard" asp-controller="Home">Back to Dashboard</a>
         </div>
     </div>
 </div>
