@@ -15,7 +15,7 @@
 
     <div class="row mt-5">
         <!--MY PROJECTS-->
-        <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+        <div class="col-xl-3 col-lg-6 col-md-6 col-6">
             <div class="card overflow-hidden sales-card bg-secondary-gradient">
                 <a asp-controller="Projects" asp-action="MyProjects">
                     <div class="px-3 pt-3  pb-2 pt-0">
@@ -37,7 +37,7 @@
         </div>
 
         <!--ALL PROJECTS-->
-        <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+        <div class="col-xl-3 col-lg-6 col-md-6 col-6">
             <div class="card overflow-hidden sales-card bg-secondary-gradient">
                 <a asp-controller="Projects" asp-action="AllProjects">
                     <div class="px-3 pt-3  pb-2 pt-0">
@@ -59,7 +59,7 @@
         </div>
 
         <!--ARCHIVED PROJECTS-->
-        <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+        <div class="col-xl-3 col-lg-6 col-md-6 col-6">
             <div class="card overflow-hidden sales-card bg-secondary-gradient">
                 <a asp-controller="Projects" asp-action="ArchivedProjects">
                     <div class="px-3 pt-3  pb-2 pt-0">
@@ -81,7 +81,7 @@
         </div>
 
         <!--UNASSIGNED TICKETS-->
-        <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+        <div class="col-xl-3 col-lg-6 col-md-6 col-6">
             <div class="card overflow-hidden sales-card bg-secondary-gradient">
                 <a asp-controller="Projects" asp-action="UnassignedProjects">
                     <div class="px-3 pt-3  pb-2 pt-0">
@@ -103,14 +103,14 @@
         </div>
     </div>
 
-    <div class="card mt-1 px-4">
-        <div class="row pt-4">
-            <div class="col-7 text-dark font-weight-bold">
+    <div class="card mt-2 px-4">
+        <div class="row pt-3">
+            <div class="col-6 text-dark font-weight-bold">
                 <h3>
                     All Projects
                 </h3>
             </div>
-            <div class="col-5 text-end">
+            <div class="col-6 text-end">
                 <h3>
                     <span>
                         @if (User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
@@ -122,7 +122,7 @@
             </div>
         </div>
         <div class="card">
-            <div class="table-responsive country-table">
+            <div class="table-responsive country-table" style="overflow-y:auto;height:600px;">
                 <table class="table table-striped table-bordered mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
                     <thead>
                         <tr class="">
