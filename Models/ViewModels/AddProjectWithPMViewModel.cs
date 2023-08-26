@@ -13,3 +13,4 @@ namespace HotBug.Models.ViewModels
         public SelectList? PriorityList { get; set; }
     }
 }
+
