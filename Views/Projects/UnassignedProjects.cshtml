@@ -1,5 +1,10 @@
 ﻿@model IEnumerable<HotBug.Models.Project>
 @using HotBug.Models.Enums;
+@using Microsoft.AspNetCore.Identity;
+@using HotBug.Services.Interfaces;
+
+@inject UserManager<HBUser> UserManager
+@inject IHBProjectService projectService
 
 @{
     ViewData["Title"] = "Unassigned Projects";
@@ -8,13 +13,14 @@
 <div class="mt-5">
 
     <div class="row mt-5">
-        <!--MY PROJECTS-->
+
+        <!--ALL PROJECTS-->
         <div class="col-xl-3 col-lg-6 col-md-6 col-6">
             <div class="card overflow-hidden sales-card bg-secondary-gradient">
-                <a asp-controller="Projects" asp-action="MyProjects">
+                <a asp-controller="Projects" asp-action="AllProjects">
                     <div class="px-3 pt-3  pb-2 pt-0">
                         <div class="">
-                            <h6 class="mb-3 tx-16 text-white">MY PROJECTS</h6>
+                            <h6 class="mb-3 tx-16 text-white">ALL PROJECTS</h6>
                         </div>
                         <div class="pb-0 mt-0">
                             <div class="d-flex">
@@ -30,13 +36,13 @@
             </div>
         </div>
 
-        <!--ALL PROJECTS-->
+        <!--MY PROJECTS-->
         <div class="col-xl-3 col-lg-6 col-md-6 col-6">
             <div class="card overflow-hidden sales-card bg-secondary-gradient">
-                <a asp-controller="Projects" asp-action="AllProjects">
+                <a asp-controller="Projects" asp-action="MyProjects">
                     <div class="px-3 pt-3  pb-2 pt-0">
                         <div class="">
-                            <h6 class="mb-3 tx-16 text-white">ALL PROJECTS</h6>
+                            <h6 class="mb-3 tx-16 text-white">MY PROJECTS</h6>
                         </div>
                         <div class="pb-0 mt-0">
                             <div class="d-flex">

@@ -94984,3 +94984,9 @@ a.evo-hist {
 .bg-secondary-gradient:hover {
     background-image: linear-gradient(to right, #5f6d88 100%, #737f9e 0%) !important;
 }
+
+@media (max-width: 500px) {
+    .hidden-on-mobile{
+        display: none;
+    }
+}
