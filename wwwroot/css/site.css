@@ -13052,7 +13052,10 @@ body {
     font-size: 10.6px;
 }
 
-.sales-card .badge {
+.
+
+
+.badge {
     border-radius: 30px;
     background-color: #c6d8ff;
     padding: 4px 15px;
@@ -13074,6 +13077,10 @@ body {
 
 .sales-card:hover .sales-icon {
     font-size: 25px;
+}
+
+.active-card {
+    background-color: #ee335e;
 }
 
 .media img {

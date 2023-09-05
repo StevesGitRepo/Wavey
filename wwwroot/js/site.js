@@ -83,6 +83,8 @@
 
 })(jQuery);
 
+
+
 //sidebar js
 
 +function ($) {
