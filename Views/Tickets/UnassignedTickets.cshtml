@@ -1,77 +1,87 @@
 ﻿@model IEnumerable<HotBug.Models.Ticket>
-@using HotBug.Models.Enums
+@using Microsoft.AspNetCore.Identity;
+@using HotBug.Services.Interfaces;
+@using HotBug.Models.Enums;
 
-<div class="col-md-12 col mt-5">
-    <div class="mt-5">
-        <div class="row mt-5">
-            
-            <!--ALL TICKETS-->
-            <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div class="card overflow-hidden sales-card bg-secondary-gradient">
-                    <a asp-controller="Tickets" asp-action="AllTickets">
-                        <div class="px-3 pt-3  pb-2 pt-0">
-                            <div class="">
-                                <h6 class="mb-3 tx-16 text-white">ALL TICKETS</h6>
-                            </div>
-                            <div class="pb-0 mt-0">
-                                <div class="d-flex">
-                                    <span class="float-end my-auto ms-auto">
-                                        <i class="fas fa-arrow-circle-up text-white"></i>
-                                        <h4 class="tx-20 fw-bold mb-1 text-white">
-                                        </h4>
-                                    </span>
-                                </div>
+@inject UserManager<HBUser> UserManager
+@inject IHBProjectService ProjectService
+
+@{
+    ViewData["Title"] = "Unassigned Tickets";
+}
+
+
+<div class="mt-5">
+    <div class="row mt-5">
+        <!--ALL TICKETS-->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-6">
+            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                <a asp-controller="Tickets" asp-action="AllTickets">
+                    <div class="px-3 pt-3  pb-2 pt-0">
+                        <div class="">
+                            <h6 class="mb-3 tx-16 text-white">ALL TICKETS</h6>
+                        </div>
+                        <div class="pb-0 mt-0">
+                            <div class="d-flex">
+                                <span class="float-end my-auto ms-auto">
+                                    <i class="fas fa-arrow-circle-up text-white"></i>
+                                    <h4 class="tx-20 fw-bold mb-1 text-white">
+                                    </h4>
+                                </span>
                             </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
+        </div>
 
-            <!--MY TICKETS-->
-            <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div class="card overflow-hidden sales-card bg-secondary-gradient">
-                    <a asp-controller="Tickets" asp-action="MyTickets">
-                        <div class="px-3 pt-3  pb-2 pt-0">
-                            <div class="">
-                                <h6 class="mb-3 tx-16 text-white">MY TICKETS</h6>
-                            </div>
-                            <div class="pb-0 mt-0">
-                                <div class="d-flex">
-                                    <span class="float-end my-auto ms-auto">
-                                        <i class="fas fa-arrow-circle-up text-white"></i>
-                                        <h4 class="tx-20 fw-bold mb-1 text-white">
-                                        </h4>
-                                    </span>
-                                </div>
+        <!--MY TICKETS-->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-6">
+            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                <a asp-controller="Tickets" asp-action="MyTickets">
+                    <div class="px-3 pt-3  pb-2 pt-0">
+                        <div class="">
+                            <h6 class="mb-3 tx-16 text-white">MY TICKETS</h6>
+                        </div>
+                        <div class="pb-0 mt-0">
+                            <div class="d-flex">
+                                <span class="float-end my-auto ms-auto">
+                                    <i class="fas fa-arrow-circle-up text-white"></i>
+                                    <h4 class="tx-20 fw-bold mb-1 text-white">
+                                    </h4>
+                                </span>
                             </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
+        </div>
 
-            <!--ARCHIVED TICKETS-->
-            <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div class="card overflow-hidden sales-card bg-secondary-gradient">
-                    <a asp-controller="Tickets" asp-action="ArchivedTickets">
-                        <div class="px-3 pt-3  pb-2 pt-0">
-                            <div class="">
-                                <h6 class="mb-3 tx-16 text-white">ARCHIVED TICKETS</h6>
-                            </div>
-                            <div class="pb-0 mt-0">
-                                <div class="d-flex">
-                                    <span class="float-end my-auto ms-auto">
-                                        <i class="fas fa-arrow-circle-up text-white"></i>
-                                        <h4 class="tx-20 fw-bold mb-1 text-white">
-                                        </h4>
-                                    </span>
-                                </div>
+        <!--ARCHIVED TICKETS-->
+        <div class="col-xl-3 col-lg-6 col-md-6 col-6">
+            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                <a asp-controller="Tickets" asp-action="ArchivedTickets">
+                    <div class="px-3 pt-3  pb-2 pt-0">
+                        <div class="">
+                            <h6 class="mb-3 tx-16 text-white">ARCHIVED TICKETS</h6>
+                        </div>
+                        <div class="pb-0 mt-0">
+                            <div class="d-flex">
+                                <span class="float-end my-auto ms-auto">
+                                    <i class="fas fa-arrow-circle-up text-white"></i>
+                                    <h4 class="tx-20 fw-bold mb-1 text-white">
+                                    </h4>
+                                </span>
                             </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
+        </div>
 
-            <!--UNASSIGNED TICKETS-->
+        <!--UNASSIGNED TICKETS-->
+        @if (User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
+        {
             <div class="col-xl-3 col-lg-6 col-md-6 col-6">
                 <div class="card overflow-hidden sales-card bg-secondary-gradient">
                     <a asp-controller="Tickets" asp-action="UnassignedTickets">
@@ -92,78 +102,99 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="card mt-2 px-4">
-            <div class="row pt-3">
-                <div class="col-6 text-dark font-weight-bold">
-                    <h3 class="">
-                        Unassigned Tickets
-                    </h3>
-                </div>
-                <div class="col-6 text-end">
-                    <a asp-action="Create" class="btn btn-md btn-primary text-white semibold-text mb-3">Create A Ticket</a>
+        }
+        else
+        {
+            <div class="col-xl-3 col-lg-6 col-md-6 col-6">
+                <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                    <div class="px-3 pt-3  pb-2 pt-0">
+                        <div class="">
+                            <h6 class="mb-3 tx-16 text-white text-uppercase">unassigned (Admin & PM)</h6>
+                        </div>
+                        <div class="pb-0 mt-0">
+                            <div class="d-flex">
+                                <span class="float-end my-auto ms-auto">
+                                    <i class="fas fa-arrow-circle-up text-white"></i>
+                                    <h4 class="tx-20 fw-bold mb-1 text-white">
+                                    </h4>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="body">
-                <div class="table-responsive ms-1 mt-3 me-2" style="overflow-y:auto;height:600px;">
-                    <table class="table table-striped table-bordered table-hovered mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
-                        <thead class="">
+        }
+    </div>
+    <div class="card mt-2 px-4">
+        <div class="row pt-3">
+            <div class="col-6 text-dark font-weight-bold">
+                <h3 class="">
+                    Unassigned Tickets
+                </h3>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-action="Create" class="btn btn-md btn-primary text-white semibold-text mb-3">Create A Ticket</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="table-responsive ms-1 mt-3 me-2" style="overflow-y:auto;height:600px;">
+                <table class="table table-striped table-bordered table-hovered mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
+                    <thead class="">
+                        <tr>
+                            @* Table header *@
+                            <th class="bg-dark text-light">Title</th>
+                            <th class="bg-dark text-light">Developer</th>
+                            <th class="bg-dark text-light">Status</th>
+                            <th class="bg-dark text-light">Priority</th>
+                            <th class="bg-dark text-light">Date</th>
+                            <th class="bg-dark text-light">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @* Table body *@
+
+                        @foreach (var ticket in Model.OrderByDescending(d => d.Created))
+                        {
                             <tr>
-                                @* Table header *@
-                                <th class="bg-dark text-light">Title</th>
-                                <th class="bg-dark text-light">Developer</th>
-                                <th class="bg-dark text-light">Status</th>
-                                <th class="bg-dark text-light">Priority</th>
-                                <th class="bg-dark text-light">Date</th>
-                                <th class="bg-dark text-light">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @* Table body *@
-
-                            @foreach (var ticket in Model.OrderByDescending(d => d.Created))
-                            {
-                                <tr>
-                                    <td><a asp-action="Details" asp-controller="Tickets" asp-route-id="@ticket.Id" style="color:black"><strong>@ticket.Title</strong></a> </td>
-                                    <td>
-                                        @if (ticket.DeveloperUserId != null)
-                                        {
-                                            @ticket.DeveloperUser?.FullName
-                                        }
-                                        else
-                                        {
-                                            if (User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
-                                            {
-                                                <a class="btn btn-xs btn-info" asp-action="AssignDeveloper" asp-controller="Tickets" asp-route-id="@ticket.Id">Assign Dev</a>
-                                            }
-
-                                        }
-                                    </td>
-                                    @if (ticket.TicketStatus.Name == "New")
+                                <td><a asp-action="Details" asp-controller="Tickets" asp-route-id="@ticket.Id" style="color:black"><strong>@ticket.Title</strong></a> </td>
+                                <td>
+                                    @if (ticket.DeveloperUserId != null)
                                     {
-                                        <td><span class="badge-success">@ticket.TicketStatus.Name </span></td>
-
+                                        @ticket.DeveloperUser?.FullName
                                     }
                                     else
                                     {
-                                        <td><span class="badge-primary">@ticket.TicketStatus.Name </span></td>
+                                        if (User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
+                                        {
+                                            <a class="btn btn-xs btn-info" asp-action="AssignDeveloper" asp-controller="Tickets" asp-route-id="@ticket.Id">Assign Dev</a>
+                                        }
+
                                     }
-                                    <td><span class="badge-warning">@ticket.TicketPriority.Name </span></td>
-                                    <td>@ticket.Created.ToString("MM-dd-yyyy")</td>
-                                    <td>
-                                        <a class="btn btn-sm btn-outline-info" asp-action="Details" asp-controller="Tickets" asp-route-id="@ticket.Id"><i class="fs-5 bi-justify"></i></a>
+                                </td>
+                                @if (ticket.TicketStatus.Name == "New")
+                                {
+                                    <td><span class="badge-success">@ticket.TicketStatus.Name </span></td>
 
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                                }
+                                else
+                                {
+                                    <td><span class="badge-primary">@ticket.TicketStatus.Name </span></td>
+                                }
+                                <td><span class="badge-warning">@ticket.TicketPriority.Name </span></td>
+                                <td>@ticket.Created.ToString("MM-dd-yyyy")</td>
+                                <td>
+                                    <a class="btn btn-sm btn-outline-info" asp-action="Details" asp-controller="Tickets" asp-route-id="@ticket.Id"><i class="fs-5 bi-justify"></i></a>
 
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
             </div>
+
         </div>
-        <div class="mb-3 ms-1 mt-3">
-            <a asp-action="MyTickets">Back to My Tickets</a>
-        </div>
+    </div>
+    <div class="mb-3 ms-1 mt-3">
+        <a asp-action="MyTickets">Back to My Tickets</a>
     </div>
 </div>

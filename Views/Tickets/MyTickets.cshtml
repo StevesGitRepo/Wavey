@@ -35,7 +35,7 @@
             </div>
         </div>
         <!--MY TICKETS-->
-        
+
         <div class="col-xl-3 col-lg-6 col-md-6 col-6">
             <div class="card overflow-hidden sales-card bg-secondary-gradient">
                 <a asp-controller="Tickets" asp-action="MyTickets">
@@ -78,12 +78,36 @@
             </div>
         </div>
         <!--UNASSIGNED TICKETS-->
-        <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-            <div class="card overflow-hidden sales-card bg-secondary-gradient">
-                <a asp-controller="Tickets" asp-action="UnassignedTickets">
+        @if (User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
+        {
+            <div class="col-xl-3 col-lg-6 col-md-6 col-6">
+                <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                    <a asp-controller="Tickets" asp-action="UnassignedTickets">
+                        <div class="px-3 pt-3  pb-2 pt-0">
+                            <div class="">
+                                <h6 class="mb-3 tx-16 text-white">UNASSIGNED TICKETS</h6>
+                            </div>
+                            <div class="pb-0 mt-0">
+                                <div class="d-flex">
+                                    <span class="float-end my-auto ms-auto">
+                                        <i class="fas fa-arrow-circle-up text-white"></i>
+                                        <h4 class="tx-20 fw-bold mb-1 text-white">
+                                        </h4>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-xl-3 col-lg-6 col-md-6 col-6">
+                <div class="card overflow-hidden sales-card bg-secondary-gradient">
                     <div class="px-3 pt-3  pb-2 pt-0">
                         <div class="">
-                            <h6 class="mb-3 tx-16 text-white">UNASSIGNED TICKETS</h6>
+                            <h6 class="mb-3 tx-16 text-white text-uppercase">unassigned (Admin & PM)</h6>
                         </div>
                         <div class="pb-0 mt-0">
                             <div class="d-flex">
@@ -95,9 +119,9 @@
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
-        </div>
+        }
     </div>
     <div class="card mt-2 px-4">
         <div class="row pt-3">
@@ -157,7 +181,7 @@
                         {
                             <tr>
                                 <td>
-                                <a asp-action="Details" asp-controller="Tickets" asp-route-id="@item.Id">@item.Title</a>    
+                                    <a asp-action="Details" asp-controller="Tickets" asp-route-id="@item.Id">@item.Title</a>
 
                                 </td>
                                 <td>

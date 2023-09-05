@@ -21,7 +21,7 @@
                 <a asp-controller="Projects" asp-action="AllProjects">
                     <div class="px-3 pt-3  pb-2 pt-0">
                         <div class="">
-                            <h6 class="mb-3 tx-16 text-white">ALL PROJECTS</h6>
+                            <h6 class="mb-3 tx-16 text-white text-uppercase">ALL PROJECTS</h6>
                         </div>
                         <div class="pb-0 mt-0">
                             <div class="d-flex">
@@ -82,12 +82,36 @@
         </div>
 
         <!--UNASSIGNED TICKETS-->
-        <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-            <div class="card overflow-hidden sales-card bg-secondary-gradient">
-                <a asp-controller="Projects" asp-action="UnassignedProjects">
+        @if (User.IsInRole(nameof(Roles.Admin)))
+        {
+            <div class="col-xl-3 col-lg-6 col-md-6 col-6">
+                <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                    <a asp-controller="Projects" asp-action="UnassignedProjects">
+                        <div class="px-3 pt-3  pb-2 pt-0">
+                            <div class="">
+                                <h6 class="mb-3 tx-16 text-white text-uppercase">UNASSIGNED PROJECTS</h6>
+                            </div>
+                            <div class="pb-0 mt-0">
+                                <div class="d-flex">
+                                    <span class="float-end my-auto ms-auto">
+                                        <i class="fas fa-arrow-circle-up text-white"></i>
+                                        <h4 class="tx-20 fw-bold mb-1 text-white">
+                                        </h4>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-xl-3 col-lg-6 col-md-6 col-6">
+                <div class="card overflow-hidden sales-card bg-secondary-gradient" title="Admin & Project Manager Access">
                     <div class="px-3 pt-3  pb-2 pt-0">
                         <div class="">
-                            <h6 class="mb-3 tx-16 text-white">UNASSIGNED PROJECTS</h6>
+                            <h6 class="mb-3 tx-16 text-white text-uppercase">UNASSIGNED (admin only)</h6>
                         </div>
                         <div class="pb-0 mt-0">
                             <div class="d-flex">
@@ -99,9 +123,9 @@
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
-        </div>
+        }
     </div>
 
     <div class="card mt-2 px-4">
