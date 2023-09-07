@@ -19,7 +19,7 @@ public static class DataUtility
         var connectionString = configuration.GetSection("pgSettings")["pgConnection"];
         //It will be automatically overwritten if we are running on Heroku
         var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
-        return /*string.IsNullOrEmpty(databaseUrl) ? connectionString :*/ BuildConnectionString(databaseUrl);
+        return string.IsNullOrEmpty(databaseUrl) ? connectionString : BuildConnectionString(databaseUrl);
     }
 
     public static string BuildConnectionString(string databaseUrl)
@@ -623,7 +623,7 @@ public static class DataUtility
             UserName = "demo.dev@bugtrackerpro.com",
             Email = "demo.dev@bugtrackerpro.com",
             FirstName = "Aaron",
-            LastName = "Judge",
+            LastName = "Roberts",
 			EmailConfirmed = true,
             CompanyId = company2Id
         };
