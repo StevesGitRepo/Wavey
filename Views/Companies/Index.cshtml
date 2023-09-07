@@ -54,7 +54,7 @@
                         {
                             <tr>
                                 <td class="font-bold">
-                                    <a asp-controller="Company" asp-action="Details">@item.Name</a>
+                                    <a asp-action="Details" asp-route-id="@item.Id">@item.Name</a>
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Description)
