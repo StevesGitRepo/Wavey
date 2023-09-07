@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HotBug.Migrations
 {
     /// <inheritdoc />
-    public partial class _001 : Migration
+    public partial class clean : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -405,8 +405,8 @@ namespace HotBug.Migrations
                     Title = table.Column<string>(type: "text", nullable: true),
                     Message = table.Column<string>(type: "text", nullable: true),
                     Created = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
-                    RecipientId = table.Column<string>(type: "text", nullable: true),
-                    SenderId = table.Column<string>(type: "text", nullable: true),
+                    RecipientId = table.Column<string>(type: "text", nullable: false),
+                    SenderId = table.Column<string>(type: "text", nullable: false),
                     Viewed = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
@@ -416,12 +416,14 @@ namespace HotBug.Migrations
                         name: "FK_Notifications_AspNetUsers_RecipientId",
                         column: x => x.RecipientId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Notifications_AspNetUsers_SenderId",
                         column: x => x.SenderId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Notifications_Tickets_TicketId",
                         column: x => x.TicketId,

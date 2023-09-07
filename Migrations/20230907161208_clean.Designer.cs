@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HotBug.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230612235544_001")]
-    partial class _001
+    [Migration("20230907161208_clean")]
+    partial class clean
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -214,9 +214,11 @@ namespace HotBug.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("RecipientId")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("SenderId")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("TicketId")
@@ -713,11 +715,15 @@ namespace HotBug.Migrations
                 {
                     b.HasOne("HotBug.Models.HBUser", "Recipient")
                         .WithMany()
-                        .HasForeignKey("RecipientId");
+                        .HasForeignKey("RecipientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("HotBug.Models.HBUser", "Sender")
                         .WithMany()
-                        .HasForeignKey("SenderId");
+                        .HasForeignKey("SenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("HotBug.Models.Ticket", "Ticket")
                         .WithMany("Notifications")
