@@ -34,6 +34,7 @@ namespace HotBug.Services
         {
             HBUser currentPM = await GetProjectManagerAsync(projectId);
 
+            //if needed remove current PM
             if (currentPM != null)
             {
                 try
@@ -249,9 +250,10 @@ namespace HotBug.Services
         #region Get Project Manager
         public async Task<HBUser> GetProjectManagerAsync(int projectId)
         {
-            Project project = await _context.Projects
+            Project? project = await _context.Projects
                                             .Include(p => p.Members)
                                             .FirstOrDefaultAsync(p => p.Id == projectId);
+
             foreach (HBUser member in project?.Members)
             {
                 if (await _roleService.IsUserInRoleAsync(member, Roles.ProjectManager.ToString()))

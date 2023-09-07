@@ -124,7 +124,7 @@ namespace HotBug.Controllers
             AssignPMViewModel model = new();
 
             model.Project = await _projectService.GetProjectByIdAsync(projectId, companyId);
-            model.PMList = new SelectList(await _roleService.GetUsersInRoleAsync(nameof(Roles.ProjectManager), projectId), "Id", "FullName");
+            model.PMList = new SelectList(await _roleService.GetUsersInRoleAsync(nameof(Roles.ProjectManager), companyId), "Id", "FullName");
 
             return View(model);
 
