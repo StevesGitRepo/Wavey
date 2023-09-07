@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HotBug.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230907161208_clean")]
-    partial class clean
+    [Migration("20230907221243_HotBug")]
+    partial class HotBug
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
