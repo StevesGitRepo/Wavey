@@ -217,7 +217,7 @@ namespace HotBug.Controllers
 
                 try
                 {
-                    ticket.Created = DateTimeOffset.Now;
+                    ticket.Created = DateTime.Now;
                     ticket.OwnerUserId = hBUser.Id;
 
                     ticket.TicketStatusId = (await _ticketService.LookupTicketStatusIdAsync(nameof(HBTicketStatus.New))).Value;
@@ -297,7 +297,7 @@ namespace HotBug.Controllers
 
                 try
                 {
-                    ticket.Updated = DateTimeOffset.Now;
+                    ticket.Updated = DateTime.Now;
                     await _ticketService.UpdateTicketAsync(ticket);
                 }
                 catch (DbUpdateConcurrencyException)
@@ -342,7 +342,7 @@ namespace HotBug.Controllers
                     ticketAttachment.FileName = ticketAttachment.FormFile.FileName;
                     ticketAttachment.FileContentType = ticketAttachment.FormFile.ContentType;
 
-                    ticketAttachment.Created = DateTimeOffset.Now;
+                    ticketAttachment.Created = DateTime.Now;
                     ticketAttachment.UserId = _userManager.GetUserId(User);
 
                     await _ticketService.AddTicketAttachmentAsync(ticketAttachment);
@@ -378,7 +378,7 @@ namespace HotBug.Controllers
                 try
                 {
                     ticketComment.UserId = _userManager.GetUserId(User);
-                    ticketComment.Created = DateTimeOffset.Now;
+                    ticketComment.Created = DateTime.Now;
 
                     await _ticketService.AddTicketCommentAsync(ticketComment);
 

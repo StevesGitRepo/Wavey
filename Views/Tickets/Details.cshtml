@@ -2,6 +2,7 @@
 @using HotBug.Models.Enums
 @using HotBug.Services.Interfaces
 @using Microsoft.AspNetCore.Identity
+@using System.ComponentModel.DataAnnotations;
 @using HotBug.Services
 
 
@@ -76,8 +77,8 @@
                                 @*Progress bar logic*@
 
                                 @{
-                                    var start = Model.Project.StartDate.DateTime;
-                                    var end = Model.Project.EndDate.DateTime;
+                                    var start = Model.Project.StartDate.Date;
+                                    var end = Model.Project.EndDate.Date;
                                     var today = DateTime.Now;
                                     var percent = today >= end ? 100 : today < start ? 0 : Math.Round((today.Subtract(start)) / (end.Subtract(start)) * 100);
                                 }

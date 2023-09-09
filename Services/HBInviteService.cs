@@ -116,7 +116,7 @@ namespace HotBug.Services
             if(invite != null)
             {
                 //Determine invite date
-                DateTime inviteDate = invite.InviteDate.DateTime;
+                DateTime inviteDate = invite.InviteDate.Date;
 
                 //Custom validation of invite based on the date it was issued
                 //In this case we are allowing an invite to be valid for 7 days

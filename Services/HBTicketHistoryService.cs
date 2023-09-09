@@ -28,7 +28,7 @@ namespace HotBug.Services
                     Property = "",
                     OldValue = "",
                     NewValue = "",
-                    Created = DateTimeOffset.Now,
+                    Created = DateTime.Now,
                     UserId = userId,
                     Description = "New Ticket Created"
                 };
@@ -55,7 +55,7 @@ namespace HotBug.Services
                         Property = "Title",
                         OldValue = oldTicket.Title,
                         NewValue = newTicket.Title,
-                        Created = DateTimeOffset.Now,
+                        Created = DateTime.Now,
                         UserId = userId,
                         Description = $"New ticket title {newTicket.Title}"
                     };
@@ -72,7 +72,7 @@ namespace HotBug.Services
                         Property = "Description",
                         OldValue = oldTicket.Description,
                         NewValue = newTicket.Description,
-                        Created = DateTimeOffset.Now,
+                        Created = DateTime.Now,
                         UserId = userId,
                         Description = $"New ticket description: {newTicket.Description}"
                     };
@@ -89,7 +89,7 @@ namespace HotBug.Services
                         Property = "TicketPriority",
                         OldValue = oldTicket.TicketPriority.Name,
                         NewValue = newTicket.TicketPriority.Name,
-                        Created = DateTimeOffset.Now,
+                        Created = DateTime.Now,
                         UserId = userId,
                         Description = $"New ticket priority: {newTicket.TicketPriority.Name}"
                     };
@@ -106,7 +106,7 @@ namespace HotBug.Services
                         Property = "TicketStatus",
                         OldValue = oldTicket.TicketStatus.Name,
                         NewValue = newTicket.TicketStatus.Name,
-                        Created = DateTimeOffset.Now,
+                        Created = DateTime.Now,
                         UserId = userId,
                         Description = $"New ticket status: {newTicket.TicketStatus.Name}"
                     };
@@ -123,7 +123,7 @@ namespace HotBug.Services
                         Property = "TicketTypeId",
                         OldValue = oldTicket.TicketType.Name,
                         NewValue = newTicket.TicketType.Name,
-                        Created = DateTimeOffset.Now,
+                        Created = DateTime.Now,
                         UserId = userId,
                         Description = $"New ticket type: {newTicket.TicketType.Name}"
                     };
@@ -140,7 +140,7 @@ namespace HotBug.Services
                         Property = "Developer",
                         OldValue = oldTicket.DeveloperUser?.FullName ?? "Not Assigned",
                         NewValue = newTicket.DeveloperUser?.FullName,
-                        Created = DateTimeOffset.Now,
+                        Created = DateTime.Now,
                         UserId = userId,
                         Description = $"New ticket developer: {newTicket.DeveloperUser.FullName}"
                     };
@@ -178,7 +178,7 @@ namespace HotBug.Services
                     Property = model,
                     OldValue = "",
                     NewValue = "",
-                    Created = DateTimeOffset.Now,
+                    Created = DateTime.Now,
                     UserId = userId,
                     Description = description
                 };

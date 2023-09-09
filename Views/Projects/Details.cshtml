@@ -2,6 +2,8 @@
 @using HotBug.Models.Enums
 @using HotBug.Services.Interfaces
 @using Microsoft.AspNetCore.Identity
+@using System.ComponentModel.DataAnnotations;
+
 
 @inject UserManager<HBUser> UserManager
 @inject IHBProjectService ProjectService
@@ -36,8 +38,8 @@
                                 @* Razor code block *@
 
                                 @{
-                                    var start = Model.StartDate.DateTime;
-                                    var end = Model.EndDate.DateTime;
+                                    var start = Model.StartDate;
+                                    var end = Model.EndDate;
                                     var today = DateTime.Now;
                                     var percent = today >= end ? 100 : today < start ? 0 : Math.Round((today.Subtract(start)) / (end.Subtract(start)) * 100);
                                 }
