@@ -8,6 +8,8 @@ namespace HotBug.Models
     {
         //Primary Key
         public int Id { get; set; }
+        private DateTime _created;
+        private DateTime _updated;
 
         //Lookup tables
 
@@ -20,13 +22,21 @@ namespace HotBug.Models
         [DisplayName("Description")]
         public string? Description { get; set; }
 
-        [DataType(DataType.Date)]
         [DisplayName("Created")]
-        public DateTimeOffset Created { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime Created
+        {
+            get => _created;
+            set => _created = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
-        [DataType(DataType.Date)]
-        [DisplayName("Updated")]
-        public DateTimeOffset? Updated { get; set; }
+        [DisplayName("Created")]
+        [DataType(DataType.DateTime)]
+        public DateTime Updated
+        {
+            get => _updated;
+            set => _updated = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
         [DisplayName("Archived")]
         public bool Archived { get; set; }

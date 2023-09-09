@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace HotBug.Models
 {
@@ -6,6 +7,7 @@ namespace HotBug.Models
     {
         //Id is the Primary Key of a Ticket, and creates a Foreign Key for other tabkes
         public int Id { get; set; }
+        private DateTime _created;
 
 
         [DisplayName("Ticket")]
@@ -21,7 +23,10 @@ namespace HotBug.Models
         public string? NewValue { get; set; }
 
         [DisplayName("Date Modified")]
-        public DateTimeOffset Created { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime Created { 
+            get => _created;
+            set => _created = DateTime.SpecifyKind(value, DateTimeKind.Utc); }
 
         [DisplayName("Description of Change")]
         public string? Description { get; set; }

@@ -10,13 +10,19 @@ namespace HotBug.Models
         //properies:
         //Id is the primary key
         public int Id { get; set; }
+        private DateTime _created;
 
         //TicketId is the foreign key
         [DisplayName("Ticket")]
         public int TicketId { get; set; }
 
         [DisplayName("File Date")]
-        public DateTimeOffset Created { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime Created
+        {
+            get => _created;
+            set => _created = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
         [DisplayName("Team Member")]
         public string? UserId { get; set; }

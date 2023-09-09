@@ -9,6 +9,8 @@ namespace HotBug.Models
     {
         //Primary Key, Entity Framework recognizes "Id" as the primary key
         public int Id { get; set; }
+        private DateTime _startDate;
+        private DateTime _endDate;
 
         //CompanyId - Foreign Key
         [DisplayName("Company Id")]
@@ -26,13 +28,21 @@ namespace HotBug.Models
 
         //StartDate
         [DisplayName("Start Date")]
-        [DataType(DataType.Date)]
-        public DateTimeOffset StartDate { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime StartDate
+        {
+            get => _startDate;
+            set => _startDate = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
         //EndDate
         [DisplayName("End Date")]
-        [DataType(DataType.Date)]
-        public DateTimeOffset EndDate { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime EndDate
+        {
+            get => _endDate;
+            set => _endDate = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
         //ProjectPriorityId - Foreign Key
         [DisplayName("Priority")]
@@ -64,4 +74,3 @@ namespace HotBug.Models
         public virtual ICollection<Ticket> Tickets { get; set; } = new HashSet<Ticket>();
     }
 }
-    

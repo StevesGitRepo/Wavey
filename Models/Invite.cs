@@ -1,16 +1,29 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace HotBug.Models
 {
     public class Invite
     {
         public int Id { get; set; }
+        private DateTime _inviteDate;
+        private DateTime _joinDate;
 
         [DisplayName("Date Sent")]
-        public DateTimeOffset InviteDate { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime InviteDate
+        {
+            get => _inviteDate;
+            set => _inviteDate = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
         [DisplayName("Join Date")]
-        public DateTimeOffset JoinDate { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime JoinDate
+        {
+            get => _joinDate;
+            set => _joinDate = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
         [DisplayName("Code")]
         public Guid CompanyToken { get; set; }

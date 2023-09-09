@@ -11,6 +11,7 @@ namespace HotBug.Models
     {
         //Primary Key
         public int Id { get; set; }
+        private DateTime _created;
 
         //Foreign Key
         [DisplayName("Ticket")]
@@ -22,9 +23,13 @@ namespace HotBug.Models
         [DisplayName("Message")]
         public string? Message { get; set; }
 
-        [DataType(DataType.Date)]
         [DisplayName("Name")]
-        public DateTimeOffset Created { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime Created
+        {
+            get => _created; 
+            set => _created = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
         [Required]
         [DisplayName("Recipient")]

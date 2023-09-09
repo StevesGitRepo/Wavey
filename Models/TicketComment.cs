@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace HotBug.Models
 {
@@ -6,6 +7,7 @@ namespace HotBug.Models
     {
         //Id (Primary Key)
         public int Id { get; set; }
+        private DateTime _created;
 
         //Comment
         [DisplayName("Member Comment")]
@@ -13,7 +15,12 @@ namespace HotBug.Models
 
         //Created
         [DisplayName("Date")]
-        public DateTimeOffset Created { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime Created
+        {
+            get => _created;
+            set => _created = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
         //TicketId
         [DisplayName("Ticket")]
