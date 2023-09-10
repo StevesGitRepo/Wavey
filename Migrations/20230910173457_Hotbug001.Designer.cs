@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HotBug.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230907221243_HotBug")]
-    partial class HotBug
+    [Migration("20230910173457_Hotbug001")]
+    partial class Hotbug001
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -159,7 +159,7 @@ namespace HotBug.Migrations
                     b.Property<Guid>("CompanyToken")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTimeOffset>("InviteDate")
+                    b.Property<DateTime>("InviteDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("InviteeEmail")
@@ -180,7 +180,7 @@ namespace HotBug.Migrations
                     b.Property<bool>("IsValid")
                         .HasColumnType("boolean");
 
-                    b.Property<DateTimeOffset>("JoinDate")
+                    b.Property<DateTime>("JoinDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("ProjectId")
@@ -207,7 +207,7 @@ namespace HotBug.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTimeOffset>("Created")
+                    b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Message")
@@ -258,7 +258,7 @@ namespace HotBug.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
-                    b.Property<DateTimeOffset>("EndDate")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("ImageContentType")
@@ -278,7 +278,7 @@ namespace HotBug.Migrations
                     b.Property<int>("ProjectPriorityId")
                         .HasColumnType("integer");
 
-                    b.Property<DateTimeOffset>("StartDate")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -320,7 +320,7 @@ namespace HotBug.Migrations
                     b.Property<bool>("ArchivedByProject")
                         .HasColumnType("boolean");
 
-                    b.Property<DateTimeOffset>("Created")
+                    b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
@@ -348,7 +348,7 @@ namespace HotBug.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<DateTimeOffset?>("Updated")
+                    b.Property<DateTime>("Updated")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -376,7 +376,7 @@ namespace HotBug.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTimeOffset>("Created")
+                    b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
@@ -418,7 +418,7 @@ namespace HotBug.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("text");
 
-                    b.Property<DateTimeOffset>("Created")
+                    b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("TicketId")
@@ -444,7 +444,7 @@ namespace HotBug.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTimeOffset>("Created")
+                    b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")

@@ -53,7 +53,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-await DataUtility.ManageDataAsync(app, builder.Configuration);
+/*await DataUtility.ManageDataAsync(app, builder.Configuration);*/
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
