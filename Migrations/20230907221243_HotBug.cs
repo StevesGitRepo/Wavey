@@ -28,6 +28,7 @@ namespace HotBug.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Companies",
+
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)

@@ -1,3 +1,4 @@
+
 using HotBug.Data;
 using HotBug.Models;
 using HotBug.Services.Interfaces;
@@ -17,19 +18,16 @@ using HotBug.Models.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-// Add services to the container.
-//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-//var connectionString = builder.Configuration.GetSection("pgSettings")["pgConnection"];
+var connectionString = builder.Configuration.GetSection("pgSettings")["pgConnection"];
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration), o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
+    options.UseNpgsql(connectionString));
+/*builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration), o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));*/
 AppContext.SetSwitch("Npgsql.EnableLegacyTimeStampBehavior", true);
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-/*builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();*/
 builder.Services.AddIdentity<HBUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddClaimsPrincipalFactory<HBUserClaimsPrincipalFactory>()
