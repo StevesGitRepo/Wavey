@@ -7,7 +7,8 @@ namespace HotBug.Data
 {
     //ApplicationDbContext extends IdentityDbContext and supplied IdentityDbContex with type parameter of HBUser
 
-    public class ApplicationDbContext : IdentityDbContext<HBUser, IdentityRole, string>
+    public class ApplicationDbContext : IdentityDbContext<HBUser>
+        /*IdentityRole, string*/
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

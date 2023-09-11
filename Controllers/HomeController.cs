@@ -40,6 +40,7 @@ namespace HotBug.Controllers
         {
             //instantiate viewmodel
             DashboardViewModel model = new();
+
             int companyId = User.Identity.GetCompanyId().Value;
 
             model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
