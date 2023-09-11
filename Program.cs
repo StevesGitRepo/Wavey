@@ -35,7 +35,6 @@ builder.Services.AddIdentity<HBUser, IdentityRole>(options => options.SignIn.Req
     .AddDefaultTokenProviders()
     .AddRoles<IdentityRole>();
 
-
 //Custom Services
 builder.Services.AddScoped<IHBRolesService, HBRolesService>();
 builder.Services.AddScoped<IHBCompanyInfoService, HBCompanyInfoService>();
