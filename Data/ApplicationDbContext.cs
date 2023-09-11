@@ -1,18 +1,19 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using HotBug.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace HotBug.Data
 {
     //ApplicationDbContext extends IdentityDbContext and supplied IdentityDbContex with type parameter of HBUser
 
-    public class ApplicationDbContext : IdentityDbContext<HBUser>
+    public class ApplicationDbContext : IdentityDbContext<HBUser, IdentityRole, string>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
-
+        
         public DbSet<Company> Companies { get; set; }
         public DbSet<Invite> Invites { get; set; }
         public DbSet<Project> Projects { get; set; }
