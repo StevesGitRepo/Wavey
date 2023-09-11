@@ -27,5 +27,4 @@ namespace HotBug.Data
         public DbSet<TicketStatus> TicketStatuses { get; set; }
         public DbSet<TicketType> TicketTypes { get; set; }
     }
-
 }
