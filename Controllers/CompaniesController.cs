@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,26 +28,26 @@ namespace HotBug.Controllers
         }
 
         // GET: Company Info
-        public async Task<IActionResult> Index()
+        /*public async Task<IActionResult> Index()
         {
             return View(await _context.Companies.ToListAsync());
+        }*/
+        public async Task<IActionResult> Index()
+        {
+            DashboardViewModel model = new();
+            int companyId = User.Identity.GetCompanyId().Value;
+
+            model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
+            model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId))
+                                                       .Where(p => p.Archived == false)
+                                                       .ToList();
+            model.Tickets = model.Projects.SelectMany(p => p.Tickets!)
+                                          .Where(p => p.Archived == false)
+                                          .ToList();
+            model.Members = model.Company.Members!.ToList();
+
+            return View(model);
         }
-        /* public async Task<IActionResult> Index()
-         {
-             DashboardViewModel model = new();
-             int companyId = User.Identity!.GetCompanyId()!.Value;
-
-             model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
-             model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId))
-                                                        .Where(p => p.Archived == false)
-                                                        .ToList();
-             model.Tickets = model.Projects.SelectMany(p => p.Tickets!)
-                                           .Where(p => p.Archived == false)
-                                           .ToList();
-             model.Members = model.Company.Members!.ToList();
-
-             return View(model);
-         }*/
 
         // GET: Companies/Details/5
         public async Task<IActionResult> Details(int? id)

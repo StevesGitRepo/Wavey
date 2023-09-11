@@ -84,7 +84,7 @@ public static class DataUtility
         try
         {
             IList<Company> defaultcompanies = new List<Company>() {
-                    new Company() { Name = "DigiSoft", Description="Digital Software- Advanced!" },
+                    new Company() { Name = "WidgiSoft", Description="We're Making Software Widgets Great Again!" },
                     new Company() { Name = "TechBuilder", Description="Helping You Build Technological Strength" },
                 };
 
@@ -93,7 +93,7 @@ public static class DataUtility
             await context.SaveChangesAsync();
 
             //Get company Ids
-            company1Id = context.Companies.FirstOrDefault(p => p.Name == "DigiSoft")!.Id;
+            company1Id = context.Companies.FirstOrDefault(p => p.Name == "WidgiSoft")!.Id;
             company2Id = context.Companies.FirstOrDefault(p => p.Name == "TechBuilder")!.Id;
         }
         catch (Exception ex)
@@ -212,8 +212,8 @@ public static class DataUtility
         //Seed Default Admin User
         var defaultUser = new HBUser
         {
-            UserName = "christie.patterson@digisoft.com",
-            Email = "christie.patterson@digisoft.com",
+            UserName = "christie.patterson@widgisoft.com",
+            Email = "christie.patterson@widgisoft.com",
             FirstName = "Christie",
             LastName = "Patterson",
             EmailConfirmed = true,
@@ -268,10 +268,10 @@ public static class DataUtility
         //Seed Default ProjectManager1 User
         defaultUser = new HBUser
         {
-            UserName = "william.stinson@digisoft.com",
-            Email = "william.stinson@digisoft.com",
+            UserName = "william.squarepants@widgisoft.com",
+            Email = "william.squarepants@widgisoft.com",
             FirstName = "William",
-            LastName = "Stinson",
+            LastName = "Squarepants",
             EmailConfirmed = true,
             CompanyId = company1Id
         };
@@ -326,8 +326,8 @@ public static class DataUtility
         //Seed Default Developer1 User
         defaultUser = new HBUser
         {
-            UserName = "ashwari.singh@digisoft.com",
-            Email = "ashwari.singh@digisoft.com",
+            UserName = "ashwari.singh@widgisoft.com",
+            Email = "ashwari.singh@widgisoft.com",
             FirstName = "Ashwari",
             LastName = "Singh",
             EmailConfirmed = true,
@@ -384,8 +384,8 @@ public static class DataUtility
         //Seed Default Developer3 User
         defaultUser = new HBUser
         {
-            UserName = "andre.blankenship@digisoft.com",
-            Email = "andre.blankenship@digisoft.com",
+            UserName = "andre.blankenship@widgisoft.com",
+            Email = "andre.blankenship@widgisoft.com",
             FirstName = "Andre",
             LastName = "Blankenship",
             EmailConfirmed = true,
@@ -442,8 +442,8 @@ public static class DataUtility
         //Seed Default Developer5 User
         defaultUser = new HBUser
         {
-            UserName = "jessica.simpson@digisoft.com",
-            Email = "jessica.simpson@digisoft.com",
+            UserName = "jessica.simpson@widgisoft.com",
+            Email = "jessica.simpson@widgisoft.com",
             FirstName = "Jessica",
             LastName = "Simpson",
             EmailConfirmed = true,
@@ -498,8 +498,8 @@ public static class DataUtility
         //Seed Default Submitter1 User
         defaultUser = new HBUser
         {
-            UserName = "maria.anderson@digisoft.com",
-            Email = "maria.anderson@digisoft.com",
+            UserName = "maria.anderson@widgisoft.com",
+            Email = "maria.anderson@widgisoft.com",
             FirstName = "Maria",
             LastName = "Anderson",
             EmailConfirmed = true,
@@ -592,7 +592,7 @@ public static class DataUtility
         {
             UserName = "demo.pm@bugtrackerpro.com",
             Email = "demo.pm@bugtrackerpro.com",
-            FirstName = "Michael",
+            FirstName = "Bernie",
             LastName = "Williams",
             EmailConfirmed = true,
             CompanyId = company2Id
