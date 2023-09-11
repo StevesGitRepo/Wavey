@@ -93,7 +93,7 @@ public static class DataUtility
             await context.SaveChangesAsync();
 
             //Get company Ids
-            company1Id = context.Companies.FirstOrDefault(p => p.Name == "DidgiSoft")!.Id;
+            company1Id = context.Companies.FirstOrDefault(p => p.Name == "DigiSoft")!.Id;
             company2Id = context.Companies.FirstOrDefault(p => p.Name == "TechBuilder")!.Id;
         }
         catch (Exception ex)

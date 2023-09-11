@@ -23,7 +23,8 @@ var connectionString = builder.Configuration.GetSection("pgSettings")["pgConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 /*builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration), o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));*/
+    options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration), o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
+*/
 AppContext.SetSwitch("Npgsql.EnableLegacyTimeStampBehavior", true);
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -34,6 +35,7 @@ builder.Services.AddIdentity<HBUser, IdentityRole>(options => options.SignIn.Req
     .AddDefaultUI()
     .AddDefaultTokenProviders()
     .AddRoles<IdentityRole>();
+
 
 //Custom Services
 builder.Services.AddScoped<IHBRolesService, HBRolesService>();
