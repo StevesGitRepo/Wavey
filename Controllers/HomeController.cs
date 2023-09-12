@@ -8,6 +8,7 @@ using HotBug.Models.Enums;
 using HotBug.Models.ChartModels;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotBug.Controllers
 {
@@ -36,12 +37,13 @@ namespace HotBug.Controllers
         }
 
         //GET Action
+        [Authorize]
         public async Task<IActionResult> Dashboard()
         {
             //instantiate viewmodel
             DashboardViewModel model = new();
 
-            int companyId = User.Identity.GetCompanyId().Value;
+            int companyId = User.Identity.GetCompanyId()!.Value;
 
             model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
 
