@@ -268,10 +268,10 @@ public static class DataUtility
         //Seed Default ProjectManager1 User
         defaultUser = new HBUser
         {
-            UserName = "william.squarepants@widgisoft.com",
-            Email = "william.squarepants@widgisoft.com",
+            UserName = "william.sanders@widgisoft.com",
+            Email = "william.sanders@widgisoft.com",
             FirstName = "William",
-            LastName = "Squarepants",
+            LastName = "Sanders",
             EmailConfirmed = true,
             CompanyId = company1Id
         };
@@ -562,7 +562,7 @@ public static class DataUtility
             UserName = "demo.admin@bugtrackerpro.com",
             Email = "demo.admin@bugtrackerpro.com",
             FirstName = "Derek",
-            LastName = "Jeter",
+            LastName = "Johnson",
             EmailConfirmed = true,
             CompanyId = company1Id
         };
@@ -574,7 +574,6 @@ public static class DataUtility
                 await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
                 await userManager.AddToRoleAsync(defaultUser, Roles.Admin.ToString());
                 await userManager.AddToRoleAsync(defaultUser, Roles.DemoUser.ToString());
-
             }
         }
         catch (Exception ex)
@@ -592,7 +591,7 @@ public static class DataUtility
         {
             UserName = "demo.pm@bugtrackerpro.com",
             Email = "demo.pm@bugtrackerpro.com",
-            FirstName = "Bernie",
+            FirstName = "Natalie",
             LastName = "Williams",
             EmailConfirmed = true,
             CompanyId = company2Id

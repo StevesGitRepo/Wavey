@@ -20,11 +20,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetSection("pgSettings")["pgConnection"];
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString));
 /*builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(connectionString));*/
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration), o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
-*/
+
 AppContext.SetSwitch("Npgsql.EnableLegacyTimeStampBehavior", true);
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
