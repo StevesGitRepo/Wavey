@@ -1,5 +1,6 @@
 ﻿@page
 @model DemoLoginModel
+@using Microsoft.AspNetCore.Identity
 
 @{
     ViewData["Title"] = "Demo Log in";
@@ -55,13 +56,12 @@
                                 <input hidden asp-for="Input.Email" value="demo.admin@bugtrackerpro.com" class="form-control mb-3" autocomplete="username" aria-required="true" />
                                 <span asp-validation-for="Input.Email" class="text-danger"></span>
                             </div>
-
                             <div class="form-floating">
                                 <input hidden asp-for="Input.Password" value="S3cureP@ssword" class="form-control mb-2" autocomplete="current-password" aria-required="true" />
                                 <span asp-validation-for="Input.Password" class="text-danger"></span>
                             </div>
                             <div>
-                                <button id="login-submit" type="submit" class="w-100 btn btn-md btn-primary mt-1 font-awesome font-weight-bold">
+                                <button id="login-submit" type="submit" class="w-100 btn btn-md btn-primary btn-rounded mt-1 font-awesome font-weight-bold text-uppercase">
                                     Administrator Login
                                 </button>
                             </div>
@@ -89,14 +89,14 @@
                                 <span asp-validation-for="Input.Password" class="text-danger"></span>
                             </div>
                             <div>
-                                <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-1 text-lg font-weight-bold">
+                                <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark btn-rounded mt-1 text-lg font-weight-bold text-uppercase">
                                     Project Manager Login
                                 </button>
                             </div>
                         </form>
                     </div>
                     <!-- DEVELOPER DEMO -->
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4 mb-5 mb-lg-0">
                         <form id="account" method="post">
                             <h3 class="text-dark">
                                 <span class="me-2">
@@ -116,8 +116,8 @@
                                 <input asp-for="Input.Password" hidden value="S3cureP@ssword" class="form-control mb-2" autocomplete="current-password" aria-required="true" />
                                 <span asp-validation-for="Input.Password" class="text-danger"></span>
                             </div>
-                            <div>
-                                <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-1 hb-button font-weight-bold">
+                            <div class="mb-5 mb-lg-0">
+                                <button id="login-submit" type="submit" class="w-100 btn btn-md btn-dark mt-1 hb-button btn-rounded font-weight-bold text-uppercase">
                                     Developer Login
                                 </button>
                             </div>
@@ -149,4 +149,8 @@
     <!-- FOOTER CLOSED -->
 </div>
 </html>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
 

@@ -6,8 +6,6 @@ using HotBug.Models.ViewModels;
 using HotBug.Services.Interfaces;
 using HotBug.Models.Enums;
 using HotBug.Models.ChartModels;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authorization;
 
 namespace HotBug.Controllers
@@ -40,19 +38,12 @@ namespace HotBug.Controllers
         [Authorize]
         public async Task<IActionResult> Dashboard()
         {
-            //instantiate viewmodel
             DashboardViewModel model = new();
-
             int companyId = User.Identity.GetCompanyId().Value;
-
             model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
-
             model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId)).Where(p => p.Archived == false).ToList();
-
-            model.Tickets = model.Projects.SelectMany(p => p.Tickets).Where(t => t.Archived == false).ToList();
-
+            model.Tickets = model.Projects.SelectMany(p => p.Tickets).Where(p=>p.Archived == false).ToList();
             model.Members = model.Company.Members.ToList();
-
 
             return View(model);
         }
