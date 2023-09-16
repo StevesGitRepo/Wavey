@@ -29,7 +29,7 @@ namespace HotBug.Controllers
             List<ManageUserRolesViewModel> model = new();
 
             // get CompanyId
-            int companyId = User.Identity.GetCompanyId().Value;
+            int companyId = User.Identity.GetCompanyId()!.Value;
 
             // get all users in the company
             List<HBUser> users = await _companyInfoService.GetAllMembersAsync(companyId);

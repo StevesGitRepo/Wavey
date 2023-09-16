@@ -84,7 +84,7 @@ public static class DataUtility
         try
         {
             IList<Company> defaultcompanies = new List<Company>() {
-                    new Company() { Name = "WidgiSoft", Description="We're Making Software Widgets Great Again!" },
+                    new Company() { Name = "WidgiSoft", Description="We're Making Software Widgets Great!" },
                     new Company() { Name = "TechBuilder", Description="Helping You Build Technological Strength" },
                 };
 
@@ -93,8 +93,8 @@ public static class DataUtility
             await context.SaveChangesAsync();
 
             //Get company Ids
-            company1Id = context.Companies.FirstOrDefault(p => p.Name == "WidgiSoft")!.Id;
-            company2Id = context.Companies.FirstOrDefault(p => p.Name == "TechBuilder")!.Id;
+            company1Id = context.Companies.FirstOrDefault(p => p.Name == "WidgiSoft").Id;
+            company2Id = context.Companies.FirstOrDefault(p => p.Name == "TechBuilder").Id;
         }
         catch (Exception ex)
         {

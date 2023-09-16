@@ -18,7 +18,7 @@ namespace HotBug.Controllers
         private readonly IHBProjectService _projectService;
 
 
-
+        [ActivatorUtilitiesConstructor]
         public HomeController(ILogger<HomeController> logger,
                               IHBCompanyInfoService companyInfoService,
                               IHBProjectService projectService)
@@ -40,7 +40,7 @@ namespace HotBug.Controllers
         public async Task<IActionResult> Dashboard()
         {
             DashboardViewModel model = new();
-            int companyId = User.Identity.GetCompanyId().Value;
+            int companyId = User.Identity.GetCompanyId()!.Value;
             model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
             model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId)).Where(p => p.Archived == false).ToList();
             model.Tickets = model.Projects.SelectMany(p => p.Tickets).Where(p=>p.Archived == false).ToList();
@@ -56,7 +56,7 @@ namespace HotBug.Controllers
             AmChartData amChartData = new();
             List<AmItem> amItems = new();
 
-            int companyId = User.Identity.GetCompanyId().Value;
+            int companyId = User.Identity.GetCompanyId()!.Value;
 
             List<Project> projects = (await _companyInfoService.GetAllProjectsAsync(companyId)).Where(p => p.Archived == false).ToList();
 
@@ -80,7 +80,7 @@ namespace HotBug.Controllers
         [HttpPost]
         public async Task<JsonResult> GglProjectTickets()
         {
-            int companyId = User.Identity.GetCompanyId().Value;
+            int companyId = User.Identity.GetCompanyId()!.Value;
 
             List<Project> projects = await _projectService.GetAllProjectsByCompanyAsync(companyId);
 
@@ -98,7 +98,7 @@ namespace HotBug.Controllers
         [HttpPost]
         public async Task<JsonResult> GglProjectPriority()
         {
-            int companyId = User.Identity.GetCompanyId().Value;
+            int companyId = User.Identity.GetCompanyId()!.Value;
 
             List<Project> projects = await _projectService.GetAllProjectsByCompanyAsync(companyId);
 
@@ -122,7 +122,7 @@ namespace HotBug.Controllers
             PlotlyBarData plotlyData = new();
             List<PlotlyBar> barData = new();
 
-            int companyId = User.Identity.GetCompanyId().Value;
+            int companyId = User.Identity.GetCompanyId()!.Value;
 
             List<Project> projects = await _projectService.GetAllProjectsByCompanyAsync(companyId);
 
