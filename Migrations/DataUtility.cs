@@ -12,7 +12,6 @@ public static class DataUtility
     private static int company1Id;
     private static int company2Id;
 
-
     public static string GetConnectionString(IConfiguration configuration)
     {
         //The default connection string will come from appSettings like usual

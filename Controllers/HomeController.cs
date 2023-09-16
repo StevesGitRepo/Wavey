@@ -40,7 +40,7 @@ namespace HotBug.Controllers
         public async Task<IActionResult> Dashboard()
         {
             DashboardViewModel model = new();
-            int companyId = User.Identity.GetCompanyId()!.Value;
+            int companyId = User.Identity.GetCompanyId().Value;
             model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
             model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId)).Where(p => p.Archived == false).ToList();
             model.Tickets = model.Projects.SelectMany(p => p.Tickets).Where(p=>p.Archived == false).ToList();
