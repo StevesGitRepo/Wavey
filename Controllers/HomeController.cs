@@ -8,6 +8,7 @@ using HotBug.Services.Interfaces;
 using HotBug.Models.Enums;
 using HotBug.Models.ChartModels;
 using Microsoft.AspNetCore.Authorization;
+using System.Diagnostics.Eventing.Reader;
 
 namespace HotBug.Controllers
 {
@@ -37,16 +38,29 @@ namespace HotBug.Controllers
 
         //GET Action
         [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Dashboard()
         {
             DashboardViewModel model = new();
-            int companyId = User.Identity.GetCompanyId().Value;
-            model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
-            model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId)).Where(p => p.Archived == false).ToList();
-            model.Tickets = model.Projects.SelectMany(p => p.Tickets).Where(p=>p.Archived == false).ToList();
-            model.Members = model.Company.Members.ToList();
 
-            return View(model);
+            int? companyId = User.Identity.GetCompanyId();
+            if (companyId.HasValue)
+            {
+                int id = companyId.Value;
+                model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(id);
+                model.Projects = (await _companyInfoService.GetAllProjectsAsync(id)).Where(p => p.Archived == false).ToList();
+                model.Tickets = model.Projects.SelectMany(p => p.Tickets).Where(p => p.Archived == false).ToList();
+                model.Members = model.Company.Members.ToList();
+
+                return View(model);
+            }
+            else
+            {
+                Console.WriteLine("CompanyId is null");
+                return RedirectToAction("Index");
+            }
+
         }
 
         [HttpPost]

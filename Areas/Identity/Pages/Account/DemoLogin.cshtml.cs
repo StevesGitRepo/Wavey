@@ -67,7 +67,9 @@ namespace HotBug.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
-            [DisplayFormat(DataFormatString = "demo.admin@bugtrackerpro.com", ApplyFormatInEditMode = true)]
+
+            /*[DisplayFormat(DataFormatString = "demo.admin@bugtrackerpro.com", ApplyFormatInEditMode = true)]*/
+
             public string Email { get; set; }
 
             /// <summary>
@@ -76,7 +78,9 @@ namespace HotBug.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [DataType(DataType.Password)]
-            [DisplayFormat(DataFormatString = "S3cureP@ssword")]
+
+            /*[DisplayFormat(DataFormatString = "S3cureP@ssword")]*/
+            
             public string Password { get; set; }
 
             /// <summary>
@@ -104,6 +108,8 @@ namespace HotBug.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/Home/Dashboard");
