@@ -38,8 +38,6 @@ namespace HotBug.Controllers
 
         //GET Action
         [Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Dashboard()
         {
             DashboardViewModel model = new();

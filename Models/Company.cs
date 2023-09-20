@@ -8,6 +8,7 @@ namespace HotBug.Models
 {
     public class Company
     {
+        [DisplayName("CompanyId")]
         public int Id { get; set; }
 
         [DisplayName("Company Name")]

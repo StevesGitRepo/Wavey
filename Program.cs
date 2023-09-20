@@ -22,8 +22,10 @@ var connectionString = builder.Configuration.GetSection("pgSettings")["pgConnect
 
 /*builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));*/
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration), o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
+    options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration),
+    o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimeStampBehavior", true);
 

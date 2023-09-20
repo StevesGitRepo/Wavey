@@ -108,8 +108,6 @@ namespace HotBug.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/Home/Dashboard");

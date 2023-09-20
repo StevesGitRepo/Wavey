@@ -239,9 +239,9 @@ public static class DataUtility
         //Seed Default Admin User
         defaultUser = new HBUser
         {
-            UserName = "harold.jeter@techbuilder.net",
-            Email = "harold.jeter@techbuilder.net",
-            FirstName = "Harold",
+            UserName = "derek.jeter@techbuilder.net",
+            Email = "derek.jeter@techbuilder.net",
+            FirstName = "Derek",
             LastName = "Jeter",
             EmailConfirmed = true,
             CompanyId = company2Id
@@ -561,7 +561,7 @@ public static class DataUtility
             UserName = "demo.admin@bugtrackerpro.com",
             Email = "demo.admin@bugtrackerpro.com",
             FirstName = "Derek",
-            LastName = "Johnson",
+            LastName = "Jeter",
             EmailConfirmed = true,
             CompanyId = company1Id
         };
@@ -590,7 +590,7 @@ public static class DataUtility
         {
             UserName = "demo.pm@bugtrackerpro.com",
             Email = "demo.pm@bugtrackerpro.com",
-            FirstName = "Natalie",
+            FirstName = "Bernie",
             LastName = "Williams",
             EmailConfirmed = true,
             CompanyId = company2Id
@@ -621,7 +621,7 @@ public static class DataUtility
             UserName = "demo.dev@bugtrackerpro.com",
             Email = "demo.dev@bugtrackerpro.com",
             FirstName = "Aaron",
-            LastName = "Roberts",
+            LastName = "Judge",
             EmailConfirmed = true,
             CompanyId = company2Id
         };
