@@ -42,22 +42,23 @@ namespace HotBug.Controllers
         {
             DashboardViewModel model = new();
 
-            int? companyId = User.Identity.GetCompanyId();
-            if (companyId.HasValue)
-            {
-                int id = companyId.Value;
-                model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(id);
-                model.Projects = (await _companyInfoService.GetAllProjectsAsync(id)).Where(p => p.Archived == false).ToList();
-                model.Tickets = model.Projects.SelectMany(p => p.Tickets).Where(p => p.Archived == false).ToList();
-                model.Members = model.Company.Members.ToList();
+            int companyId = User.Identity.GetCompanyId().Value;
 
-                return View(model);
-            }
-            else
-            {
-                Console.WriteLine("CompanyId is null");
-                return RedirectToAction("Index");
-            }
+            model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
+            model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId)).Where(p => p.Archived == false).ToList();
+            model.Tickets = model.Projects.SelectMany(p => p.Tickets).Where(p => p.Archived == false).ToList();
+            model.Members = model.Company.Members.ToList();
+
+            return View(model);
+            /* if (companyId.HasValue)
+             {
+             }
+
+             else
+             {
+                 Console.WriteLine("CompanyId is null");
+                 return RedirectToAction("Index");
+             }*/
 
         }
 

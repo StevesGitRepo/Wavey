@@ -244,7 +244,7 @@ public static class DataUtility
             FirstName = "Derek",
             LastName = "Jeter",
             EmailConfirmed = true,
-            CompanyId = company2Id
+            CompanyId = company1Id
         };
         try
         {
