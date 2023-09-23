@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using System.Diagnostics;
-using System.Security.Principal;
 using HotBug.Extensions;
 using HotBug.Models;
 using HotBug.Models.ViewModels;
 using HotBug.Services.Interfaces;
 using HotBug.Models.Enums;
 using HotBug.Models.ChartModels;
-using Microsoft.AspNetCore.Authorization;
+using HotBug.Services;
+using System.Security.Principal;
 using System.Diagnostics.Eventing.Reader;
 
 namespace HotBug.Controllers
@@ -43,7 +44,6 @@ namespace HotBug.Controllers
             DashboardViewModel model = new();
 
             int companyId = User.Identity.GetCompanyId().Value;
-
             model.Company = await _companyInfoService.GetCompanyInfoByIdAsync(companyId);
             model.Projects = (await _companyInfoService.GetAllProjectsAsync(companyId)).Where(p => p.Archived == false).ToList();
             model.Tickets = model.Projects.SelectMany(p => p.Tickets).Where(p => p.Archived == false).ToList();
@@ -69,7 +69,7 @@ namespace HotBug.Controllers
             AmChartData amChartData = new();
             List<AmItem> amItems = new();
 
-            int companyId = User.Identity.GetCompanyId()!.Value;
+            int companyId = User.Identity.GetCompanyId().Value;
 
             List<Project> projects = (await _companyInfoService.GetAllProjectsAsync(companyId)).Where(p => p.Archived == false).ToList();
 

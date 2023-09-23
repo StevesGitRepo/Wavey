@@ -206,7 +206,7 @@ namespace HotBug.Services
         #endregion
 
         #region Get Developers On Project
-        public async Task<List<HBUser>> GetDevelopersOnProjectAsync(int projectId)
+        public Task<List<HBUser>> GetDevelopersOnProjectAsync(int projectId)
         {
             throw new NotImplementedException();
         }
@@ -286,7 +286,7 @@ namespace HotBug.Services
         #endregion
 
         #region Get Submitters On Project
-        public async Task<HBUser> GetSubmittersOnProjectAsync(int projectId)
+        public Task<HBUser> GetSubmittersOnProjectAsync(int projectId)
         {
             throw new NotImplementedException();
         }

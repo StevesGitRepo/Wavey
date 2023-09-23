@@ -14,7 +14,7 @@ namespace HotBug.Extensions
         }
 
 
-        protected override ValidationResult IsValid(
+        protected override ValidationResult? IsValid(
         object value, ValidationContext validationContext)
         {
             var file = value as IFormFile;
@@ -46,7 +46,7 @@ namespace HotBug.Extensions
         }
 
 
-        protected override ValidationResult IsValid(
+        protected override ValidationResult? IsValid(
         object value, ValidationContext validationContext)
         {
             var file = value as IFormFile;

@@ -25,6 +25,7 @@ namespace HotBug.Services
             _userManager = userManager; 
         }
 
+
         //add async to crate asynchronous methods
         #region Add User To Role
         public async Task<bool> AddUserToRoleAsync(HBUser user, string rolename)

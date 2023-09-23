@@ -10,7 +10,6 @@ public static class DataUtility
 {
     //Company Ids
     private static int company1Id;
-    private static int company2Id;
 
     public static string GetConnectionString(IConfiguration configuration)
     {
@@ -57,8 +56,7 @@ public static class DataUtility
         //Custom  Bug Tracker Seed Methods
         await SeedRolesAsync(roleManagerSvc);
         await SeedDefaultCompaniesAsync(dbContextSvc);
-        await SeedDefaultUsersAsync(userManagerSvc, configuration);
-        await SeedDemoUsersAsync(userManagerSvc, configuration);
+        await SeedDefaultUsersAsync(userManagerSvc);
         await SeedDefaultTicketTypeAsync(dbContextSvc);
         await SeedDefaultTicketStatusAsync(dbContextSvc);
         await SeedDefaultTicketPriorityAsync(dbContextSvc);
@@ -83,17 +81,15 @@ public static class DataUtility
         try
         {
             IList<Company> defaultcompanies = new List<Company>() {
-                    new Company() { Name = "WidgiSoft", Description="We're Making Software Widgets Great!" },
                     new Company() { Name = "TechBuilder", Description="Helping You Build Technological Strength" },
                 };
 
-            var dbCompanies = context.Companies!.Select(c => c.Name).ToList();
-            await context.Companies!.AddRangeAsync(defaultcompanies.Where(c => !dbCompanies.Contains(c.Name)));
+            var dbCompanies = context.Companies.Select(c => c.Name).ToList();
+            await context.Companies.AddRangeAsync(defaultcompanies.Where(c => !dbCompanies.Contains(c.Name)));
             await context.SaveChangesAsync();
 
             //Get company Ids
-            company1Id = context.Companies.FirstOrDefault(p => p.Name == "WidgiSoft").Id;
-            company2Id = context.Companies.FirstOrDefault(p => p.Name == "TechBuilder").Id;
+            company1Id = context.Companies.FirstOrDefault(p => p.Name == "TechBuilder").Id;
         }
         catch (Exception ex)
         {
@@ -109,7 +105,7 @@ public static class DataUtility
     {
         try
         {
-            IList<Models.ProjectPriority> projectPriorities = new List<ProjectPriority>() {
+            IList<ProjectPriority> projectPriorities = new List<ProjectPriority>() {
                                                     new ProjectPriority() { Name = HBProjectPriority.Low.ToString() },
                                                     new ProjectPriority() { Name = HBProjectPriority.Medium.ToString() },
                                                     new ProjectPriority() { Name = HBProjectPriority.High.ToString() },
@@ -154,7 +150,7 @@ public static class DataUtility
                      },
                      new Project()
                      {
-                         CompanyId = company2Id,
+                         CompanyId = company1Id,
                          Name = "Build a Marketing Automation Application",
                          Description="Candidate's custom built web application using .Net Core with MVC, a postgres database and hosted in a heroku container.  The app is designed for the candidate to create, update and maintain a live marketing automation site.",
                          StartDate = new DateTime(2022,10,20),
@@ -172,7 +168,7 @@ public static class DataUtility
                      },
                      new Project()
                      {
-                         CompanyId = company2Id,
+                         CompanyId = company1Id,
                          Name = "Build an Address Book Web Application",
                          Description="A custom designed .Net Core application with postgres database.  This is an application to serve as a rolodex of contacts for a given user..",
                          StartDate = new DateTime(2022,10,20),
@@ -190,7 +186,7 @@ public static class DataUtility
                      }
                 };
 
-            var dbProjects = context.Projects!.Select(c => c.Name).ToList();
+            var dbProjects = context.Projects.Select(c => c.Name).ToList();
             await context.Projects!.AddRangeAsync(projects.Where(c => !dbProjects.Contains(c.Name)));
             await context.SaveChangesAsync();
         }
@@ -206,41 +202,15 @@ public static class DataUtility
 
 
 
-    public static async Task SeedDefaultUsersAsync(UserManager<HBUser> userManager, IConfiguration configuration)
+    public static async Task SeedDefaultUsersAsync(UserManager<HBUser> userManager)
     {
-        //Seed Default Admin User
+
+
+        //Seed Default Admin
         var defaultUser = new HBUser
         {
-            UserName = "christie.patterson@widgisoft.com",
-            Email = "christie.patterson@widgisoft.com",
-            FirstName = "Christie",
-            LastName = "Patterson",
-            EmailConfirmed = true,
-            CompanyId = company1Id
-        };
-        try
-        {
-            var user = await userManager.FindByEmailAsync(defaultUser.Email);
-            if (user == null)
-            {
-                await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
-                await userManager.AddToRoleAsync(defaultUser, Roles.Admin.ToString());
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Default Admin User.");
-            Console.WriteLine(ex.Message);
-            Console.WriteLine("***********************************");
-            throw;
-        }
-
-        //Seed Default Admin User
-        defaultUser = new HBUser
-        {
-            UserName = "derek.jeter@techbuilder.net",
-            Email = "derek.jeter@techbuilder.net",
+            UserName = "demo.admin@bugtrackerpro.com",
+            Email = "demo.admin@bugtrackerpro.com",
             FirstName = "Derek",
             LastName = "Jeter",
             EmailConfirmed = true,
@@ -258,19 +228,19 @@ public static class DataUtility
         catch (Exception ex)
         {
             Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Default Admin User.");
+            Console.WriteLine("Error Seeding Demo Admin User.");
             Console.WriteLine(ex.Message);
             Console.WriteLine("***********************************");
             throw;
         }
 
-        //Seed Default ProjectManager1 User
+        //Seed Demo ProjectManager
         defaultUser = new HBUser
         {
-            UserName = "william.sanders@widgisoft.com",
-            Email = "william.sanders@widgisoft.com",
-            FirstName = "William",
-            LastName = "Sanders",
+            UserName = "demo.pm@bugtrackerpro.com",
+            Email = "demo.pm@bugtrackerpro.com",
+            FirstName = "Bernie",
+            LastName = "Williams",
             EmailConfirmed = true,
             CompanyId = company1Id
         };
@@ -286,22 +256,21 @@ public static class DataUtility
         catch (Exception ex)
         {
             Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Default ProjectManager1 User.");
+            Console.WriteLine("Error Seeding Demo ProjectManager1 User.");
             Console.WriteLine(ex.Message);
             Console.WriteLine("***********************************");
             throw;
         }
 
-
-        //Seed Default ProjectManager2 User
+        //Seed Demo Developer User
         defaultUser = new HBUser
         {
-            UserName = "darrell.lopez@techbuilder.net",
-            Email = "darrell.lopez@techbuilder.net",
-            FirstName = "Darrell",
-            LastName = "Lopez",
+            UserName = "demo.dev@bugtrackerpro.com",
+            Email = "demo.dev@bugtrackerpro.com",
+            FirstName = "Aaron",
+            LastName = "Judge",
             EmailConfirmed = true,
-            CompanyId = company2Id
+            CompanyId = company1Id
         };
         try
         {
@@ -309,24 +278,23 @@ public static class DataUtility
             if (user == null)
             {
                 await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
-                await userManager.AddToRoleAsync(defaultUser, Roles.ProjectManager.ToString());
+                await userManager.AddToRoleAsync(defaultUser, Roles.Developer.ToString());
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Default ProjectManager2 User.");
+            Console.WriteLine("Error Seeding Demo Developer1 User.");
             Console.WriteLine(ex.Message);
             Console.WriteLine("***********************************");
             throw;
         }
 
-
         //Seed Default Developer1 User
         defaultUser = new HBUser
         {
-            UserName = "ashwari.singh@widgisoft.com",
-            Email = "ashwari.singh@widgisoft.com",
+            UserName = "ashwari.singh@techbuilder.net",
+            Email = "ashwari.singh@techbuilder.net",
             FirstName = "Ashwari",
             LastName = "Singh",
             EmailConfirmed = true,
@@ -359,7 +327,7 @@ public static class DataUtility
             FirstName = "Madeline",
             LastName = "Johnson",
             EmailConfirmed = true,
-            CompanyId = company2Id
+            CompanyId = company1Id
         };
         try
         {
@@ -417,7 +385,7 @@ public static class DataUtility
             FirstName = "Terrance",
             LastName = "Turner",
             EmailConfirmed = true,
-            CompanyId = company2Id
+            CompanyId = company1Id
         };
         try
         {
@@ -465,247 +433,7 @@ public static class DataUtility
             Console.WriteLine("***********************************");
             throw;
         }
-
-        //Seed Default Developer6 User
-        defaultUser = new HBUser
-        {
-            UserName = "kelvin.jiminez@techbuilder.net",
-            Email = "kelvin.jiminez@techbuilder.net",
-            FirstName = "Kelvin",
-            LastName = "Jiminez",
-            EmailConfirmed = true,
-            CompanyId = company2Id
-        };
-        try
-        {
-            var user = await userManager.FindByEmailAsync(defaultUser.Email);
-            if (user == null)
-            {
-                await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
-                await userManager.AddToRoleAsync(defaultUser, Roles.Developer.ToString());
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Default Developer5 User.");
-            Console.WriteLine(ex.Message);
-            Console.WriteLine("***********************************");
-            throw;
-        }
-
-        //Seed Default Submitter1 User
-        defaultUser = new HBUser
-        {
-            UserName = "maria.anderson@widgisoft.com",
-            Email = "maria.anderson@widgisoft.com",
-            FirstName = "Maria",
-            LastName = "Anderson",
-            EmailConfirmed = true,
-            CompanyId = company1Id
-        };
-        try
-        {
-            var user = await userManager.FindByEmailAsync(defaultUser.Email);
-            if (user == null)
-            {
-                await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
-                await userManager.AddToRoleAsync(defaultUser, Roles.Submitter.ToString());
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Default Submitter1 User.");
-            Console.WriteLine(ex.Message);
-            Console.WriteLine("***********************************");
-            throw;
-        }
-
-
-        //Seed Default Submitter2 User
-        defaultUser = new HBUser
-        {
-            UserName = "blake.jonsonberg@techbuilder.net",
-            Email = "blake.jonsonberg@techbuilder.net",
-            FirstName = "Blake",
-            LastName = "Jonsonberg",
-            EmailConfirmed = true,
-            CompanyId = company2Id
-        };
-        try
-        {
-            var user = await userManager.FindByEmailAsync(defaultUser.Email);
-            if (user == null)
-            {
-                await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
-                await userManager.AddToRoleAsync(defaultUser, Roles.Submitter.ToString());
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Default Submitter2 User.");
-            Console.WriteLine(ex.Message);
-            Console.WriteLine("***********************************");
-            throw;
-        }
-
     }
-
-    public static async Task SeedDemoUsersAsync(UserManager<HBUser> userManager, IConfiguration configuration)
-    {
-        //Seed Demo Admin User
-        var defaultUser = new HBUser
-        {
-            UserName = "demo.admin@bugtrackerpro.com",
-            Email = "demo.admin@bugtrackerpro.com",
-            FirstName = "Derek",
-            LastName = "Jeter",
-            EmailConfirmed = true,
-            CompanyId = company1Id
-        };
-        try
-        {
-            var user = await userManager.FindByEmailAsync(defaultUser.Email);
-            if (user == null)
-            {
-                await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
-                await userManager.AddToRoleAsync(defaultUser, Roles.Admin.ToString());
-                await userManager.AddToRoleAsync(defaultUser, Roles.DemoUser.ToString());
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Demo Admin User.");
-            Console.WriteLine(ex.Message);
-            Console.WriteLine("***********************************");
-            throw;
-        }
-
-
-        //Seed Demo ProjectManager User
-        defaultUser = new HBUser
-        {
-            UserName = "demo.pm@bugtrackerpro.com",
-            Email = "demo.pm@bugtrackerpro.com",
-            FirstName = "Bernie",
-            LastName = "Williams",
-            EmailConfirmed = true,
-            CompanyId = company2Id
-        };
-        try
-        {
-            var user = await userManager.FindByEmailAsync(defaultUser.Email);
-            if (user == null)
-            {
-                await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
-                await userManager.AddToRoleAsync(defaultUser, Roles.ProjectManager.ToString());
-                await userManager.AddToRoleAsync(defaultUser, Roles.DemoUser.ToString());
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Demo ProjectManager1 User.");
-            Console.WriteLine(ex.Message);
-            Console.WriteLine("***********************************");
-            throw;
-        }
-
-
-        //Seed Demo Developer User
-        defaultUser = new HBUser
-        {
-            UserName = "demo.dev@bugtrackerpro.com",
-            Email = "demo.dev@bugtrackerpro.com",
-            FirstName = "Aaron",
-            LastName = "Judge",
-            EmailConfirmed = true,
-            CompanyId = company2Id
-        };
-        try
-        {
-            var user = await userManager.FindByEmailAsync(defaultUser.Email);
-            if (user == null)
-            {
-                await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
-                await userManager.AddToRoleAsync(defaultUser, Roles.Developer.ToString());
-                await userManager.AddToRoleAsync(defaultUser, Roles.DemoUser.ToString());
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Demo Developer1 User.");
-            Console.WriteLine(ex.Message);
-            Console.WriteLine("***********************************");
-            throw;
-        }
-
-
-        //Seed Demo Submitter User
-        defaultUser = new HBUser
-        {
-            UserName = "demo.submitter@bugtrackerpro.com",
-            Email = "demo.submitter@bugtrackerpro.com",
-            FirstName = "Nester",
-            LastName = "Cortez",
-            EmailConfirmed = true,
-            CompanyId = company2Id
-        };
-        try
-        {
-            var user = await userManager.FindByEmailAsync(defaultUser.Email);
-            if (user == null)
-            {
-                await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
-                await userManager.AddToRoleAsync(defaultUser, Roles.Submitter.ToString());
-                await userManager.AddToRoleAsync(defaultUser, Roles.DemoUser.ToString());
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Demo Submitter User.");
-            Console.WriteLine(ex.Message);
-            Console.WriteLine("***********************************");
-            throw;
-        }
-
-
-        //Seed Demo New User
-        defaultUser = new HBUser
-        {
-            UserName = "demo.newuser@bugtrackerpro.com",
-            Email = "demo.newuser@bugtrackerpro.com",
-            FirstName = "Oswaldo",
-            LastName = "Cabrera",
-            EmailConfirmed = true,
-            CompanyId = company2Id
-        };
-        try
-        {
-            var user = await userManager.FindByEmailAsync(defaultUser.Email);
-            if (user == null)
-            {
-                await userManager.CreateAsync(defaultUser, "S3cureP@ssword");
-                await userManager.AddToRoleAsync(defaultUser, Roles.Submitter.ToString());
-                await userManager.AddToRoleAsync(defaultUser, Roles.DemoUser.ToString());
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("*************  ERROR  *************");
-            Console.WriteLine("Error Seeding Demo New User.");
-            Console.WriteLine(ex.Message);
-            Console.WriteLine("***********************************");
-            throw;
-        }
-    }
-
-
 
     public static async Task SeedDefaultTicketTypeAsync(ApplicationDbContext context)
     {
@@ -721,7 +449,7 @@ public static class DataUtility
                 };
 
             var dbTicketTypes = context.TicketTypes!.Select(c => c.Name).ToList();
-            await context.TicketTypes!.AddRangeAsync(ticketTypes.Where(c => !dbTicketTypes.Contains(c.Name)));
+            await context.TicketTypes.AddRangeAsync(ticketTypes.Where(c => !dbTicketTypes.Contains(c.Name)));
             await context.SaveChangesAsync();
 
         }
@@ -747,7 +475,7 @@ public static class DataUtility
                 };
 
             var dbTicketStatuses = context.TicketStatuses!.Select(c => c.Name).ToList();
-            await context.TicketStatuses!.AddRangeAsync(ticketStatuses.Where(c => !dbTicketStatuses.Contains(c.Name)));
+            await context.TicketStatuses.AddRangeAsync(ticketStatuses.Where(c => !dbTicketStatuses.Contains(c.Name)));
             await context.SaveChangesAsync();
 
         }
@@ -772,7 +500,7 @@ public static class DataUtility
                                                     new TicketPriority() { Name = HBTicketPriority.Urgent.ToString()},
                 };
 
-            var dbTicketPriorities = context.TicketPriorities!.Select(c => c.Name).ToList();
+            var dbTicketPriorities = context.TicketPriorities.Select(c => c.Name).ToList();
             await context.TicketPriorities!.AddRangeAsync(ticketPriorities.Where(c => !dbTicketPriorities.Contains(c.Name)));
             context.SaveChanges();
 
@@ -921,7 +649,7 @@ public static class DataUtility
                 };
 
 
-            var dbTickets = context.Tickets!.Select(c => c.Title).ToList();
+            var dbTickets = context.Tickets.Select(c => c.Title).ToList();
             await context.Tickets!.AddRangeAsync(tickets.Where(c => !dbTickets.Contains(c.Title)));
             await context.SaveChangesAsync();
         }

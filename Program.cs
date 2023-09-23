@@ -1,4 +1,3 @@
-
 using HotBug.Data;
 using HotBug.Models;
 using HotBug.Services.Interfaces;
