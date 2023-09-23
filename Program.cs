@@ -19,8 +19,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetSection("pgSettings")["pgConnection"];
 
-/*builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString));*/
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(connectionString));
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration),
