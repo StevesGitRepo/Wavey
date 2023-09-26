@@ -1,17 +1,10 @@
 using HotBug.Data;
 using HotBug.Models;
-using HotBug.Services.Interfaces;
 using HotBug.Services;
+using HotBug.Services.Factories;
+using HotBug.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.EntityFrameworkCore;
-using HotBug.Services.Factories;
-using HotBug.Models;
-using HotBug.Models.Enums;
-using HotBug.Services;
-using HotBug.Services.Factories;
-using HotBug.Services.Interfaces;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using HotBug.Models.ViewModels;
 
@@ -19,11 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetSection("pgSettings")["pgConnection"];
 
-/*builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString));*/
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(connectionString));
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration),
+    options.UseNpgsql(DataUtility.GetConnectionString(builder.Configuration), 
     o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimeStampBehavior", true);
