@@ -1,13 +1,10 @@
-﻿@model IEnumerable<HotBug.Models.Company>
+﻿@model HotBug.Models.ViewModels.DashboardViewModel
 @using HotBug.Models
 @using HotBug.Models.Enums
 @using HotBug.Services.Interfaces
 @using Microsoft.AspNetCore.Identity
 
 @inject UserManager<HBUser> UserManager
-@inject IHBRolesService RoleService
-@inject IHBProjectService projectService
-
 
 @{
     ViewData["Title"] = "Index";
@@ -38,34 +35,31 @@
                     <thead>
                         <tr>
                             <th class="text-light bg-dark">
-                                @Html.DisplayNameFor(model => model.Name)
+                                Company Name
                             </th>
                             <th class="text-light bg-dark">
-                                @Html.DisplayNameFor(model => model.Description)
-
+                                Description
                             </th>
                             <th class="text-light bg-dark">
-                                ACTIONS
+                                Actions
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
-                        {
                             <tr>
                                 <td class="font-bold">
-                                    <a asp-action="Details" asp-route-id="@item.Id">@item.Name</a>
+                                    <a asp-action="Details" asp-route-id="@Model.Company.Id">@Model.Company.Name</a>
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Description)
+                                    @Html.DisplayFor(modelItem => Model.Company.Description)
                                 </td>
                                 <td>
-                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    <a asp-action="Edit" asp-route-id="@Model.Company.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@Model.Company.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@Model.Company.Id">Delete</a>
                                 </td>
                             </tr>
-                        }
+                        
                     </tbody>
                 </table>
             </div>

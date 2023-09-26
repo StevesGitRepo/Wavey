@@ -34,8 +34,7 @@ builder.Services.AddIdentity<HBUser, IdentityRole>(options => options.SignIn.Req
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddClaimsPrincipalFactory<HBUserClaimsPrincipalFactory>()
     .AddDefaultUI()
-    .AddDefaultTokenProviders()
-    .AddRoles<IdentityRole>();
+    .AddDefaultTokenProviders();
 
 //Custom Services
 builder.Services.AddScoped<IHBRolesService, HBRolesService>();

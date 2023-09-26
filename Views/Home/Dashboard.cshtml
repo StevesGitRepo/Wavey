@@ -73,6 +73,7 @@
                                 <div class="pb-0 mt-0">
                                     <div class="d-flex">
                                         <span class="float-end my-auto ms-auto">
+                                            <i class="fas fa-arrow-circle-up text-white"></i>
                                             <h4 class="tx-20 fw-bold mb-1 text-white">@Model.Tickets!.Count()</h4>
                                         </span>
                                     </div>
@@ -95,7 +96,7 @@
                                         <div class="d-flex">
                                             <span class="float-end my-auto ms-auto">
                                                 <i class="fas fa-arrow-circle-up text-white"></i>
-                                                <h4 class="tx-18 mb-1 text-white">Admin/PM</h4>
+                                                <h4 class="tx-20 mb-1 text-white">Admin/PM</h4>
                                             </span>
                                         </div>
                                     </div>
@@ -110,7 +111,7 @@
                         <div class="card overflow-hidden sales-card bg-secondary-gradient">
                             <div class="px-3 pt-3  pb-2 pt-0">
                                 <div class="">
-                                    <h6 class="mb-3 tx-18 text-white">Unassigned Tickets</h6>
+                                    <h6 class="mb-3 tx-20 text-white">Unassigned Tickets</h6>
                                 </div>
                                 <div class="pb-0 mt-0">
                                     <div class="d-flex">
@@ -126,8 +127,8 @@
                 }
                 <!--TOTAL DATA COLOR CARD-->
                 <div class="col-xl-3 col-lg-6 col-md-6 col-xm-6 col-6">
-                    <div class="card overflow-hidden sales-card bg-secondary-transparent alert-dark">
-                        <div class="px-3 pt-3  pb-2 pt-0">
+                    <div class="card overflow-hidden sales-card bg-white alert-dark">
+                        <div class="px-3 pt-3 pb-2 pt-0">
                             <div class="">
                                 <h6 class="mb-3 tx-18 text-dark">Projects Tickets Members</h6>
                             </div>
@@ -216,7 +217,7 @@
                         <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
                             <div class="card-body">
                                 <h5>Project Tickets Count</h5>
-                                <p>Ticket Status %</p>
+                                <p>Tickets: @Model.Tickets.Count</p>
                                 <div id="donut"></div>
                             </div>
                         </div>
@@ -228,7 +229,7 @@
                         <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
                             <div class="card-body">
                                 <h5>Projects by Priority</h5>
-                                <p>Priority End Date</p>
+                                <p>Projects: @Model.Projects.Count</p>
                                 <div id="chart3D"></div>
                             </div>
                         </div>
@@ -356,7 +357,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="overflow-y:auto;height:271.5px;">
+                        <div style="overflow-y:auto;height:265px;">
                             @foreach (Project project in Model.Projects)
                             {
                                 <div class="product-timeline card-body">
@@ -376,9 +377,7 @@
 
                     </div>
                 </div>
-
             </div>
-
         </div>
 
         <!-- NEW ROW -->
