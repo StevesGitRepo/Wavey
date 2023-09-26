@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HotBug.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230926015422_InitialDbChange")]
+    [Migration("20230926055943_InitialDbChange")]
     partial class InitialDbChange
     {
         /// <inheritdoc />
