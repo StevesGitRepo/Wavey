@@ -166,7 +166,7 @@ public static class DataUtility
                          EndDate = new DateTime(2022,10,20).AddMonths(7),
                          ProjectPriorityId = priorityHigh
                      },
-                     new Project()
+                     new Project()   
                      {
                          CompanyId = company1Id,
                          Name = "Build an Address Book Web Application",
