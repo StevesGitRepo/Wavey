@@ -41,8 +41,8 @@
     <div class="overflow-hidden">
         <!-- Page -->
         <div class="custom-index mt-4">
-            <!-- CURRENT PROJECTS COLOR CARD-->
             <div class="row row-sm">
+                <!-- CURRENT PROJECTS COLOR CARD-->
                 <div class="col-xl-3 col-lg-6 col-md-6 col-xm-6 col-6">
                     <a asp-action="AllProjects" asp-controller="Projects">
                         <div class="card overflow-hidden sales-card bg-primary-gradient">
@@ -237,7 +237,7 @@
                 </div>
                 <!--TICKET PRIORITY CARD-->
                 <div class="col-md-12 col-lg-12 col-xl-3">
-                    <div class="card">
+                    <div class="card" style="overflow-y:auto;height:327.8px;">
                         <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
                             <div class="d-flex justify-content-between">
                                 <h5 class="mb-4 card-title">Tickets by Priority</h5>
@@ -293,7 +293,7 @@
                     </div>
                 </div>
 
-                <!-- NEW ROW -->
+    <!-- NEW ROW -->
                 <!--MEMBERS CARD-->
                 <div class="col-xl-7 col-md-12 col-lg-12">
                     <div class="card card-table-two">
@@ -340,11 +340,11 @@
                 </div>
                 <!--PROJECTS CARD -->
                 <div class="col-xl-5 col-md-12 col-lg-12">
-                    <div class="card">
+                    <div class="card pb-3">
                         <div class="card-header pb-1 mb-1">
                             <div class="row">
                                 <div class=col-10>
-                                    <h3 class="card-title mb-2"><a asp-action="AllProjects" asp-controller="Projects" style="text-decoration:none">Projects List</a></h3>
+                                    <h3 class="card-title mb-2"><a asp-action="AllProjects" asp-controller="Projects" style="text-decoration:none">Projects</a></h3>
                                     <p class="tx-12 mb-0 text-muted">Available Projects</p>
                                 </div>
                                 <div class="col-2 text-end">
@@ -357,7 +357,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="overflow-y:auto;height:265px;">
+                        <div style="overflow-y:auto;height:249.5px;">
                             @foreach (Project project in Model.Projects)
                             {
                                 <div class="product-timeline card-body">
@@ -370,19 +370,14 @@
                                     </ul>
                                 </div>
                             }
-
-
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- NEW ROW -->
+    <!-- NEW ROW -->
         <!-- TICKETS CARD -->
-
         <div class="row row-sm">
             <div class="col-md-12 col-lg-12 col-xl-12">
                 <div class="card card-table-two">
@@ -484,8 +479,8 @@
                     <ul class="nav panel-tabs">
                         <li><a asp-area="Identity" asp-page="/Account/Manage/Index" target="_blank" title="Profile"><i class="fe fe-bell tx-15 me-2"></i>Profile</a></li>
                         <li><a asp-action="Index" asp-controller="Notifications"><i class="fe fe-bell tx-15 me-2"></i> Notifications</a></li>
-                        <li><a href="#side3" data-bs-toggle="tab"><i class="fe fe-users tx-15 me-2"></i> Friends</a></li>
-                    </ul>
+@*                         <li><a href="#side3" data-bs-toggle="tab"><i class="fe fe-users tx-15 me-2"></i> Friends</a></li>
+ *@                    </ul>
                 </div>
                 <div class="tab-content">
                 </div>

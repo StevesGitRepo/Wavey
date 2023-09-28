@@ -60,7 +60,7 @@
 
         <!--ARCHIVED TICKETS-->
         <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-            <div class="card overflow-hidden sales-card bg-secondary-transparent alert-dark">
+            <div class="card overflow-hidden sales-card bg-white alert-dark">
                 <a asp-controller="Tickets" asp-action="ArchivedTickets">
                     <div class="px-3 pt-3  pb-2 pt-0">
                         <div class="">
@@ -137,10 +137,9 @@
                 <a asp-action="Create" class="btn btn-md btn-primary text-white semibold-text mb-3">Create A Ticket</a>
             </div>
         </div>
-        <div class="card">
-            <div class="table-responsive country-table">
-
-                <table class="table table-striped table-bordered mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
+        <div class="body">
+            <div class="table-responsive" style="overflow-y:auto;height:400px;">
+                <table class="table table-hover table-bordered text-dark">
                     <thead>
                         <tr class="">
                             <th class="bg-dark text-light">
@@ -184,7 +183,7 @@
                         {
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Title)
+                                    <a asp-action="Details" asp-controller="Tickets" asp-route-id="@item.Id" style="color:darkslateblue"><strong>@item.Title</strong></a>
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Description)
@@ -243,5 +242,8 @@
 
             </div>
         </div>
+    </div>
+    <div class="mb-3 ms-1 mt-3">
+        <a asp-action="Dashboard" asp-controller="Home">Dashboard</a>
     </div>
 </div>
