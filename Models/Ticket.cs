@@ -65,17 +65,17 @@ namespace HotBug.Models
         public string? DeveloperUserId { get; set; }
 
         //Navigation Properties
-        public virtual Project? Project { get; set; }
+        public virtual Project Project { get; set; }
 
-        public virtual TicketType? TicketType { get; set; }
+        public virtual TicketType TicketType { get; set; }
 
-        public virtual TicketPriority? TicketPriority { get; set; }
+        public virtual TicketPriority TicketPriority { get; set; }
 
-        public virtual TicketStatus? TicketStatus { get; set; }
+        public virtual TicketStatus TicketStatus { get; set; }
 
-        public virtual HBUser? OwnerUser { get; set; }
+        public virtual HBUser OwnerUser { get; set; }
 
-        public virtual HBUser? DeveloperUser { get; set; }
+        public virtual HBUser DeveloperUser { get; set; }
 
         public virtual ICollection<TicketComment> Comments { get; set; } = new HashSet<TicketComment>();
 
