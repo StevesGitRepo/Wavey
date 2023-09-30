@@ -18163,7 +18163,8 @@ html.fullscreen-button {
         text-align: center;
     }
 
-    .landing-page .reveal.revealleft.active {
+    .landing-page .
+    .revealleft.active {
         transform: translateY(0px);
         opacity: 1;
     }
@@ -43217,6 +43218,21 @@ textarea.parsley-success:focus {
 .login,
 .image {
     min-height: 100vh;
+}
+
+.index-bg-image {
+    background-image: url(../img/hotbug/hbbg1600w.png);
+    background-repeat: no-repeat;
+    background-position:bottom;
+    background-size:inherit;
+    /*height:fit-content;*/
+}
+
+.index-bg-imageUpD {
+    background-image: url(../img/hotbug/hbbg1600wUpsideDown.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
 }
 
 .construction .form-control {
