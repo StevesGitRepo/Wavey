@@ -18,17 +18,20 @@ namespace HotBug.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IHBCompanyInfoService _companyInfoService;
         private readonly IHBProjectService _projectService;
+        private readonly IHBTicketService _ticketService;
 
 
         [ActivatorUtilitiesConstructor]
         public HomeController(ILogger<HomeController> logger,
                               IHBCompanyInfoService companyInfoService,
-                              IHBProjectService projectService)
+                              IHBProjectService projectService,
+                              IHBTicketService ticketService)
 
         {
             _logger = logger;
             _companyInfoService = companyInfoService;
             _projectService = projectService;
+            _ticketService = ticketService;
         }
 
 
@@ -50,16 +53,6 @@ namespace HotBug.Controllers
             model.Members = model.Company.Members.ToList();
 
             return View(model);
-            /* if (companyId.HasValue)
-             {
-             }
-
-             else
-             {
-                 Console.WriteLine("CompanyId is null");
-                 return RedirectToAction("Index");
-             }*/
-
         }
 
         [HttpPost]

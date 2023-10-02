@@ -84,7 +84,7 @@
         @if (User.IsInRole(nameof(Roles.Admin)))
         {
             <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div class="card overflow-hidden sales-card bg-secondary-transparent alert-dark">
+                <div class="card overflow-hidden sales-card bg-white alert-dark">
                     <a asp-controller="Projects" asp-action="UnassignedProjects">
                         <div class="px-3 pt-3  pb-2 pt-0">
                             <div class="">
@@ -107,7 +107,7 @@
         else
         {
             <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div class="card overflow-hidden sales-card bg-secondary-transparent alert-dark" title="Admin & Project Manager Access">
+                <div class="card overflow-hidden sales-card bg-white alert-dark" title="Admin & Project Manager Access">
                     <div class="px-3 pt-3  pb-2 pt-0">
                         <div class="">
                             <h6 class="mb-3 tx-16 text-dark text-uppercase">UNASSIGNED</h6>

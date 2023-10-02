@@ -211,14 +211,22 @@
                         </div>
                     </div>
                 </div>
-                <!--TICKET COUNT CARD-->
+                <!--PROJECT TITLES CARD-->
                 <div class="col-md-12 col-lg-12 col-xl-3">
                     <div class="card">
                         <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
                             <div class="card-body">
-                                <h5>Project Tickets Count</h5>
-                                <p>Tickets: @Model.Tickets.Count</p>
-                                <div id="donut"></div>
+                                <h5><strong>@Model.Company.Name</strong></h5>
+                                <p class="">@Model.Company.Description</p>
+                                <div class="" style="overflow-y:auto;height:179px;">
+                                    @foreach (Project project in Model.Projects)
+                                    {
+                                        <h5 class="py-2">
+                                            <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id" style="color:darkslateblue"><strong>@project.Name</strong></a>
+                                        </h5>
+                                    }
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -293,7 +301,7 @@
                     </div>
                 </div>
 
-    <!-- NEW ROW -->
+                <!-- NEW ROW -->
                 <!--MEMBERS CARD-->
                 <div class="col-xl-7 col-md-12 col-lg-12">
                     <div class="card card-table-two">
@@ -357,7 +365,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="overflow-y:auto;height:249.5px;">
+                        <div style="overflow-y:auto;height:249px;">
                             @foreach (Project project in Model.Projects)
                             {
                                 <div class="product-timeline card-body">
@@ -376,7 +384,7 @@
             </div>
         </div>
 
-    <!-- NEW ROW -->
+        <!-- NEW ROW -->
         <!-- TICKETS CARD -->
         <div class="row row-sm">
             <div class="col-md-12 col-lg-12 col-xl-12">
@@ -479,8 +487,9 @@
                     <ul class="nav panel-tabs">
                         <li><a asp-area="Identity" asp-page="/Account/Manage/Index" target="_blank" title="Profile"><i class="fe fe-bell tx-15 me-2"></i>Profile</a></li>
                         <li><a asp-action="Index" asp-controller="Notifications"><i class="fe fe-bell tx-15 me-2"></i> Notifications</a></li>
-@*                         <li><a href="#side3" data-bs-toggle="tab"><i class="fe fe-users tx-15 me-2"></i> Friends</a></li>
- *@                    </ul>
+                        @*                         <li><a href="#side3" data-bs-toggle="tab"><i class="fe fe-users tx-15 me-2"></i> Friends</a></li>
+                        *@
+                    </ul>
                 </div>
                 <div class="tab-content">
                 </div>
@@ -594,7 +603,7 @@
         function drawChart() {
             $.ajax({
                 type: "POST",
-                url: "/Home/GglProjectPriority",
+                url: "/Home/GglProjectTickets",
                 data: '{}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -619,6 +628,53 @@
                 }
             });
         }
+    </script>
+
+    <script>
+
+        var donutChartCanvas = $('#donutChart').get(0).getContext('2d');
+        var donutData = {
+            labels: [
+                '@nameof(HBTicketStatus.Development)',
+                '@nameof(HBTicketStatus.New)',
+                '@nameof(HBTicketStatus.Resolved)',
+                '@nameof(HBTicketStatus.Testing)'
+            ],
+            datasets: [
+                {
+                    data: [
+        @Model.Tickets!.Where(t=> t.TicketStatus.Name == nameof(HBTicketStatus.Development)).Count(),
+        @Model.Tickets!.Where(t=> t.TicketStatus.Name ==nameof(HBTicketStatus.New)).Count(),
+        @Model.Tickets!.Where(t=> t.TicketStatus.Name ==nameof(HBTicketStatus.Resolved)).Count(),
+        @Model.Tickets!.Where(t=> t.TicketStatus.Name ==nameof(HBTicketStatus.Testing)).Count()
+                                                                ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ]
+                }
+            ]
+        };
+
+        var donutOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+        };
+        //Create pie or douhnut chart
+        // You can switch between pie and douhnut using the method below.
+        new Chart(donutChartCanvas, {
+            type: 'doughnut',
+            data: donutData,
+            options: donutOptions
+        });
     </script>
 
     <!-- Chart code -->
