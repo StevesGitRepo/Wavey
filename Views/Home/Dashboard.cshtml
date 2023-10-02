@@ -250,11 +250,11 @@
                             <div class="d-flex justify-content-between">
                                 <h5 class="mb-4 card-title">Tickets by Priority</h5>
                             </div>
-                            <p class="mb-4">Tickets sorted by their status</p>
+                            <p class="mb-4">Tickets sorted by their priority</p>
                             <div>
                                 <div class="row mb-4">
                                     <div class="col-8">
-                                        <h5 class="text-start">Low</h5>
+                                        <h5 class="text-start"><strong>Low</strong></h5>
                                     </div>
                                     <div class="col-4 d-flex justify-content-end">
                                         <a asp-action="AllTickets" asp-controller="Tickets">
@@ -265,7 +265,7 @@
 
                                 <div class="row mb-4">
                                     <div class="col-8">
-                                        <h5 class="text-start">Medium</h5>
+                                        <h5 class="text-start"><strong>Medium</strong></h5>
                                     </div>
                                     <div class="col-4 d-flex justify-content-end">
                                         <a asp-action="AllTickets" asp-controller="Tickets">
@@ -277,7 +277,7 @@
                                 <div class="row mb-4">
                                     <div class="col-8">
                                         <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i>
-                                        <h5 class="text-start">High</h5>
+                                        <h5 class="text-start"><strong>High</strong></h5>
                                     </div>
                                     <div class="col-4 d-flex justify-content-end">
                                         <a asp-action="AllTickets" asp-controller="Tickets">
@@ -288,7 +288,7 @@
                                 </div>
                                 <div class="row mb-4 pb-1">
                                     <div class="col-8">
-                                        <h5 class="text-start">Urgent</h5>
+                                        <h5 class="text-start"><strong>Urgent</strong></h5>
                                     </div>
                                     <div class="col-4 d-flex justify-content-end">
                                         <a asp-action="AllTickets" asp-controller="Tickets">
@@ -497,260 +497,7 @@
         </div>
     </div>
 
-    <!-- Back-to-top -->
-    <a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
-
-    <!-- JQuery min js -->
-    <script src="../assets/plugins/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Bundle js -->
-    <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-    <!--Internal  Chart.bundle js -->
-    <script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
-
-    <!-- Moment js -->
-    <script src="../assets/plugins/moment/moment.js"></script>
-
-    <!--Internal Sparkline js -->
-    <script src="../assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
-
-    <!-- Moment js -->
-    <script src="../assets/plugins/raphael/raphael.min.js"></script>
-
-    <!--Internal Apexchart js-->
-    <script src="../assets/js/apexcharts.js"></script>
-
-    <!--Internal  Perfect-scrollbar js -->
-    <script src="../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="../assets/plugins/perfect-scrollbar/p-scroll.js"></script>
-
-    <!-- Eva-icons js -->
-    <script src="../assets/js/eva-icons.min.js"></script>
-
-    <!-- right-sidebar js -->
-    <script src="../assets/plugins/sidebar/sidebar.js"></script>
-    <script src="../assets/plugins/sidebar/sidebar-custom.js"></script>
-
-    <!-- Sticky js -->
-    <script src="../assets/js/sticky.js"></script>
-    <script src="../assets/js/modal-popup.js"></script>
-
-    <!-- Left-menu js-->
-    <script src="../assets/plugins/side-menu/sidemenu.js"></script>
-
-    <!-- Internal Map -->
-    <script src="../assets/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="../assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-
-    <!--Internal  index js -->
-    <script src="../assets/js/index.js"></script>
-
-    <!--themecolor js-->
-    <script src="../assets/js/themecolor.js"></script>
-
-    <!-- Apexchart js-->
-    <script src="../assets/js/apexcharts.js"></script>
-    <script src="../assets/js/jquery.vmap.sampledata.js"></script>
-
-    <!-- custom js -->
-    <script src="../assets/js/custom.js"></script>
-
-    <!-- switcher-styles js -->
-    <script src="../assets/js/swither-styles.js"></script>
-    <!--Google Charts-->
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-    <script type="text/javascript">
-        google.load("visualization", "1", { packages: ["corechart"] });
-        google.setOnLoadCallback(drawChart);
-        function drawChart() {
-            $.ajax({
-                type: "POST",
-                url: "/Home/GglProjectPriority",
-                data: '{}',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (result) {
-                    var data = google.visualization.arrayToDataTable(result);
-
-                    //3D Pie
-                    var options = {
-                        title: 'Project Priority',
-                        is3D: true,
-                        chartArea: { left: 0, bottom: 15, width: '100%', height: '100%' },
-                        legend: { position: 'bottom' }
-
-                    };
-
-                    var chart = new google.visualization.PieChart($("#chart3D")[0]);
-                    chart.draw(data, options);
-                },
-                failure: function (result) {
-                    alert(result.d);
-                },
-                error: function (result) {
-                    alert(result.d);
-                }
-            });
-        }
-    </script>
-
-    <script type="text/javascript">
-        google.load("visualization", "1", { packages: ["corechart"] });
-        google.setOnLoadCallback(drawChart);
-        function drawChart() {
-            $.ajax({
-                type: "POST",
-                url: "/Home/GglProjectTickets",
-                data: '{}',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (result) {
-                    var data = google.visualization.arrayToDataTable(result);
-
-                    //Donut
-                    var options = {
-                        title: 'Company Ticket Distribution',
-                        pieHole: 0.3,
-                        chartArea: { left: 0, bottom: 15, width: '100%', height: '100%' },
-                        legend: { position: 'bottom' }
-                    };
-                    var chart = new google.visualization.PieChart($("#donut")[0]);
-                    chart.draw(data, options);
-                },
-                failure: function (rresult) {
-                    alert(result.d);
-                },
-                error: function (result) {
-                    alert(result.d);
-                }
-            });
-        }
-    </script>
-
-    <script>
-
-        var donutChartCanvas = $('#donutChart').get(0).getContext('2d');
-        var donutData = {
-            labels: [
-                '@nameof(HBTicketStatus.Development)',
-                '@nameof(HBTicketStatus.New)',
-                '@nameof(HBTicketStatus.Resolved)',
-                '@nameof(HBTicketStatus.Testing)'
-            ],
-            datasets: [
-                {
-                    data: [
-        @Model.Tickets!.Where(t=> t.TicketStatus.Name == nameof(HBTicketStatus.Development)).Count(),
-        @Model.Tickets!.Where(t=> t.TicketStatus.Name ==nameof(HBTicketStatus.New)).Count(),
-        @Model.Tickets!.Where(t=> t.TicketStatus.Name ==nameof(HBTicketStatus.Resolved)).Count(),
-        @Model.Tickets!.Where(t=> t.TicketStatus.Name ==nameof(HBTicketStatus.Testing)).Count()
-                                                                ],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)'
-                    ]
-                }
-            ]
-        };
-
-        var donutOptions = {
-            maintainAspectRatio: false,
-            responsive: true,
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        new Chart(donutChartCanvas, {
-            type: 'doughnut',
-            data: donutData,
-            options: donutOptions
-        });
-    </script>
-
-    <!-- Chart code -->
-    <script>
-        $.ajax({
-            type: "POST",
-            url: "/Home/AmCharts",
-            data: '{}',
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-                am4core.ready(function () {
-
-                    // Themes begin
-                    // Themes end
-
-                    // Create chart instance
-                    var chart = am4core.create("chartdiv", am4charts.XYChart);
-
-
-                    // Add data
-                    chart.data = result;
-
-                    // Create axes
-                    var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
-                    categoryAxis.dataFields.category = "project";
-                    categoryAxis.numberFormatter.numberFormat = "#";
-                    categoryAxis.renderer.inversed = true;
-                    categoryAxis.renderer.grid.template.location = 0;
-                    categoryAxis.renderer.cellStartLocation = 0.1;
-                    categoryAxis.renderer.cellEndLocation = 0.9;
-
-                    var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
-                    valueAxis.renderer.opposite = true;
-
-                    // Create series
-                    function createSeries(field, name) {
-                        var series = chart.series.push(new am4charts.ColumnSeries());
-                        series.dataFields.valueX = field;
-                        series.dataFields.categoryY = "project";
-                        series.name = name;
-                        series.columns.template.tooltipText = "{name}: [bold]{valueX}[/]";
-                        series.columns.template.height = am4core.percent(100);
-                        series.sequencedInterpolation = true;
-
-                        var valueLabel = series.bullets.push(new am4charts.LabelBullet());
-                        valueLabel.label.text = "{valueX}";
-                        valueLabel.label.horizontalCenter = "left";
-                        valueLabel.label.dx = 10;
-                        valueLabel.label.hideOversized = false;
-                        valueLabel.label.truncate = false;
-
-                        var categoryLabel = series.bullets.push(new am4charts.LabelBullet());
-                        categoryLabel.label.text = "{name}";
-                        categoryLabel.label.horizontalCenter = "right";
-                        categoryLabel.label.dx = -10;
-                        categoryLabel.label.fill = am4core.color("#fff");
-                        categoryLabel.label.hideOversized = false;
-                        categoryLabel.label.truncate = false;
-                    }
-
-                    createSeries("tickets", "Tickets");
-                    createSeries("developers", "Devs");
-
-                }); // end am4core.ready()
-
-
-            },
-            failure: function (result) {
-                alert(result.d);
-            },
-            error: function (result) {
-                alert(result.d);
-            }
-        });
-    </script>
+    
     </div>
 </body>
 </html>

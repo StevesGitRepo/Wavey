@@ -3,6 +3,10 @@
 @using HotBug.Models.Enums
 @using HotBug.Services.Interfaces
 @using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore;
+@using Microsoft.AspNetCore.Identity
+@using HotBug.Models.Enums;
+@using HotBug.Services;
 
 @inject UserManager<HBUser> UserManager
 
@@ -18,14 +22,14 @@
                 <div class="col-6 text-dark font-weight-bold">
                     Companies
                 </div>
-                @if (User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
+                @* @if (User.IsInRole(nameof(Roles.Admin)) || User.IsInRole(nameof(Roles.ProjectManager)))
                 {
                 }
                 <div class="col-6 text-end">
                     <h3>
                         <a asp-action="Create" class="btn btn-md btn-purple text-white semibold-text mb-2">Create Company</a>
                     </h3>
-                </div>
+                </div> *@
             </div>
         </h3>
         <div class="card">
