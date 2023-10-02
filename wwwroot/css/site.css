@@ -43225,7 +43225,7 @@ textarea.parsley-success:focus {
     background-repeat: no-repeat;
     background-position:bottom;
     background-size:inherit;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
     /*height:fit-content;*/
 }
 
@@ -43234,7 +43234,7 @@ textarea.parsley-success:focus {
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
 }
 
 .construction .form-control {

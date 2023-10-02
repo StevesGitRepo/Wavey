@@ -154,13 +154,13 @@
 
                 <!--SNAPSHOT CARD-->
                 <div class="col-md-12 col-lg-12 col-xl-3">
-                    <div class="card">
+                    <div class="card" style="height:327.8px;">
                         <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
-                            <div class="d-flex justify-content-between">
-                                <h4 class="card-title mb-0">Snapshot</h4>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <h5 class=""><strong>Snapshot</strong></h5>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-body">
                             <div class="row">
                                 <div class="col-3">
                                     <div class="hstack">
@@ -173,13 +173,13 @@
                                 </div>
                                 <div class="col-9">
                                     <h6>Total Users</h6>
-                                    <h4 class="">@Model.Members.Count()</h4>
+                                    <h5 class=""><strong>@Model.Members.Count()</strong></h5>
                                 </div>
                                 <div class="col-12">
-                                    <hr class="border border-dark w-100">
+                                    <hr class="border border-light w-100">
                                 </div>
                             </div>
-                            <div class="row mt-1">
+                            <div class="row mt-0">
                                 <div class="col-3">
                                     <div class="hstack">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-ticket-fill mt-1 px-1 bg-purple-gradient border rounded" viewBox="0 0 16 16">
@@ -189,13 +189,13 @@
                                 </div>
                                 <div class="col-9">
                                     <h6>Tickets in Development</h6>
-                                    <h4 class="">@Model.Tickets!.Count()</h4>
+                                    <h5 class=""><strong>@Model.Tickets!.Count()</strong></h5>
                                 </div>
                                 <div class="col-12">
-                                    <hr class="border border-dark w-100">
+                                    <hr class="border border-light w-100">
                                 </div>
                             </div>
-                            <div class="row mt-1">
+                            <div class="row mt-0">
                                 <div class="col-3">
                                     <div class="hstack">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-person-fill mt-1 bg-primary-gradient border rounded" viewBox="0 0 16 16">
@@ -205,7 +205,7 @@
                                 </div>
                                 <div class="col-9">
                                     <h6>Total Developers</h6>
-                                    <h4 class="">4</h4>
+                                    <h5 class="mb-3"><strong>@Model.Members!.Count()</strong></h5>
                                 </div>
                             </div>
                         </div>
@@ -216,8 +216,8 @@
                     <div class="card">
                         <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
                             <div class="card-body">
-                                <h5><strong>@Model.Company.Name</strong></h5>
-                                <p class="">@Model.Company.Description</p>
+                                <h5><strong>@Model.Company.Name Projects</strong></h5>
+                                <p class="">"@Model.Company.Description"</p>
                                 <div class="" style="overflow-y:auto;height:179px;">
                                     @foreach (Project project in Model.Projects)
                                     {
@@ -236,7 +236,7 @@
                     <div class="card">
                         <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
                             <div class="card-body">
-                                <h5>Projects by Priority</h5>
+                                <h5><strong>Projects by Priority</strong></h5>
                                 <p>Projects: @Model.Projects.Count</p>
                                 <div id="chart3D"></div>
                             </div>
@@ -247,11 +247,10 @@
                 <div class="col-md-12 col-lg-12 col-xl-3">
                     <div class="card" style="overflow-y:auto;height:327.8px;">
                         <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
-                            <div class="d-flex justify-content-between">
-                                <h5 class="mb-4 card-title">Tickets by Priority</h5>
+                            <div class="card-body d-flex justify-content-between">
+                                <h5 class=""><strong>Tickets by Priority</strong></h5>
                             </div>
-                            <p class="mb-4">Tickets sorted by their priority</p>
-                            <div>
+                            <div class="ms-2 me-2">
                                 <div class="row mb-4">
                                     <div class="col-8">
                                         <h5 class="text-start"><strong>Low</strong></h5>
@@ -497,7 +496,7 @@
         </div>
     </div>
 
-    
+
     </div>
 </body>
 </html>
