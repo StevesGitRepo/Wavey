@@ -346,17 +346,17 @@
                         </div>
                     </div>
                 </div>
-                <!--PROJECTS CARD -->
+                <!--NOTIFICATIONS CARD -->
                 <div class="col-xl-5 col-md-12 col-lg-12">
                     <div class="card pb-3">
                         <div class="card-header pb-1 mb-1">
                             <div class="row">
                                 <div class=col-10>
-                                    <h3 class="card-title mb-2"><a asp-action="AllProjects" asp-controller="Projects" style="text-decoration:none">Projects</a></h3>
-                                    <p class="tx-12 mb-0 text-muted">Available Projects</p>
+                                    <h3 class="card-title mb-2"><a asp-action="Index" asp-controller="Notifications" style="text-decoration:none">Notifications</a></h3>
+                                    <p class="tx-12 mb-0 text-muted">New Ticket Notifications</p>
                                 </div>
                                 <div class="col-2 text-end">
-                                    <a asp-action="AllProjects" asp-controller="Projects" style="text-decoration:none">
+                                    <a asp-action="Index" asp-controller="Notifications" style="text-decoration:none">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-card-checklist px-1 bg-secondary-gradient border rounded" viewBox="0 0 16 16">
                                             <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
                                             <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
@@ -371,8 +371,8 @@
                                 <div class="product-timeline card-body">
                                     <ul class="timeline-1">
                                         <li class="mrg-8">
-                                            <a asp-action="Details" asp-controller="Projects" asp-route-id="@project.Id">
-                                                <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i> <span class="fw-semibold tx-14 ">@project.Name</span>
+                                            <a asp-action="Index" asp-controller="Notifications" asp-route-id="">
+                                                <i class="ti-pie-chart bg-alert-gradient text-white product-icon"></i> <span class="fw-semibold tx-14 ">New notifications are displayed here.</span>
                                             </a>
                                         </li>
                                     </ul>
