@@ -43232,9 +43232,9 @@ textarea.parsley-success:focus {
 .index-bg-imageUpD {
     background-image: url(../img/hotbug/hbbg1600wUpsideDown.png);
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: left;
     background-size: cover;
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(2px);
 }
 
 .construction .form-control {
