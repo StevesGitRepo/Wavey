@@ -4,11 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<div class="mt-5">
-    <div class="row mt-5">
+<div class="mt-4">
+    <div class="row">
         <!--MY NOTIFICATIONS-->
         <div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
-            <div class="card overflow-hidden sales-card bg-secondary-transparent alert-dark">
+            <div class="card overflow-hidden sales-card bg-white alert-dark">
                 <a asp-controller="Notifications" asp-action="Index">
                     <div class="px-3 pt-3  pb-2 pt-0">
                         <div class="">
@@ -133,7 +133,7 @@
                         <th class="bg-dark text-light">Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="pb-3">
                     @foreach (var item in Model)
                     {
                         <tr>
@@ -171,3 +171,25 @@
     </div>
 </div>
 
+<!-- Sidebar-right-->
+<div class="sidebar sidebar-right sidebar-animate">
+    <div class="panel panel-primary card mb-0 box-shadow">
+        <div class="tab-menu-heading border-0 p-3">
+            <div class="card-title mb-0">Settings</div>
+            <div class="card-options ms-auto">
+                <a class="sidebar-remove"><i class="fe fe-x"></i></a>
+            </div>
+        </div>
+        <div class="panel-body tabs-menu-body latest-tasks p-0 border-0">
+            <div class="tabs-menu ">
+                <!-- Tabs -->
+                <ul class="nav panel-tabs">
+                    <li><a asp-area="Identity" asp-page="/Account/Manage/Index" target="_blank" title="Profile"><i class="fe fe-bell tx-15 me-2"></i>Profile</a></li>
+                    <li><a asp-action="Index" asp-controller="Notifications"><i class="fe fe-bell tx-15 me-2"></i> Notifications</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+            </div>
+        </div>
+    </div>
+</div>

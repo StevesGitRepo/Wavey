@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1 class="mt-4">Edit</h1>
 
 <h4>TicketComment</h4>
 <hr />
@@ -43,7 +43,28 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+<!-- Sidebar-right-->
+<div class="sidebar sidebar-right sidebar-animate">
+    <div class="panel panel-primary card mb-0 box-shadow">
+        <div class="tab-menu-heading border-0 p-3">
+            <div class="card-title mb-0">Settings</div>
+            <div class="card-options ms-auto">
+                <a class="sidebar-remove"><i class="fe fe-x"></i></a>
+            </div>
+        </div>
+        <div class="panel-body tabs-menu-body latest-tasks p-0 border-0">
+            <div class="tabs-menu ">
+                <!-- Tabs -->
+                <ul class="nav panel-tabs">
+                    <li><a asp-area="Identity" asp-page="/Account/Manage/Index" target="_blank" title="Profile"><i class="fe fe-bell tx-15 me-2"></i>Profile</a></li>
+                    <li><a asp-action="Index" asp-controller="Notifications"><i class="fe fe-bell tx-15 me-2"></i> Notifications</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+            </div>
+        </div>
+    </div>
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

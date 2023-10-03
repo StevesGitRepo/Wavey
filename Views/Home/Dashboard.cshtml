@@ -161,7 +161,7 @@
                                     <h5 class=""><strong>Snapshot</strong></h5>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row ms-2 me-2 mb-3">
                                 <div class="col-3">
                                     <div class="hstack">
 
@@ -176,10 +176,11 @@
                                     <h5 class=""><strong>@Model.Members.Count()</strong></h5>
                                 </div>
                                 <div class="col-12">
-                                    <hr class="border border-light w-100">
+                                    @*                                     <hr class="border border-light w-100">
+                                    *@
                                 </div>
                             </div>
-                            <div class="row mt-0">
+                            <div class="row ms-2 me-2 mb-3">
                                 <div class="col-3">
                                     <div class="hstack">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-ticket-fill mt-1 px-1 bg-purple-gradient border rounded" viewBox="0 0 16 16">
@@ -188,14 +189,15 @@
                                     </div>
                                 </div>
                                 <div class="col-9">
-                                    <h6>Tickets in Development</h6>
+                                    <h6>Total Tickets</h6>
                                     <h5 class=""><strong>@Model.Tickets!.Count()</strong></h5>
                                 </div>
                                 <div class="col-12">
-                                    <hr class="border border-light w-100">
+                                    @*                                     <hr class="border border-light w-100">
+                                    *@
                                 </div>
                             </div>
-                            <div class="row mt-0">
+                            <div class="row ms-2 me-3">
                                 <div class="col-3">
                                     <div class="hstack">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-person-fill mt-1 bg-primary-gradient border rounded" viewBox="0 0 16 16">
@@ -250,14 +252,18 @@
                             <div class="card-body d-flex justify-content-between">
                                 <h5 class=""><strong>Tickets by Priority</strong></h5>
                             </div>
-                            <div class="ms-2 me-2">
+                            <div class="ms-4 me-4">
                                 <div class="row mb-4">
                                     <div class="col-8">
                                         <h5 class="text-start"><strong>Low</strong></h5>
                                     </div>
                                     <div class="col-4 d-flex justify-content-end">
                                         <a asp-action="AllTickets" asp-controller="Tickets">
-                                            <h5>@Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Low)).Count()</h5>
+                                            <h5>
+                                                <strong>
+                                                    @Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Low)).Count()
+                                                </strong>
+                                            </h5>
                                         </a>
                                     </div>
                                 </div>
@@ -268,7 +274,11 @@
                                     </div>
                                     <div class="col-4 d-flex justify-content-end">
                                         <a asp-action="AllTickets" asp-controller="Tickets">
-                                            <h5>@Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Medium)).Count()</h5>
+                                            <h5>
+                                                <strong>
+                                                    @Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Medium)).Count()
+                                                </strong>
+                                            </h5>
                                         </a>
                                     </div>
                                 </div>
@@ -280,7 +290,11 @@
                                     </div>
                                     <div class="col-4 d-flex justify-content-end">
                                         <a asp-action="AllTickets" asp-controller="Tickets">
-                                            <h5>@Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.High)).Count()</h5>
+                                            <h5>
+                                                <strong>
+                                                    @Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.High)).Count()
+                                                </strong>
+                                            </h5>
                                         </a>
                                     </div>
 
@@ -291,7 +305,11 @@
                                     </div>
                                     <div class="col-4 d-flex justify-content-end">
                                         <a asp-action="AllTickets" asp-controller="Tickets">
-                                            <h5>@Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Urgent)).Count()</h5>
+                                            <h5>
+                                                <strong>
+                                                    @Model.Tickets.Where(t=>t.TicketPriority.Name == nameof(HBTicketPriority.Urgent)).Count()
+                                                </strong>
+                                            </h5>
                                         </a>
                                     </div>
                                 </div>
@@ -486,8 +504,6 @@
                     <ul class="nav panel-tabs">
                         <li><a asp-area="Identity" asp-page="/Account/Manage/Index" target="_blank" title="Profile"><i class="fe fe-bell tx-15 me-2"></i>Profile</a></li>
                         <li><a asp-action="Index" asp-controller="Notifications"><i class="fe fe-bell tx-15 me-2"></i> Notifications</a></li>
-                        @*                         <li><a href="#side3" data-bs-toggle="tab"><i class="fe fe-users tx-15 me-2"></i> Friends</a></li>
-                        *@
                     </ul>
                 </div>
                 <div class="tab-content">
@@ -498,5 +514,8 @@
 
 
     </div>
+    <a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
+
+
 </body>
 </html>
