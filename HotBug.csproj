@@ -152,17 +152,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Update="wwwroot\img\hotbug\hotbugNoBgLightNoTextCropped.png">
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </Content>
-	  <Content Update="wwwroot\img\hotbug\hotbugNoBgLightTextCropped.png">
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </Content>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Folder Include="wwwroot\assets\" />
 	</ItemGroup>
 

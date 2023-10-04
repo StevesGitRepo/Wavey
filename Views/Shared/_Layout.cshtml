@@ -8,421 +8,432 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - HotBug Issue Tracker</title>
+    <title>@ViewData["Title"] - Wavey Bug Tracker</title>
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-   
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="icon" type="image/png" sizes="32x32" href="~/img/hotbug/hb1Favicon.PNG" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/img/hotbug/WaveyFav.png" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 </head>
 
 @{
-	HBUser hbUser = await UserManager.GetUserAsync(User);
+    HBUser hbUser = await UserManager.GetUserAsync(User);
 }
-	<body class="main-body app sidebar-mini ltr">
-		<div class="overflow-hidden">
-			<!-- Page -->
-			<div class="custom-index">
-				<div>
-					<!-- main-header -->
-					<div class="main-header side-header sticky nav nav-item">
-						<div class="container-fluid main-container">
-						<div class="main-header-left">
-								<div class="app-sidebar__toggle" data-bs-toggle="sidebar">
-								<a class="open-toggle" href="javascript:void(0);">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="secondary" class="bi bi-text-left mt-2" viewBox="0 0 16 16">
-									  <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-									</svg>
-								</a>
-								<a class="close-toggle" href="javascript:void(0);">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="dark" class="bi bi-x mt-1" viewBox="0 0 16 16">
-									  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-									</svg>
-								</a>
-								</div>
-								<div class="responsive-logo">
-									<a class="header-logo">
-										<img src="~/img/hotbug/hbLogoNoTextEyesFwd.png" width="90" class="logo-1" alt="logo">
-										<img src="~/img/hotbug/hbFavicon.png" class="dark-logo-1" alt="logo"/>
-									</a>
-								</div>
-								<div class="main-header-center ms-3 d-sm-none d-md-none d-lg-block">
-@*									<input class="form-control" placeholder="Search for anything..." type="search"> <button class="btn"><i class="fas fa-search d-none d-md-block"></i></button>
-*@								</div>
-							</div>
-							<div class="main-header-right">
-							@if (SignInManager.IsSignedIn(User))
-							{
-								<p class="mt-3 d-none d-lg-block">Hello @hbUser.FullName</p>
-							}
-							<div class="mb-0 navbar navbar-expand-lg navbar-nav-right responsive-navbar navbar-dark p-0">
-								<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-										<ul class="nav nav-item  navbar-nav-right ms-auto">
-											<li class="dropdown nav-item main-layout">
-@*												<a class="new nav-link theme-layout nav-link-bg layout-setting" >
-*@												
-											</li>
-											<li class="nav-link search-icon d-lg-none d-block">
-											</li>
-											<li class="dropdown nav-item main-header-message d-block d-lg-block">
-												@*<a class="new nav-link" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span class=" pulse-danger"></span></a>*@
-												<div class="dropdown-menu">
-													<div class="menu-header-content bg-primary text-start">
-														<div class="d-flex">
-															<h6 class="dropdown-title mb-1 tx-15 text-white fw-semibold">Messages</h6>
-@*															<a href="javascript:void(0);" class="badge rounded-pill bg-warning ms-auto my-auto float-end">Mark All Read</a>
-*@														</div>
-														<p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread messages</p>
-													</div>
-													<div class="main-message-list chat-scroll">
-													</div>
-													<div class="text-center dropdown-footer">
-													</div>
-												</div>
-											</li>
-											<li class="dropdown nav-item main-header-notification">
-												@*<a class="new nav-link" href="javascript:void(0);">
-													<svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span class=" pulse"></span>
-												</a>*@
-												<div class="dropdown-menu">
-													<div class="menu-header-content bg-primary text-start">
-														<p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread Notifications</p>
-													</div>
-													<div class="main-notification-list Notification-scroll">
-													</div>
-													<div class="dropdown-footer">
-														<a href="mail.html">VIEW ALL</a>
-													</div>
-												</div>
-											</li>
-											<li class="nav-item full-screen fullscreen-button">
-@*												<a class="new nav-link full-screen-link" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></a>
-*@											</li>
-											<li class="dropdown main-profile-menu nav nav-item nav-link">
-@*												<a class="profile-user d-flex" href=""><img alt="" src="../assets/img/users/6.jpg"></a>
-*@												<div class="dropdown-menu">
-													<div class="main-header-profile bg-primary p-3">
-														<div class="d-flex wd-100p">
-															<div class="main-img-user"><img alt="" src="../assets/img/users/6.jpg" class=""></div>
-															<div class="ms-3 my-auto">
-																<h6>Patrick Cruiser</h6><span>Premium Member</span>
-															</div>
-														</div>
-													</div>
-													<a class="dropdown-item" href="profile.html"><i class="bx bx-user-circle"></i>Profile</a>
-													<a class="dropdown-item" href="editprofile.html"><i class="bx bx-cog"></i> Edit Profile</a>
-													<a class="dropdown-item" href="mail.html"><i class="bx bxs-inbox"></i>Inbox</a>
-													<a class="dropdown-item" href="chat.html"><i class="bx bx-envelope"></i>Messages</a>
-													<a class="dropdown-item" href="editprofile.html"><i class="bx bx-slider-alt"></i> Account Settings</a>
-													<a class="dropdown-item" href="signin.html"><i class="bx bx-log-out"></i> Sign Out</a>
-												</div>
-											</li>
-											<li class="dropdown main-header-message right-toggle">
-												<a class="nav-link pe-0" data-bs-toggle="sidebar-right" data-bs-target=".sidebar-right">
-													<svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /main-header -->
-					<!-- main-sidebar -->
-					<div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
-					<div class="sticky">
-						<aside class="app-sidebar sidebar-scroll">
-							<div class="main-sidebar-header active">
-								<a class="desktop-logo logo-light active" asp-area="" asp-action="Index" asp-controller="Home"><img src="~/img/hotbug/hbLogoNoTextEyesFwd.png" class="main-logo" alt="logo"></a>
-								<a class="logo-icon mobile-logo icon-light active" href="index.html"><img src="~/img/hotbug/hbFavicon.png" alt="logo"></a>
-							</div>
-							<div class="main-sidemenu">
-								<div class="app-sidebar__user clearfix mt-5">
-								</div>
-								<div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" /></svg></div>
-								<ul class="side-menu">
-									<li class="side-item side-item-category">Home</li>
-									<!--DASHBOARD-->
-									<li class="slide">
-										<a class="side-menu__item" asp-area="" asp-action="Dashboard" asp-controller="Home"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" /><path d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" /></svg><span class="side-menu__label">Dashboard</span></a>
-									</li>
+<body class="main-body app sidebar-mini ltr">
+    <div class="overflow-hidden">
+        <!-- Page -->
+        <div class="custom-index">
+            <div>
+                <!-- main-header -->
+                <div class="main-header side-header sticky nav nav-item">
+                    <div class="container-fluid main-container">
+                        <div class="main-header-left">
+                            <div class="app-sidebar__toggle" data-bs-toggle="sidebar">
+                                <a class="open-toggle" href="javascript:void(0);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="secondary" class="bi bi-text-left mt-2" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
+                                </a>
+                                <a class="close-toggle" href="javascript:void(0);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="dark" class="bi bi-x mt-1" viewBox="0 0 16 16">
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="responsive-logo">
+                                <a class="header-logo">
+                                    <img src="~/img/hotbug/WaveyNav.png" width="90" class="logo-1" alt="logo">
+                                    <img src="~/img/hotbug/WaveyWave.png" class="dark-logo-1" alt="logo" />
+                                </a>
+                            </div>
+                            <div class="main-header-center ms-3 d-sm-none d-md-none d-lg-block">
+                                @*									<input class="form-control" placeholder="Search for anything..." type="search"> <button class="btn"><i class="fas fa-search d-none d-md-block"></i></button>
+                                *@
+                            </div>
+                        </div>
+                        <div class="main-header-right">
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <p class="mt-3 d-none d-lg-block">Hello @hbUser.FullName</p>
+                            }
+                            <div class="mb-0 navbar navbar-expand-lg navbar-nav-right responsive-navbar navbar-dark p-0">
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                                    <ul class="nav nav-item  navbar-nav-right ms-auto">
+                                        <li class="dropdown nav-item main-layout">
+                                            @*												<a class="new nav-link theme-layout nav-link-bg layout-setting" >
+                                            *@
+                                        </li>
+                                        <li class="nav-link search-icon d-lg-none d-block">
+                                        </li>
+                                        <li class="dropdown nav-item main-header-message d-block d-lg-block">
+                                            @*<a class="new nav-link" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span class=" pulse-danger"></span></a>*@
+                                            <div class="dropdown-menu">
+                                                <div class="menu-header-content bg-primary text-start">
+                                                    <div class="d-flex">
+                                                        <h6 class="dropdown-title mb-1 tx-15 text-white fw-semibold">Messages</h6>
+                                                        @*															<a href="javascript:void(0);" class="badge rounded-pill bg-warning ms-auto my-auto float-end">Mark All Read</a>
+                                                        *@
+                                                    </div>
+                                                    <p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread messages</p>
+                                                </div>
+                                                <div class="main-message-list chat-scroll">
+                                                </div>
+                                                <div class="text-center dropdown-footer">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="dropdown nav-item main-header-notification">
+                                            @*<a class="new nav-link" href="javascript:void(0);">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span class=" pulse"></span>
+                                            </a>*@
+                                            <div class="dropdown-menu">
+                                                <div class="menu-header-content bg-primary text-start">
+                                                    <p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread Notifications</p>
+                                                </div>
+                                                <div class="main-notification-list Notification-scroll">
+                                                </div>
+                                                <div class="dropdown-footer">
+                                                    <a href="mail.html">VIEW ALL</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item full-screen fullscreen-button">
+                                            @*												<a class="new nav-link full-screen-link" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></a>
+                                            *@
+                                        </li>
+                                        <li class="dropdown main-profile-menu nav nav-item nav-link">
+                                            @*												<a class="profile-user d-flex" href=""><img alt="" src="../assets/img/users/6.jpg"></a>
+                                            *@												<div class="dropdown-menu">
+                                                <div class="main-header-profile bg-primary p-3">
+                                                    <div class="d-flex wd-100p">
+                                                        <div class="main-img-user"><img alt="" src="../assets/img/users/6.jpg" class=""></div>
+                                                        <div class="ms-3 my-auto">
+                                                            <h6>Patrick Cruiser</h6><span>Premium Member</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="dropdown-item" href="profile.html"><i class="bx bx-user-circle"></i>Profile</a>
+                                                <a class="dropdown-item" href="editprofile.html"><i class="bx bx-cog"></i> Edit Profile</a>
+                                                <a class="dropdown-item" href="mail.html"><i class="bx bxs-inbox"></i>Inbox</a>
+                                                <a class="dropdown-item" href="chat.html"><i class="bx bx-envelope"></i>Messages</a>
+                                                <a class="dropdown-item" href="editprofile.html"><i class="bx bx-slider-alt"></i> Account Settings</a>
+                                                <a class="dropdown-item" href="signin.html"><i class="bx bx-log-out"></i> Sign Out</a>
+                                            </div>
+                                        </li>
+                                        <li class="dropdown main-header-message right-toggle">
+                                            <a class="nav-link pe-0" data-bs-toggle="sidebar-right" data-bs-target=".sidebar-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /main-header -->
+                <!-- main-sidebar -->
+                <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+                <div class="sticky">
+                    <aside class="app-sidebar sidebar-scroll">
+                        <div class="main-sidebar-header active">
+                            <a class="desktop-logo logo-light active" asp-area="" asp-action="Index" asp-controller="Home"><img src="~/img/hotbug/WaveyNav.png" class="main-logo" alt="logo"></a>
+                            <a class="logo-icon mobile-logo icon-light active" href="index.html"><img src="~/img/hotbug/WaveyFav.png" alt="logo"></a>
+                        </div>
+                        <div class="main-sidemenu">
+                            <div class="app-sidebar__user clearfix mt-5">
+                            </div>
+                            <div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" /></svg></div>
+                            <ul class="side-menu">
+                                <li class="side-item side-item-category">Home</li>
+                                <!--DASHBOARD-->
+                                <li class="slide">
+                                    <a class="side-menu__item" asp-area="" asp-action="Index" asp-controller="Home">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="darkslategray" style="color:darkslategray" class="bi bi-house-door side-menu__icon" viewBox="0 0 16 16">
+                                            <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z" />
+                                        </svg>
+                                        <span class="side-menu__label">Home</span>
+                                    </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item" asp-area="" asp-action="Dashboard" asp-controller="Home"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" /><path d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" /></svg><span class="side-menu__label">Dashboard</span></a>
+                                </li>
 
-									<li class="side-item side-item-category">Projects</li>
-									<!--COMPANY-->
-									<li class="slide">
-									<a class="side-menu__item" data-bs-toggle="" asp-area="" asp-action="Index" asp-controller="Companies"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M5 5h15v3H5zm12 5h3v9h-3zm-7 0h5v9h-5zm-5 0h3v9H5z" opacity=".3" /><path d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 19H5v-9h3v9zm7 0h-5v-9h5v9zm5 0h-3v-9h3v9zm0-11H5V5h15v3z" /></svg><span class="side-menu__label">Company</span><i class="angle fe fe-chevron-down"></i></a>
-									</li>
+                                <li class="side-item side-item-category">Projects</li>
+                                <!--COMPANY-->
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="" asp-area="" asp-action="Index" asp-controller="Companies"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M5 5h15v3H5zm12 5h3v9h-3zm-7 0h5v9h-5zm-5 0h3v9H5z" opacity=".3" /><path d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 19H5v-9h3v9zm7 0h-5v-9h5v9zm5 0h-3v-9h3v9zm0-11H5V5h15v3z" /></svg><span class="side-menu__label">Company</span><i class="angle fe fe-chevron-down"></i></a>
+                                </li>
 
-									<!--PROJECTS-->
-									<li class="slide">
-										<a class="side-menu__item" data-bs-toggle="" asp-action="AllProjects" asp-controller="Projects"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M5 9h14V5H5v4zm2-3.5c.83 0 1.5.67 1.5 1.5S7.83 8.5 7 8.5 5.5 7.83 5.5 7 6.17 5.5 7 5.5zM5 19h14v-4H5v4zm2-3.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z" opacity=".3" /><path d="M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zm-1 6H5v-4h14v4zm-12-.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zm-1 6H5V5h14v4zM7 8.5c.83 0 1.5-.67 1.5-1.5S7.83 5.5 7 5.5 5.5 6.17 5.5 7 6.17 8.5 7 8.5z" /></svg><span class="side-menu__label">Projects</span><i class="angle fe fe-chevron-down"></i></a>
-									</li>
+                                <!--PROJECTS-->
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="" asp-action="AllProjects" asp-controller="Projects"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M5 9h14V5H5v4zm2-3.5c.83 0 1.5.67 1.5 1.5S7.83 8.5 7 8.5 5.5 7.83 5.5 7 6.17 5.5 7 5.5zM5 19h14v-4H5v4zm2-3.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z" opacity=".3" /><path d="M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zm-1 6H5v-4h14v4zm-12-.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zm-1 6H5V5h14v4zM7 8.5c.83 0 1.5-.67 1.5-1.5S7.83 5.5 7 5.5 5.5 6.17 5.5 7 6.17 8.5 7 8.5z" /></svg><span class="side-menu__label">Projects</span><i class="angle fe fe-chevron-down"></i></a>
+                                </li>
 
-									<!--TICKETS-->
-									<li class="slide">
-										<a class="side-menu__item" data-bs-toggle="" asp-action="AllTickets" asp-controller="Tickets"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M13 4H6v16h12V9h-5V4zm3 14H8v-2h8v2zm0-6v2H8v-2h8z" opacity=".3" /><path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z" /></svg><span class="side-menu__label">Tickets</span><i class="angle fe fe-chevron-down"></i></a>
-									</li>
-									<!--NOTIFICATIONS-->
-									<li class="slide">
-										<a class="side-menu__item" asp-action="Index" asp-controller="Notifications"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><path d="M12 4.02C7.6 4.02 4.02 7.6 4.02 12S7.6 19.98 12 19.98s7.98-3.58 7.98-7.98S16.4 4.02 12 4.02zM11.39 19v-5.5H8.25l4.5-8.5v5.5h3L11.39 19z" opacity=".3" /><path d="M12 2.02c-5.51 0-9.98 4.47-9.98 9.98s4.47 9.98 9.98 9.98 9.98-4.47 9.98-9.98S17.51 2.02 12 2.02zm0 17.96c-4.4 0-7.98-3.58-7.98-7.98S7.6 4.02 12 4.02 19.98 7.6 19.98 12 16.4 19.98 12 19.98zM12.75 5l-4.5 8.5h3.14V19l4.36-8.5h-3V5z" /></svg><span class="side-menu__label">Notifications</span></a>
-									</li>
-								</ul>
-							</div>
-						</aside>
-					</div>
-					<!-- main-sidebar -->
-				</div>
-				
-				<!-- main-content -->
-				<div class="main-content app-content">
+                                <!--TICKETS-->
+                                <li class="slide">
+                                    <a class="side-menu__item" data-bs-toggle="" asp-action="AllTickets" asp-controller="Tickets"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M13 4H6v16h12V9h-5V4zm3 14H8v-2h8v2zm0-6v2H8v-2h8z" opacity=".3" /><path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z" /></svg><span class="side-menu__label">Tickets</span><i class="angle fe fe-chevron-down"></i></a>
+                                </li>
+                                <!--NOTIFICATIONS-->
+                                <li class="slide">
+                                    <a class="side-menu__item" asp-action="Index" asp-controller="Notifications"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><path d="M12 4.02C7.6 4.02 4.02 7.6 4.02 12S7.6 19.98 12 19.98s7.98-3.58 7.98-7.98S16.4 4.02 12 4.02zM11.39 19v-5.5H8.25l4.5-8.5v5.5h3L11.39 19z" opacity=".3" /><path d="M12 2.02c-5.51 0-9.98 4.47-9.98 9.98s4.47 9.98 9.98 9.98 9.98-4.47 9.98-9.98S17.51 2.02 12 2.02zm0 17.96c-4.4 0-7.98-3.58-7.98-7.98S7.6 4.02 12 4.02 19.98 7.6 19.98 12 16.4 19.98 12 19.98zM12.75 5l-4.5 8.5h3.14V19l4.36-8.5h-3V5z" /></svg><span class="side-menu__label">Notifications</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <!-- main-sidebar -->
+            </div>
 
-					<!-- container -->
-					<div class="main-container container-fluid">
-						<main class="row">
-							@RenderBody()
-						</main>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /Container -->
-		</div>
-		
-		<a href="/" class="d-flex me-md-auto"></a>
-		<div class="col d-flex flex-column h-100"></div>
-		
-		<!--FOOTER-->
-		<div class="main-footer">
-			<div class="container-fluid pd-t-0 d-flex">
-				<span> Copyright © 2023 <a href="javascript:void(0);" class="text-primary">Hotbug</a>. Designed by <a href="https://steveszymanski.com/"> Steve Szymanski </a> All rights reserved.</span>
-			</div>
-		</div>
+            <!-- main-content -->
+            <div class="main-content app-content">
 
-		</div>
-		<!-- End Page -->
-		<!-- Back-to-top -->
-		<a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
+                <!-- container -->
+                <div class="main-container container-fluid">
+                    <main class="row">
+                        @RenderBody()
+                    </main>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /Container -->
+    </div>
 
-		<!-- JQuery min js -->
-		<script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <a href="/" class="d-flex me-md-auto"></a>
+    <div class="col d-flex flex-column h-100"></div>
 
-		<!-- Bootstrap Bundle js -->
-		<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
-		<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--FOOTER-->
+    <div class="main-footer">
+        <div class="container-fluid pd-t-0 d-flex">
+            <span> Copyright © 2023 <a href="javascript:void(0);" class="text-primary">Wavey</a>. Designed by <a href="https://steveszymanski.com/"> Steve Szymanski </a> All rights reserved.</span>
+        </div>
+    </div>
 
-		<!--Internal  Chart.bundle js -->
-		<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+    </div>
+    <!-- End Page -->
+    <!-- Back-to-top -->
+    <a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
 
-		<!-- Moment js -->
-		<script src="../assets/plugins/moment/moment.js"></script>
+    <!-- JQuery min js -->
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
 
-		<!--Internal Sparkline js -->
-		<script src="../assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!-- Bootstrap Bundle js -->
+    <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
-		<!-- Moment js -->
-		<script src="../assets/plugins/raphael/raphael.min.js"></script>
+    <!--Internal  Chart.bundle js -->
+    <script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
 
-		<!--Internal Apexchart js-->
-		<script src="../assets/js/apexcharts.js"></script>
+    <!-- Moment js -->
+    <script src="../assets/plugins/moment/moment.js"></script>
 
-		<!--Internal  Perfect-scrollbar js -->
-		<script src="../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-		<script src="../assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+    <!--Internal Sparkline js -->
+    <script src="../assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
 
-		<!-- Eva-icons js -->
-		<script src="../assets/js/eva-icons.min.js"></script>
+    <!-- Moment js -->
+    <script src="../assets/plugins/raphael/raphael.min.js"></script>
 
-		<!-- right-sidebar js -->
-		<script src="../assets/plugins/sidebar/sidebar.js"></script>
-		<script src="../assets/plugins/sidebar/sidebar-custom.js"></script>
+    <!--Internal Apexchart js-->
+    <script src="../assets/js/apexcharts.js"></script>
 
-		<!-- Sticky js -->
-		<script src="../assets/js/sticky.js"></script>
-		<script src="../assets/js/modal-popup.js"></script>
+    <!--Internal  Perfect-scrollbar js -->
+    <script src="../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="../assets/plugins/perfect-scrollbar/p-scroll.js"></script>
 
-		<!-- Left-menu js-->
-		<script src="../assets/plugins/side-menu/sidemenu.js"></script>
+    <!-- Eva-icons js -->
+    <script src="../assets/js/eva-icons.min.js"></script>
 
-		<!-- Internal Map -->
-		<script src="../assets/plugins/jqvmap/jquery.vmap.min.js"></script>
-		<script src="../assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- right-sidebar js -->
+    <script src="../assets/plugins/sidebar/sidebar.js"></script>
+    <script src="../assets/plugins/sidebar/sidebar-custom.js"></script>
 
-		<!--Internal  index js -->
-		<script src="../assets/js/index.js"></script>
+    <!-- Sticky js -->
+    <script src="../assets/js/sticky.js"></script>
+    <script src="../assets/js/modal-popup.js"></script>
 
-		<!--themecolor js-->
-		<script src="../assets/js/themecolor.js"></script>
+    <!-- Left-menu js-->
+    <script src="../assets/plugins/side-menu/sidemenu.js"></script>
 
-		<!-- Apexchart js-->
-		<script src="../assets/js/apexcharts.js"></script>
-		<script src="../assets/js/jquery.vmap.sampledata.js"></script>
+    <!-- Internal Map -->
+    <script src="../assets/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="../assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 
-		<!-- custom js -->
-		<script src="../assets/js/custom.js"></script>
+    <!--Internal  index js -->
+    <script src="../assets/js/index.js"></script>
 
-		<!-- switcher-styles js -->
-		<script src="../assets/js/swither-styles.js"></script>
-		<!--Google Charts-->
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <!--themecolor js-->
+    <script src="../assets/js/themecolor.js"></script>
 
-		<script type="text/javascript">
-			google.load("visualization", "1", { packages: ["corechart"] });
-			google.setOnLoadCallback(drawChart);
-			function drawChart() {
-				$.ajax({
-					type: "POST",
-					url: "/Home/GglProjectPriority",
-					data: '{}',
-					contentType: "application/json; charset=utf-8",
-					dataType: "json",
-					success: function (result) {
-						var data = google.visualization.arrayToDataTable(result);
+    <!-- Apexchart js-->
+    <script src="../assets/js/apexcharts.js"></script>
+    <script src="../assets/js/jquery.vmap.sampledata.js"></script>
 
-						//3D Pie
-						var options = {
-							title: 'Project Priority',
-							is3D: true,
-							chartArea: { left: 0, bottom: 15, width: '100%', height: '100%' },
-							legend: { position: 'bottom' }
+    <!-- custom js -->
+    <script src="../assets/js/custom.js"></script>
 
-						};
+    <!-- switcher-styles js -->
+    <script src="../assets/js/swither-styles.js"></script>
+    <!--Google Charts-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-						var chart = new google.visualization.PieChart($("#chart3D")[0]);
-						chart.draw(data, options);
-					},
-					failure: function (rresult) {
-						alert(result.d);
-					},
-					error: function (result) {
-						alert(result.d);
-					}
-				});
-			}
-		</script>
-		<script type="text/javascript">
-			google.load("visualization", "1", { packages: ["corechart"] });
-			google.setOnLoadCallback(drawChart);
-			function drawChart() {
-				$.ajax({
-					type: "POST",
-					url: "/Home/GglProjectPriority",
-					data: '{}',
-					contentType: "application/json; charset=utf-8",
-					dataType: "json",
-					success: function (result) {
-						var data = google.visualization.arrayToDataTable(result);
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+            $.ajax({
+                type: "POST",
+                url: "/Home/GglProjectPriority",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var data = google.visualization.arrayToDataTable(result);
 
-						//Donut
-						var options = {
-							title: 'Company Ticket Distribution',
-							pieHole: 0.3,
-							chartArea: { left: 0, bottom: 15, width: '100%', height: '100%' },
-							legend: { position: 'bottom' }
-						};
-						var chart = new google.visualization.PieChart($("#donut")[0]);
-						chart.draw(data, options);
-					},
-					failure: function (rresult) {
-						alert(result.d);
-					},
-					error: function (result) {
-						alert(result.d);
-					}
-				});
-			}
-		</script>
+                    //3D Pie
+                    var options = {
+                        title: 'Project Priority',
+                        is3D: true,
+                        chartArea: { left: 0, bottom: 15, width: '100%', height: '100%' },
+                        legend: { position: 'bottom' }
 
-		<!-- @* Morris Donut Chart *@ -->
-		<!-- *** Begin Chart JS Pie/Donut *** -->
-		<!-- *** End Chart JS Donut *** -->
-		<!-- *** Begin AM Charts *** -->
-		<!-- Resources -->
-		<!-- *** End AM Charts *** -->
-		<!-- Chart code -->
-		<script>
-			$.ajax({
-				type: "POST",
-				url: "/Home/AmCharts",
-				data: '{}',
-				contentType: "application/json; charset=utf-8",
-				dataType: "json",
-				success: function (result) {
-					am4core.ready(function () {
+                    };
 
-						// Themes begin
-						// Themes end
+                    var chart = new google.visualization.PieChart($("#chart3D")[0]);
+                    chart.draw(data, options);
+                },
+                failure: function (rresult) {
+                    alert(result.d);
+                },
+                error: function (result) {
+                    alert(result.d);
+                }
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+            $.ajax({
+                type: "POST",
+                url: "/Home/GglProjectPriority",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var data = google.visualization.arrayToDataTable(result);
 
-						// Create chart instance
-						var chart = am4core.create("chartdiv", am4charts.XYChart);
+                    //Donut
+                    var options = {
+                        title: 'Company Ticket Distribution',
+                        pieHole: 0.3,
+                        chartArea: { left: 0, bottom: 15, width: '100%', height: '100%' },
+                        legend: { position: 'bottom' }
+                    };
+                    var chart = new google.visualization.PieChart($("#donut")[0]);
+                    chart.draw(data, options);
+                },
+                failure: function (rresult) {
+                    alert(result.d);
+                },
+                error: function (result) {
+                    alert(result.d);
+                }
+            });
+        }
+    </script>
 
+    <!-- @* Morris Donut Chart *@ -->
+    <!-- *** Begin Chart JS Pie/Donut *** -->
+    <!-- *** End Chart JS Donut *** -->
+    <!-- *** Begin AM Charts *** -->
+    <!-- Resources -->
+    <!-- *** End AM Charts *** -->
+    <!-- Chart code -->
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/Home/AmCharts",
+            data: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                am4core.ready(function () {
 
-						// Add data
-						chart.data = result;
+                    // Themes begin
+                    // Themes end
 
-						// Create axes
-						var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
-						categoryAxis.dataFields.category = "project";
-						categoryAxis.numberFormatter.numberFormat = "#";
-						categoryAxis.renderer.inversed = true;
-						categoryAxis.renderer.grid.template.location = 0;
-						categoryAxis.renderer.cellStartLocation = 0.1;
-						categoryAxis.renderer.cellEndLocation = 0.9;
-
-						var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
-						valueAxis.renderer.opposite = true;
-
-						// Create series
-						function createSeries(field, name) {
-							var series = chart.series.push(new am4charts.ColumnSeries());
-							series.dataFields.valueX = field;
-							series.dataFields.categoryY = "project";
-							series.name = name;
-							series.columns.template.tooltipText = "{name}: [bold]{valueX}[/]";
-							series.columns.template.height = am4core.percent(100);
-							series.sequencedInterpolation = true;
-
-							var valueLabel = series.bullets.push(new am4charts.LabelBullet());
-							valueLabel.label.text = "{valueX}";
-							valueLabel.label.horizontalCenter = "left";
-							valueLabel.label.dx = 10;
-							valueLabel.label.hideOversized = false;
-							valueLabel.label.truncate = false;
-
-							var categoryLabel = series.bullets.push(new am4charts.LabelBullet());
-							categoryLabel.label.text = "{name}";
-							categoryLabel.label.horizontalCenter = "right";
-							categoryLabel.label.dx = -10;
-							categoryLabel.label.fill = am4core.color("#fff");
-							categoryLabel.label.hideOversized = false;
-							categoryLabel.label.truncate = false;
-						}
-
-						createSeries("tickets", "Tickets");
-						createSeries("developers", "Devs");
-
-					}); // end am4core.ready()
+                    // Create chart instance
+                    var chart = am4core.create("chartdiv", am4charts.XYChart);
 
 
-				},
-				failure: function (result) {
-					alert(result.d);
-				},
-				error: function (result) {
-					alert(result.d);
-				}
-			});
-		</script>
-		<script src="~/js/site.js"></script>
-		<script src="~/js/JavaScript.js"></script>
-		<script src="~/lib/jquery/dist/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-		@await RenderSectionAsync("Scripts", required: false)
-	</body>
+                    // Add data
+                    chart.data = result;
+
+                    // Create axes
+                    var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+                    categoryAxis.dataFields.category = "project";
+                    categoryAxis.numberFormatter.numberFormat = "#";
+                    categoryAxis.renderer.inversed = true;
+                    categoryAxis.renderer.grid.template.location = 0;
+                    categoryAxis.renderer.cellStartLocation = 0.1;
+                    categoryAxis.renderer.cellEndLocation = 0.9;
+
+                    var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+                    valueAxis.renderer.opposite = true;
+
+                    // Create series
+                    function createSeries(field, name) {
+                        var series = chart.series.push(new am4charts.ColumnSeries());
+                        series.dataFields.valueX = field;
+                        series.dataFields.categoryY = "project";
+                        series.name = name;
+                        series.columns.template.tooltipText = "{name}: [bold]{valueX}[/]";
+                        series.columns.template.height = am4core.percent(100);
+                        series.sequencedInterpolation = true;
+
+                        var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+                        valueLabel.label.text = "{valueX}";
+                        valueLabel.label.horizontalCenter = "left";
+                        valueLabel.label.dx = 10;
+                        valueLabel.label.hideOversized = false;
+                        valueLabel.label.truncate = false;
+
+                        var categoryLabel = series.bullets.push(new am4charts.LabelBullet());
+                        categoryLabel.label.text = "{name}";
+                        categoryLabel.label.horizontalCenter = "right";
+                        categoryLabel.label.dx = -10;
+                        categoryLabel.label.fill = am4core.color("#fff");
+                        categoryLabel.label.hideOversized = false;
+                        categoryLabel.label.truncate = false;
+                    }
+
+                    createSeries("tickets", "Tickets");
+                    createSeries("developers", "Devs");
+
+                }); // end am4core.ready()
+
+
+            },
+            failure: function (result) {
+                alert(result.d);
+            },
+            error: function (result) {
+                alert(result.d);
+            }
+        });
+    </script>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/JavaScript.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
 </html>
