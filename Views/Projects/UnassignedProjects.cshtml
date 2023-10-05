@@ -16,11 +16,11 @@
 
         <!--ALL PROJECTS-->
         <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+            <div class="card overflow-hidden sales-card bg-white">
                 <a asp-controller="Projects" asp-action="AllProjects">
                     <div class="px-3 pt-3 pb-2 pt-0">
                         <div class="">
-                            <h6 class="tx-16 text-white">ALL PROJECTS</h6>
+                            <h6 class="tx-16 text-dark">ALL PROJECTS</h6>
                         </div>
                     </div>
                 </a>
@@ -29,11 +29,11 @@
 
         <!--MY PROJECTS-->
         <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+            <div class="card overflow-hidden sales-card bg-white">
                 <a asp-controller="Projects" asp-action="MyProjects">
                     <div class="px-3 pt-3 pb-2 pt-0">
                         <div class="">
-                            <h6 class="tx-16 text-white">MY PROJECTS</h6>
+                            <h6 class="tx-16 text-dark">MY PROJECTS</h6>
                         </div>
                     </div>
                 </a>
@@ -42,11 +42,11 @@
 
         <!--ARCHIVED PROJECTS-->
         <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+            <div class="card overflow-hidden sales-card bg-white">
                 <a asp-controller="Projects" asp-action="ArchivedProjects">
                     <div class="px-3 pt-3 pb-2 pt-0">
                         <div class="">
-                            <h6 class="tx-16 text-white">ARCHIVED</h6>
+                            <h6 class="tx-16 text-dark">ARCHIVED</h6>
                         </div>
                     </div>
                 </a>
@@ -57,7 +57,7 @@
         @if (User.IsInRole(nameof(Roles.Admin)))
         {
             <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div class="card overflow-hidden active-card sales-card bg-info-gradient alert-dark">
+                <div class="card overflow-hidden active-card sales-card bg-info-gradient">
                     <a asp-controller="Projects" asp-action="UnassignedProjects">
                         <div class="px-3 pt-3 pb-2 pt-0">
                             <div class="">
@@ -71,7 +71,7 @@
         else
         {
             <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div class="card overflow-hidden active-card sales-card bg-info-gradient alert-dark" title="Admin & Project Manager Access">
+                <div class="card overflow-hidden active-card sales-card bg-info-gradient" title="Admin & Project Manager Access">
                     <div class="px-3 pt-3 pb-2 pt-0">
                         <div class="">
                             <h6 class="tx-16 text-white text-uppercase">UNASSIGNED</h6>
@@ -100,31 +100,31 @@
                 </h3>
             </div>
             <div class="table-responsive country-table" style="overflow-y:auto;height:490px;">
-                <table class="table table-striped mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
+                <table class="table table-hover mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
                     <thead>
                         <tr>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.Name)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.Description)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.StartDate)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.EndDate)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.ImageFileData)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.Archived)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.ProjectPriority)
                             </th>
-                            <th class="bg-dark text-light">Assign PM</th>
+                            <th class="bg-light text-dark">Assign PM</th>
                         </tr>
                     </thead>
                     <tbody>

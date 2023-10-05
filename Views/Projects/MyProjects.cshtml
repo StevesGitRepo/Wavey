@@ -18,11 +18,11 @@
 
         <!--ALL PROJECTS-->
         <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+            <div class="card overflow-hidden sales-card bg-white">
                 <a asp-controller="Projects" asp-action="AllProjects">
                     <div class="px-3 pt-3 pb-2 pt-0">
                         <div class="">
-                            <h6 class="tx-16 text-white">ALL PROJECTS</h6>
+                            <h6 class="tx-16 text-dark">ALL PROJECTS</h6>
                         </div>
                     </div>
                 </a>
@@ -31,7 +31,7 @@
 
         <!--MY PROJECTS-->
         <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-            <div class="card overflow-hidden active-card sales-card bg-info-gradient alert-dark">
+            <div class="card overflow-hidden active-card sales-card bg-info-gradient">
                 <a asp-controller="Projects" asp-action="MyProjects">
                     <div class="px-3 pt-3 pb-2 pt-0">
                         <div class="">
@@ -44,11 +44,11 @@
 
         <!--ARCHIVED PROJECTS-->
         <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-            <div class="card overflow-hidden sales-card bg-secondary-gradient">
+            <div class="card overflow-hidden sales-card bg-white">
                 <a asp-controller="Projects" asp-action="ArchivedProjects">
                     <div class="px-3 pt-3 pb-2 pt-0">
                         <div class="">
-                            <h6 class="tx-16 text-white">ARCHIVED</h6>
+                            <h6 class="tx-16 text-dark">ARCHIVED</h6>
                         </div>
                     </div>
                 </a>
@@ -59,11 +59,11 @@
         @if (User.IsInRole(nameof(Roles.Admin)))
         {
             <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div class="card overflow-hidden sales-card bg-secondary-gradient">
+                <div class="card overflow-hidden sales-card bg-white">
                     <a asp-controller="Projects" asp-action="UnassignedProjects">
                         <div class="px-3 pt-3 pb-2 pt-0">
                             <div class="">
-                                <h6 class="tx-16 text-white text-uppercase">UNASSIGNED</h6>
+                                <h6 class="tx-16 text-dark text-uppercase">UNASSIGNED</h6>
                             </div>
                         </div>
                     </a>
@@ -73,10 +73,10 @@
         else
         {
             <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                <div class="card overflow-hidden sales-card bg-secondary-gradient" title="Admin & Project Manager Access">
+                <div class="card overflow-hidden sales-card bg-white" title="Admin & Project Manager Access">
                     <div class="px-3 pt-3  pb-2 pt-0">
                         <div class="">
-                            <h6 class="tx-16 text-white text-uppercase">UNASSIGNED</h6>
+                            <h6 class="tx-16 text-dark text-uppercase">UNASSIGNED</h6>
                         </div>
                     </div>
                 </div>
@@ -104,42 +104,42 @@
         </div>
         <div class="card">
             <div class="table-responsive country-table" style="overflow-y:auto;height:460px;">
-                <table class="table table-striped mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
+                <table class="table table-hover mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
                     <thead>
                         <tr class="">
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.Name)
                             </th>
-                            <th class="bg-dark text-light ps-5 pe-5">
+                            <th class="bg-light text-dark ps-5 pe-5">
                                 <div class="ps-5 pe-5">
                                     @Html.DisplayNameFor(model => model.Description)
                                 </div>
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.StartDate)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.EndDate)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.ImageFileName)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.ImageFileData)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.ImageContentType)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.Archived)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.Company)
                             </th>
-                            <th class="bg-dark text-light">
+                            <th class="bg-light text-dark">
                                 @Html.DisplayNameFor(model => model.ProjectPriority)
                             </th>
-                            <th class="bg-dark text-light">ACTION</th>
+                            <th class="bg-light text-dark">ACTION</th>
                         </tr>
                     </thead>
 

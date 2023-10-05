@@ -44751,7 +44751,15 @@ button.bg-dark:focus {
 }
 
 .bg-info-gradient {
-    background-image: linear-gradient(to right, #0296ce 0%, #38c6f7 100%) !important;
+    background-image: linear-gradient(to right, #1274F1 0%, #0FC5FF 100%) !important;
+}
+
+.bg-info2-gradient {
+    background-image: linear-gradient(to right, #0FC5FF 0%, #abe1ff 100%) !important;
+}
+
+.bg-info3-gradient {
+    background-image: linear-gradient(to right, #abe1ff 0%, #e3f9ff 100%) !important;
 }
 
 .bg-secondary-gradient {
