@@ -180,7 +180,7 @@ namespace HotBug.Controllers
         }
 
         // GET: Tickets/Create
-        // async methods must invole a Task<>!
+        // async methods must invoke a Task<>!
         public async Task<IActionResult> Create()
         {
             HBUser hBUser = await _userManager.GetUserAsync(User);
@@ -208,7 +208,7 @@ namespace HotBug.Controllers
         //these items bind to the Ticket:
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Created,TicketTypeId,TicketPriorityId")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,Created,ProjectId,TicketTypeId,TicketPriorityId")] Ticket ticket)
         {
             HBUser hBUser = await _userManager.GetUserAsync(User);
 
