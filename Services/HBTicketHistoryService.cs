@@ -20,7 +20,7 @@ namespace HotBug.Services
         {
 
             //NEW TICKET HAS BEEN ADDED
-            if(oldTicket != null && newTicket != null)
+            if(oldTicket == null && newTicket != null)
             {
                 TicketHistory history = new()
                 {
