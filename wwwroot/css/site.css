@@ -43237,6 +43237,14 @@ textarea.parsley-success:focus {
     backdrop-filter: blur(2px);
 }
 
+.demoLogin-bg-image {
+    background-image: url(../img/hotbug/WaveyDemoBg.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: inherit;
+    backdrop-filter: blur(0px);
+}
+
 .construction .form-control {
     border-radius: 4px;
     width: 100%;

@@ -19,10 +19,10 @@ namespace HotBug.Models
 
         //Navigation properties
 
-        public virtual ICollection<HBUser> Members { get; set; }
-        public virtual ICollection<Project> Projects { get; set; }
+        public virtual ICollection<HBUser>? Members { get; set; }
+        public virtual ICollection<Project>? Projects { get; set; }
 
         //create relationship to Invitees
-        public virtual ICollection<Invite> Invites { get; set; }
+        public virtual ICollection<Invite>? Invites { get; set; }
     }
 }
