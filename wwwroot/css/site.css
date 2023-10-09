@@ -43234,11 +43234,11 @@ textarea.parsley-success:focus {
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
 }
 
 .demoLogin-bg-image {
-    background-image: url(../img/hotbug/WaveyDemoBg.png);
+    background-image: url(../img/hotbug/WaveyDemoSurfboards.png);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: inherit;
