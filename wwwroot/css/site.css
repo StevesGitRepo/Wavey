@@ -44767,7 +44767,7 @@ button.bg-dark:focus {
 }
 
 .bg-info3-gradient {
-    background-image: linear-gradient(to right, #abe1ff 0%, #e3f9ff 100%) !important;
+    background-image: linear-gradient(to right, #abe1ff 0%, #f5fcfd 100%) !important;
 }
 
 .bg-secondary-gradient {
@@ -79045,6 +79045,11 @@ a.ui-button:active {
     margin: 0 auto;
     inset-inline-end: 10px !important;
     inset-inline-start: 10px !important;
+}
+
+.overflowHidden {
+    display:flex;
+    overflow:hidden;
 }
 
 /**
