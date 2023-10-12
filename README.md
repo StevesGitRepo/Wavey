@@ -24,7 +24,7 @@ The Dashboard is the first page the user sees after signing in. The Wavey dashbo
  
 <h2>Features</h2>
 
-The Wavey Bug Tracker is a feature-rich application and there are plans to expand the software suite in the future.  Here are some of the current features of the app:
+The Wavey Bug Tracker is a feature-rich application and there are plans to expand the scope in the future.  Here are some of the current features of the app:
 
   * CRUD: Create, Read, Update, Delete (Archive) Companies, Projects, Tickets
   * Manage User roles, tickets, and project data
