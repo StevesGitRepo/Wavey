@@ -32,7 +32,7 @@ I love the design process.  Whether it's creating a database, scaffolding a web 
 
 I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint. The final image may be a future iteration.
 
-<h1>The Dashboard</h1>
+<h2>The Dashboard</h2>
 
 The Dashboard is the first page the user sees after signing in. The Wavey dashboard is a mix of charts, lists, and live data is called into corresponding cards with C# Razor Pages in the Html.
  
