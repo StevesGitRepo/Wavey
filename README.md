@@ -3,7 +3,7 @@
 ![waveyCardGradientCropped](https://github.com/StevesGitRepo/HotBug/assets/104333881/c2470536-1256-40c9-9c14-62df49511d69)
 
 
-The Wavey Bug Tracker (formerly Hotbug) is an issue tracker that I built in .NET, C#, PostgreSQL and MVC.  This is a powerful application that I use to work through bugs in my own projects. Enjoy this walk-through! <a href="https://hotbug-production.up.railway.app/" target="_blank">Go to Wavey</a>
+The Wavey Bug Tracker (formerly Hotbug) is an issue tracker that I built in .NET, C#, PostgreSQL and MVC.  This is a powerful application that I use to work through bugs in my own projects. Enjoy this walk-through!  <a href="https://hotbug-production.up.railway.app/" target="_blank">Go to Wavey</a>
 
 <h2>First Impressions</h2>
 
