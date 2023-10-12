@@ -17,10 +17,10 @@ The Wavey Bug Tracker (formerly Hotbug) is an issue tracker that I built in .NET
   * Design:  I love the design process.  Whether it's creating a database, scaffolding a web page, or creating a logo I try to balance creativity and usability.
       Here is a example of the evolution of the favicon logo:
       
-![WaveyReadMe1](https://github.com/StevesGitRepo/HotBug/assets/104333881/f6ad8628-028c-4947-9423-33d958de4000)
+    ![WaveyReadMe1](https://github.com/StevesGitRepo/HotBug/assets/104333881/f6ad8628-028c-4947-9423-33d958de4000)
 
-![WaveyReadMe2](https://github.com/StevesGitRepo/HotBug/assets/104333881/25be4e13-f7cf-4a6b-bc61-5f6f3d33bde5)
+    ![WaveyReadMe2](https://github.com/StevesGitRepo/HotBug/assets/104333881/25be4e13-f7cf-4a6b-bc61-5f6f3d33bde5)
 
-![WaveyReadMe3](https://github.com/StevesGitRepo/HotBug/assets/104333881/e81e9bd2-a1d7-499a-a675-881fd8a29108)
+    ![WaveyReadMe3](https://github.com/StevesGitRepo/HotBug/assets/104333881/e81e9bd2-a1d7-499a-a675-881fd8a29108)
 
-![WaveyReadMe4](https://github.com/StevesGitRepo/HotBug/assets/104333881/76514740-56d3-4b1d-a832-44816a3c6eee)
+    ![WaveyReadMe4](https://github.com/StevesGitRepo/HotBug/assets/104333881/76514740-56d3-4b1d-a832-44816a3c6eee)
