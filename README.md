@@ -5,6 +5,22 @@
 
 The Wavey Bug Tracker (formerly Hotbug) is an issue tracker that I built in .NET.  It combines the back-end of C# and PostgreSQL and MVC ties the data to the front-end.  This powerful application is greater in scope than anything I have built before and here are a few key features of the project. <a href="https://hotbug-production.up.railway.app/">Go to Wavey</a>
 
+<h2>First Impressions</h2>
+
+My goal with the Wavey landing pages was to create an inviting user experience...
+
+![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/074fb188-fe3a-43da-85d3-f396dc61dafd)
+
+...and to continue the themes to the demo log in page:
+
+![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/6d9e805c-ef6a-4d16-8b28-a425e4fd743b)
+
+<h2>The Dashboard</h2>
+
+The Dashboard is the first page the user sees after signing in. The Wavey dashboard is a mix of charts, lists, and live data is called into corresponding cards with C# Razor Pages in the Html.
+ 
+![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/b2a74f70-1259-416d-8484-1adb902e64d5)
+ 
 <h2>Features</h2>
 
   * CRUD: Create, Read, Update, Delete (Archive) Companies, Projects, Tickets
@@ -32,9 +48,5 @@ I love the design process.  Whether it's creating a database, scaffolding a web 
 
 I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint. The final image may be a future iteration.
 
-<h2>The Dashboard</h2>
 
-The Dashboard is the first page the user sees after signing in. The Wavey dashboard is a mix of charts, lists, and live data is called into corresponding cards with C# Razor Pages in the Html.
- 
- ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/b2a74f70-1259-416d-8484-1adb902e64d5)
 
