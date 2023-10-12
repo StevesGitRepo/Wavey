@@ -39,8 +39,8 @@ The Wavey Bug Tracker is a feature-rich application and there are plans to expan
 
 <h2>Design</h2>
 
-I love the design process.  Whether it's creating a database, scaffolding a web page, or creating a logo I try to balance design and function.
-      Here is a example of the evolution of the favicon logo:
+I love the design process.  Whether it's creating a database, web page, or logo I try to balance design and function.
+      See the evolution of the Wavey favicon logo:
       
       
   ![WaveyReadMe1](https://github.com/StevesGitRepo/HotBug/assets/104333881/f6ad8628-028c-4947-9423-33d958de4000)
