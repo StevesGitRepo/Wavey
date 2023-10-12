@@ -19,7 +19,8 @@ The Wavey Bug Tracker (formerly Hotbug) is an issue tracker that I built in .NET
      ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/92c4db04-67b9-4df9-a461-92de02e5c2db)
 
 <h2>Design</h2>
-  * I love the design process.  Whether it's creating a database, scaffolding a web page, or creating a logo I try to balance creativity and usability.
+
+I love the design process.  Whether it's creating a database, scaffolding a web page, or creating a logo I try to balance creativity and usability.
       Here is a example of the evolution of the favicon logo:
       
       
@@ -29,7 +30,7 @@ The Wavey Bug Tracker (formerly Hotbug) is an issue tracker that I built in .NET
   ![WaveyReadMe4](https://github.com/StevesGitRepo/HotBug/assets/104333881/76514740-56d3-4b1d-a832-44816a3c6eee) ??? 
   ![WaveyReadMe5](https://github.com/StevesGitRepo/HotBug/assets/104333881/927b033a-a560-4c32-be61-15a6b4e0a6e8)
 
-  * I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint. The final image may be a future iteration.
+I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint. The final image may be a future iteration.
 
 <h1>The Dashboard</h1>
 
