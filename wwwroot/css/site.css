@@ -43221,7 +43221,7 @@ textarea.parsley-success:focus {
 }
 
 .index-bg-image {
-    background-image: url(../img/hotbug/hbbg1600w.png);
+    background-image: url(../img/hotbug/WaveyWaveBg.png);
     background-repeat: no-repeat;
     background-position:bottom;
     background-size:inherit;
@@ -43230,11 +43230,11 @@ textarea.parsley-success:focus {
 }
 
 .index-bg-imageUpD {
-    background-image: url(../img/hotbug/hbbg1600wUpsideDown.png);
+    background-image: url(../img/hotbug/WaveyWaveBg2.png);
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(0px);
 }
 
 .demoLogin-bg-image {
