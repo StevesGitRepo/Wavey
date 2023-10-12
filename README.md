@@ -7,11 +7,11 @@ The Wavey Bug Tracker (formerly Hotbug) is an issue tracker that I built in .NET
 
 <h2>First Impressions</h2>
 
-My goal with the Wavey landing pages was to create an inviting user experience...
+I created an inviting user experience on the Wavey landing page...
 
 ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/074fb188-fe3a-43da-85d3-f396dc61dafd)
 
-...and to continue the themes to the demo log in page:
+...and continued the theme to the demo log in page:
 
 ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/957f3957-ca1d-4798-be3b-a637a7fdaeba)
 
