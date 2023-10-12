@@ -13,7 +13,8 @@ My goal with the Wavey landing pages was to create an inviting user experience..
 
 ...and to continue the themes to the demo log in page:
 
-![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/6d9e805c-ef6a-4d16-8b28-a425e4fd743b)
+![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/957f3957-ca1d-4798-be3b-a637a7fdaeba)
+
 
 <h2>The Dashboard</h2>
 
