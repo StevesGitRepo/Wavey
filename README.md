@@ -20,7 +20,7 @@ The Wavey Bug Tracker (formerly Hotbug) is an issue tracker that I built in .NET
 
 <h2>Design</h2>
 
-I love the design process.  Whether it's creating a database, scaffolding a web page, or creating a logo I try to balance creativity and usability.
+I love the design process.  Whether it's creating a database, scaffolding a web page, or creating a logo I try to balance design and function.
       Here is a example of the evolution of the favicon logo:
       
       
