@@ -28,13 +28,11 @@ The Wavey Bug Tracker (formerly Hotbug) is an issue tracker that I built in .NET
   ![WaveyReadMe4](https://github.com/StevesGitRepo/HotBug/assets/104333881/76514740-56d3-4b1d-a832-44816a3c6eee) ??? 
   ![WaveyReadMe5](https://github.com/StevesGitRepo/HotBug/assets/104333881/927b033a-a560-4c32-be61-15a6b4e0a6e8)
 
- * I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint. The final image may be a future iteration.
+  * I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint. The final image may be a future iteration.
 
 <h1>The Dashboard</h1>
 
 The Dashboard is the first page the user sees after signing in. The Wavey dashboard is a mix of charts, lists, and live data is called into corresponding cards with C# Razor Pages in the Html.
-
- *The Wavey Dashboard View:
  
  ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/b2a74f70-1259-416d-8484-1adb902e64d5)
 
