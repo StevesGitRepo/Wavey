@@ -76,3 +76,4 @@ A part of the Invite class:
 ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/0f2aec7e-d8c2-42b1-a805-e13bf89e74fc)
 
 
+<a href="https://hotbug-production.up.railway.app/" target="_blank">Go to Wavey</a>
