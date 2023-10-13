@@ -46,7 +46,7 @@ I created the PostgreSQL database and seeded organization data on the initial co
 
      ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/92c4db04-67b9-4df9-a461-92de02e5c2db)
 
-    ^The priorityId is defined at the top of the codeblock.  LINQ drills through database to include the Ticket details that need to be available when returning the tickets by their priorities.
+    ^The priorityId is defined at the top of the codeblock.  LINQ drills through database to include the Ticket details that need to be available when returning a ticket by its priorityId.
 <h2>Design</h2>
 
 I love the design process.  Whether it's creating a database, web page, or logo I try to balance design and function.
