@@ -11,7 +11,7 @@ Let's dive in!
 
 <h2>First Impressions</h2>
 
-I started by creating an inviting landing page...
+I started with an inviting landing page...
 
 ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/074fb188-fe3a-43da-85d3-f396dc61dafd)
 
