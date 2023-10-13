@@ -22,7 +22,7 @@ I started by creating an inviting landing page...
 
 <h2>The Dashboard</h2>
 
-The Dashboard is the first page the user sees after logging in. The Wavey dashboard is a mix of charts and tables.  Live data is called into corresponding cards with C# Razor Pages.
+The Dashboard is the first page the user sees after logging in and is a mix of charts, tables, lists and links.  Live data is called into corresponding cards with C# Razor Pages.
  
 ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/b2a74f70-1259-416d-8484-1adb902e64d5)
 
