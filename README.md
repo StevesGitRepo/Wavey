@@ -4,7 +4,9 @@
 
 I built the Wavey Bug Tracker (formerly Hotbug) with .NET, C#, PostgreSQL and MVC.  This is a powerful application that I actually use to track bugs on my own projects. 
 
-Let's dive in!  <a href="https://hotbug-production.up.railway.app/" target="_blank">Go to Wavey</a>
+Let's dive in!  
+
+<a href="https://hotbug-production.up.railway.app/" target="_blank">Go to Wavey</a>
 
 
 <h2>First Impressions</h2>
