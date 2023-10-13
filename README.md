@@ -4,6 +4,7 @@
 
 I built the Wavey Bug Tracker (formerly Hotbug) with .NET, C#, PostgreSQL and MVC.  This is a powerful application that I actually use to track bugs on my own projects. Let's dive in!  <a href="https://hotbug-production.up.railway.app/" target="_blank">Go to Wavey</a>
 
+
 <h2>First Impressions</h2>
 
 I started by creating an inviting landing page...
@@ -20,6 +21,7 @@ I started by creating an inviting landing page...
 The Dashboard is the first page the user sees after logging in. The Wavey dashboard is a mix of charts and tables.  Live data is called into corresponding cards with C# Razor Pages.
  
 ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/b2a74f70-1259-416d-8484-1adb902e64d5)
+
  
 <h2>Features</h2>
 
@@ -50,9 +52,13 @@ I love the design process.  Whether it's creating a database, web page, or logo 
 
 I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint. The final image may be a future iteration.
 
-<h1>Create a Ticket</h1>
+
+<h2>Create a Ticket</h2>
 
 Service tickets are the heart of the app.  Wavey is designed teams to create tickets, assign users, and work through the ticket lifecycle as the bug or issue is addressed. Invitations, Comments, and Notifications are hardwired through Models and Controllers and will be wired up soon to the front-end.
+
+![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/8afed775-a1a4-43a5-baad-941aa5fd9391)
+A small part of the Ticket Model.
 
 ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/0f2aec7e-d8c2-42b1-a805-e13bf89e74fc)
 A part of the Invite class.
