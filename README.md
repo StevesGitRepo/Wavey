@@ -36,7 +36,11 @@ The Wavey Bug Tracker is a feature-rich application and there are plans to expan
   * User-defined roles: Some functions are only accessible for the admin and project manager
   * Service Layer: I created a service layer in order to remove direct exposure to the database
   * Security: AspNetCore Identity enabled
-  * PostgreSQL: I created the database and seeded organization data originally, but demo users can also add tickets and make updates on the original data
+
+<h2>Database</h2>
+
+I created the PostgreSQL database and seeded organization data on the initial commit, but demo users can also add tickets and make updates on the original data.
+
   * Object-Relational Mapper: I manage the database through Entity Framework.  LINQ Queries are used extensively throughout the codebase.
       Here is an example of LINQ in my Ticket Service:
 
