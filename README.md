@@ -2,7 +2,9 @@
 
 ![waveyCardWhiteBg](https://github.com/StevesGitRepo/HotBug/assets/104333881/d0dbdf45-cbb8-4cd4-b4ed-4c9c97a9d9c5)
 
-I built the Wavey Bug Tracker (formerly Hotbug) with .NET, C#, PostgreSQL and MVC.  This is a powerful application that I actually use to track bugs on my own projects. Let's dive in!  <a href="https://hotbug-production.up.railway.app/" target="_blank">Go to Wavey</a>
+I built the Wavey Bug Tracker (formerly Hotbug) with .NET, C#, PostgreSQL and MVC.  This is a powerful application that I actually use to track bugs on my own projects. 
+
+Let's dive in!  <a href="https://hotbug-production.up.railway.app/" target="_blank">Go to Wavey</a>
 
 
 <h2>First Impressions</h2>
