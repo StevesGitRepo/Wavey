@@ -57,11 +57,13 @@ I started by removing the text from the original wave design. I cropped a portio
 
 <h2>Create a Ticket</h2>
 
-Service tickets are the heart of the app.  Wavey is designed teams to create tickets, assign users, and work through the ticket lifecycle as the bug or issue is addressed. Invitations, Comments, and Notifications are hardwired through Models and Controllers and will be wired up soon to the front-end.
+Service tickets are the heart of the app.  Wavey is designed for teams to create tickets, assign users, and work through the ticket lifecycle as the bug or issue is addressed. Invitations, Comments, and Notifications are hardwired through Models and Controllers and will be wired up soon to the front-end.
 
 ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/8afed775-a1a4-43a5-baad-941aa5fd9391)
+
 A small part of the Ticket Model.
 
 ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/0f2aec7e-d8c2-42b1-a805-e13bf89e74fc)
+
 A part of the Invite class.
 
