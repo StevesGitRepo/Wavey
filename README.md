@@ -42,7 +42,7 @@ The Wavey Bug Tracker is a feature-rich application and there are plans to expan
 I created the PostgreSQL database and seeded organization data on the initial commit, but demo users can also add tickets and make updates on the original data.
 
   * Object-Relational Mapper: I manage the database through Entity Framework.  LINQ Queries are used extensively throughout the codebase.
-      Here is an example of LINQ in my Ticket Service:
+      Here is an example of LINQ in my Ticket Service to get Tickets by their priority:
 
      ![image](https://github.com/StevesGitRepo/HotBug/assets/104333881/92c4db04-67b9-4df9-a461-92de02e5c2db)
 
