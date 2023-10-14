@@ -56,10 +56,13 @@ I love the design process.  Whether it's creating a database, web page, or logo 
   ![WaveyReadMe1](https://github.com/StevesGitRepo/HotBug/assets/104333881/f6ad8628-028c-4947-9423-33d958de4000)
   ![WaveyReadMe2](https://github.com/StevesGitRepo/HotBug/assets/104333881/25be4e13-f7cf-4a6b-bc61-5f6f3d33bde5)
   ![WaveyReadMe3](https://github.com/StevesGitRepo/HotBug/assets/104333881/e81e9bd2-a1d7-499a-a675-881fd8a29108)
-  ![WaveyReadMe4](https://github.com/StevesGitRepo/HotBug/assets/104333881/76514740-56d3-4b1d-a832-44816a3c6eee) ... 
+  ![WaveyReadMe4](https://github.com/StevesGitRepo/HotBug/assets/104333881/76514740-56d3-4b1d-a832-44816a3c6eee) 
   ![WaveyReadMe5](https://github.com/StevesGitRepo/HotBug/assets/104333881/927b033a-a560-4c32-be61-15a6b4e0a6e8)
+  ![WaveyReadMe6](https://github.com/StevesGitRepo/Wavey-Bug-Tracker/assets/104333881/1445e1dd-059a-49b1-9f2b-31b1d5b63d9d)
 
-I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint. The final image may be a future iteration.
+  
+
+I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint.  I eventually rotated the image and formed a wave for the final design.
 
 
 <h2>Create a Ticket</h2>
