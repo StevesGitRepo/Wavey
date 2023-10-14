@@ -49,8 +49,9 @@ I created the PostgreSQL database and seeded organization data on the initial co
     ^The priorityId is defined at the top of the codeblock.  LINQ drills through database to include the Ticket details that need to be available when returning a ticket by its priorityId.
 <h2>Design</h2>
 
-I love the design process.  Whether it's creating a database, web page, or logo I try to balance design and function.
-      See the evolution of the Wavey favicon logo:
+I love the design process.  Whether it's creating a database, web page, or logo I try to balance design and function.  
+
+The evolution of the Wavey favicon logo:
       
       
   ![WaveyReadMe1](https://github.com/StevesGitRepo/HotBug/assets/104333881/f6ad8628-028c-4947-9423-33d958de4000)
@@ -62,7 +63,7 @@ I love the design process.  Whether it's creating a database, web page, or logo 
 
   
 
-I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint.  I eventually rotated the image and formed a wave for the final design.
+I started by removing the text from the original wave design. I cropped a portion of the wave and added a third layer the same color as the text, then cropped the image again to reduce the footprint.  I eventually rotated/flipped the image and formed the wave for the final design.
 
 
 <h2>Create a Ticket</h2>
