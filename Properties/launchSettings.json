@@ -4,9 +4,11 @@
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DATABASE_URL": "postgresql://postgres:HGOgxDfSBmOJIHJgoSGWdgqpmnenqwyG@yamabiko.proxy.rlwy.net:24381/railway"
       },
       "applicationUrl": "https://localhost:55371;http://localhost:55372"
     }
   }
-}
+} 
+
